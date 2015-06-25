@@ -88,33 +88,6 @@ a {
     -moz-transform: rotateX(0deg);
     -ms-transform: rotateX(0deg);
     transform: rotateX(0deg); } }
-@-webkit-keyframes slide-in {}
-@-moz-keyframes slide-in {}
-@-ms-keyframes slide-in {}
-@-webkit-keyframes slide-out {
-  to {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); } }
-@-moz-keyframes slide-out {
-  to {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); } }
-@-ms-keyframes slide-out {
-  to {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); } }
-@keyframes slide-out {
-  to {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); } }
 body {
   background-color: #252a33;
   height: 100vh; }
@@ -309,7 +282,11 @@ body {
         background-image: radial-gradient(circle, #fff, #ccc);
         background-repeat: no-repeat; }
         body .sections section#work .my-work {
-          position: relative; }
+          position: relative;
+          -webkit-transition: all 300ms ease;
+          -moz-transition: all 300ms ease;
+          -ms-transition: all 300ms ease;
+          transition: all 300ms ease; }
           body .sections section#work .my-work:before, body .sections section#work .my-work:after {
             content: '';
             display: table; }
@@ -323,36 +300,23 @@ body {
             -webkit-transition: all 300ms ease;
             -moz-transition: all 300ms ease;
             -ms-transition: all 300ms ease;
-            transition: all 300ms ease;
-            -webkit-transform-origin: 50% 0% 0;
-            -moz-transform-origin: 50% 0% 0;
-            -ms-transform-origin: 50% 0% 0;
-            transform-origin: 50% 0% 0;
-            -webkit-transform-style: preserve-3d;
-            -moz-transform-style: preserve-3d;
-            -ms-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            -webkit-transform: rotateX(0deg);
-            -moz-transform: rotateX(0deg);
-            -ms-transform: rotateX(0deg);
-            transform: rotateX(0deg); }
+            transition: all 300ms ease; }
             @media only screen and (max-width: 414px) {
               body .sections section#work .my-work .item {
                 width: calc(50% - 30px); } }
             body .sections section#work .my-work .item img {
               display: block;
               width: 100%; }
-          body .sections section#work .my-work.hide .item {
-            opacity: 0.1;
-            -webkit-transform: rotateX(-40deg);
-            -moz-transform: rotateX(-40deg);
-            -ms-transform: rotateX(-40deg);
-            transform: rotateX(-40deg); }
+          body .sections section#work .my-work.hide {
+            -webkit-transform: translateX(-100%);
+            -moz-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            transform: translateX(-100%); }
+            body .sections section#work .my-work.hide .item {
+              opacity: 0.1; }
           body .sections section#work .my-work .work-focus {
             position: absolute;
             top: 20px;
-            right: 20px;
-            left: 20px;
             opacity: 0;
             -webkit-transition: all 300ms ease;
             -moz-transition: all 300ms ease;
@@ -362,16 +326,12 @@ body {
             -moz-transform-origin: 50% 0% 0;
             -ms-transform-origin: 50% 0% 0;
             transform-origin: 50% 0% 0;
-            -webkit-transform: rotateX(90deg);
-            -moz-transform: rotateX(90deg);
-            -ms-transform: rotateX(90deg);
-            transform: rotateX(90deg); }
+            -webkit-transform: translateX(100%);
+            -moz-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            transform: translateX(100%); }
             body .sections section#work .my-work .work-focus.show {
-              opacity: 1;
-              -webkit-transform: translateZ(0);
-              -moz-transform: translateZ(0);
-              -ms-transform: translateZ(0);
-              transform: translateZ(0); }
+              opacity: 1; }
             body .sections section#work .my-work .work-focus figure {
               float: left;
               width: 50%; }

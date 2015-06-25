@@ -12,20 +12,12 @@
 	}
 }
 
-@include keyframes(slide-in){
-}
-
-@include keyframes(slide-out){
-	to {
-		@include translateY(100%); 
-	}
-}
-
 body {
 	background-color: #252a33;
 	height:100vh;
 	
 	.navigation {
+		
 		// The hamburger
 		.hamburger {
 			$padding: 15px;
@@ -126,6 +118,7 @@ body {
 				}
 			}
 			
+			// Intro section
 			&#intro {
 				background-color: darken(#385B7F,40%);
 				
@@ -251,12 +244,16 @@ body {
 				}
 			}
 			
+			// Work section
 			&#work {
 				@include gradient-radial(#fff,#ccc);
+				
+				$slide-value: 800px;
 				
 				.my-work {
 					position: relative;
 					@include clearfix;
+					@include transition(all 300ms ease);
 					
 					.item {
 						border-radius: 5px;
@@ -264,9 +261,6 @@ body {
 						margin: 15px;
 						width: calc(33.33% - 30px);
 						@include transition(all 300ms ease);
-						@include transform-origin(50%,0%);
-						@include transform-style(preserve-3d);
-						@include rotateX(0deg);
 						
 						@media only screen and (max-width : 414px) {
 							width: calc(50% - 30px);
@@ -279,26 +273,23 @@ body {
 					}
 					
 					&.hide {
+						@include translateX(-100%);
 						
 						.item {
 							opacity: 0.1;
-							@include rotateX(-40deg);
 						}
 					}
 				
 					.work-focus {
 						position: absolute;
 						top:20px;
-						right:20px;
-						left: 20px;
 						opacity: 0;
 						@include transition(all 300ms ease);
 						@include transform-origin(50%,0%);
-						@include rotateX(90deg);
+						@include translateX(100%);
 						
 						&.show {
 							opacity: 1;
-							@include translateZ(0);
 						}
 						
 						figure {
