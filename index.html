@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Michael K. Clements</title>
+    <meta name="description" content="The best web designer ever* *Not really" />
+    <meta name="keywords" content="html, css, js, html5, css3, graphic, web, designer, awesome, lovely eyes, loves long walks on the beaches and strawberries and peaches" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="images/favicon.png" />
+    <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico" /><![endif]-->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch-icon-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch-icon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch-icon-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/touch-icon-57.png" />
+    
+    <link rel="stylesheet" href="css/screen.css">
+    
+    <script type="text/javascript" src="js/mkc.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
+
+  </head>
+  <body data-bind="css: { 'nav-active' : isNavClicked }">
+    
+    <div class="navigation">
+      <nav>
+        <ul>
+          <li>
+            <a href="#intro">Intro</a>
+          </li>
+          <li>
+            <a href="#work">Work</a>
+          </li>
+          <li>
+            <a href="#work">Experience</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="hamburger" data-bind="click: openNav">
+        <div class="line"></div>
+      </div>
+    </div>
+    
+    <div class="sections">
+    
+      <section id="intro">
+        
+        <div class="text">
+          <h1 class="title">MichaelKC<span class="domain">.com</span></h1>
+          <h2 class="sub-title">Front end developer living in <span class="location">Newcastle upon Tyne</span></h2>
+        </div>
+        
+      </section>
+      
+      <section id="work">
+        
+        <div class="container">
+    
+            <h1 class="title">Work</span></h1>
+              
+            <div class="my-work" data-bind="css: { 'hide': isWorkShown }">
+              
+              <a class="item" data-bind="click: showWork()"><img src="images/work-music.jpg"/></a>
+              <a class="item" data-bind="click: showWork()"><img src="images/work-oldmkc.jpg"/></a>
+              <a class="item" data-bind="click: showWork()"><img src="images/work-litfusefilms.jpg"/></a>
+              <a class="item" data-bind="click: showWork()"><img src="images/work-wonderflix.jpg"/></a>
+              <a class="item" data-bind="click: showWork()"><img src="images/work-music.jpg"/></a>
+              <a class="item" data-bind="click: showWork()"><img src="images/work-oldmkc.jpg"/></a>
+                
+              <div class="work-focus" data-bind="css: { 'show': isWorkShown }">
+                <figure>
+                  <a href="http://michaelkc.com/music/"><img src="images/work-music.jpg"/></a>
+                </figure>
+                
+                <article>
+                  <h1>MichaelKC Music</h1>
+                  <p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p>
+                  <p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p>
+                  <p>The tough parts was getting the logic for shuffling, repeating and both.</p>
+                  <p>Thanks for my friend Lars for the music.</p>
+                </article>
+                
+                <nav>
+                  <a data-bind="click: !showWork()">Back</a>
+                </nav>
+              </div>
+            </div>
+        
+        </div>
+        
+      </section>
+    
+    </div>
+
+  </body>
+</html>
