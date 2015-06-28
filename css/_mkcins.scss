@@ -1,4 +1,11 @@
 // Pre-defined mkcins
+// Background image size fill
+@mixin background-size() {
+    background-position:center;
+    background-size:cover;
+    background-repeat:none;
+}
+
 // Border box with ease
 @mixin border-box() {
     -moz-box-sizing: border-box;
