@@ -6,7 +6,7 @@
 	from {
 		@include rotateX(110deg);
 	}
-	
+
 	to {
 		@include rotateX(0deg);
 	}
@@ -15,13 +15,13 @@
 body {
 	background-color: #252a33;
 	height:100vh;
-	
+
 	.navigation {
-		
+
 		// The hamburger
 		.hamburger {
 			$padding: 15px;
-			
+
 			background-color: rgba(#000, 0.2);
 			cursor: pointer;
 			padding: $padding;
@@ -32,20 +32,20 @@ body {
 			height: 60px;
 			z-index: 10000;
 			@include user-select(none);
-			
+
 			@mixin line() {
 				background-color: #fff;
 				height: 3px;
 				position: absolute;
 			}
-			
+
 			.line {
 				top:50%;
 				left: $padding;
 				right: $padding;
 				@include translate(0, -50%);
 				@include line;
-				
+
 				&:before,
 				&:after {
 					content: '';
@@ -53,37 +53,37 @@ body {
 					right: 0;
 					@include line;
 				}
-				
+
 				&:before {
 					bottom: calc(100% + 5px);
 				}
-				
+
 				&:after {
 					top: calc(100% + 5px);
 				}
 			}
 		}
-		
+
 		nav {
 			top:100px;
 			position: fixed;
 			@include transition(all 300ms ease);
 			@include translate3d(-200px, 0, 100px);
-			
+
 			ul {
 				list-style:none;
-				
+
 				li {
 					margin-bottom: 20px;
-					
+
 					a {
 						color: #fff;
 						display: block;
 						font-size: 34px;
 						padding: 5px;
-						
+
 						@media only screen and (max-width : 1024px) {
-							
+
 							& {
 								font-size: 20px;
 							}
@@ -93,11 +93,11 @@ body {
 			}
 		}
 	}
-	
+
 	.sections {
 		overflow: hidden;
 		@include perspective(3000px);
-	
+
 		section {
 			min-height:100vh;
 			position: relative;
@@ -105,23 +105,23 @@ body {
 			@include transform-origin(100%, 50%);
 			@include transform-style(preserve-3d);
 			@include transition(all 300ms ease);
-			
+
 			.container {
 				margin: 0 auto;
 				max-width: 960px;
 				padding: 50px 0;
-				
+
 				.title {
 					font-family: 'Lato';
 					font-size: 98px;
 					font-weight: 100;
 				}
 			}
-			
+
 			// Intro section
 			&#intro {
 				background-color: darken(#385B7F,40%);
-				
+
 				&:before,
 				&:after {
 					content: '';
@@ -131,17 +131,17 @@ body {
 					bottom: 0;
 					left: 0;
 				}
-				
+
 				&:before {
 					background: url(../images/intro-bg.jpg) center;
 					background-size: cover;
 					@include blur(0);
 				}
-				
+
 				&:after {
 					background-color: rgba(#385B7F,0.3);
 				}
-				
+
 				.text {
 					position: absolute;
 					bottom: 20%;
@@ -150,92 +150,92 @@ body {
 					z-index: 1;
 					@include transform-style(preserve-3d);
 					@include translate3d(0,-50%, 100px);
-					
+
 					.title,
 					.sub-title {
 						font-weight: 100;
 						@include backface-visibility(hidden);
 						@include transform-origin(50%,0);
 					}
-					
+
 					.title {
 						color: #fff;
 						font-size: 78px;
 						@include animation(text-fold-in 700ms ease 300ms 1 both);
-						
+
 						.domain {
 							color: #eee;
 						}
 					}
-					
+
 					.sub-title {
 						color: #fff;
 						font-size: 34px;
 						font-weight: 300;
 						@include animation(text-fold-in 700ms ease 700ms 1 both);
-						
+
 						.location {
 							color: #ff4f79;
 						}
 					}
-					
+
 					@media only screen and (max-width : 1920px) {
-						
+
 						& {
 							bottom: 25%;
-							
+
 							.title {
 								font-size: 78px;
 							}
-							
+
 							.sub-title {
 								font-size: 28px;
 							}
 						}
 					}
-	
+
 					@media only screen and (max-width : 1024px) {
-						
+
 						& {
 							right:5%;
 							bottom:24%;
-							
+
 							.title {
 								font-size: 68px;
 							}
 						}
 					}
-					
+
 					@media only screen and (max-width : 768px) {
 						& {
 							right:5%;
 							bottom:28%;
-							
+
 							.title {
 								font-size: 68px;
 							}
-							
+
 							.sub-title {
 								font-size: 24px;
 							}
 						}
 					}
-					
+
 					@media only screen and (max-width : 414px) {
 						& {
 							left: 5%;
 							right:5%;
 							bottom:25%;
-							
+
 							.title,
 							.sub-title {
 								text-align: center;
 							}
-							
+
 							.title {
 								font-size: 38px;
 							}
-							
+
 							.sub-title {
 								font-size: 22px;
 							}
@@ -243,117 +243,156 @@ body {
 					}
 				}
 			}
-			
+
 			// Work section
 			&#work {
-				@include gradient-radial(#fff,#ccc);
-				
-				$slide-value: 800px;
-				
-				.my-work {
+				@include gradient-radial(#fff,#ddd);
+
+				.slide {
+					height: 325px;
+					margin-bottom: 20px;
 					position: relative;
-					@include clearfix;
-					@include transition(all 300ms ease);
-					
-					.item {
-						border-radius: 5px;
-						float: left;
-						margin: 15px;
-						width: calc(33.33% - 30px);
-						@include transition(all 300ms ease);
-						
-						@media only screen and (max-width : 414px) {
-							width: calc(50% - 30px);
-						}
-						
-						img {
-							display: block;
-							width: 100%;
-						}
-					}
-					
-					&.hide {
-						@include translateX(-100%);
-						
-						.item {
-							opacity: 0.1;
-						}
-					}
-				
-					.work-focus {
+
+					article {
+						padding-right: 40px;
 						position: absolute;
-						top:20px;
-						opacity: 0;
-						@include transition(all 300ms ease);
-						@include transform-origin(50%,0%);
-						@include translateX(100%);
-						
-						&.show {
-							opacity: 1;
-						}
-						
+						height: 100%;
+						width: 100%;
+						@include clearfix;
+
 						figure {
-							float:left;
-							width: 50%;
-							
+							float: left;
+							margin-right: 5%;
+							width: 45%;
+
 							a {
-								box-shadow: 0 5px 10px rgba(#000,0.1);
+								box-shadow: 0 0 5px rgba(#000,0.1);
 								display: block;
 								@include transition(all 300ms ease);
-								
-								&:hover {
-									box-shadow: 0 3px 15px rgba(#1e93cf,0.3);
-								}
-								
+
 								img {
 									display: block;
 									width: 100%;
-								}	
+								}
+
+								&:hover {
+									box-shadow: 0 0 5px rgba(#009cff, 0.5);
+								}
 							}
 						}
-						
-						article {
-							float: left;
-							padding-left: 50px;
-							width:50%;
-							
-							h1 {
-								font-weight: 300;
-								font-size: 32px;
+
+						h1 {
+							font-size: 40px;
+							font-weight: 300;
+						}
+
+						p {
+							color: #666;
+							margin: 10px 0;
+						}
+
+						@for $i from 1 through 5 {
+							&:nth-of-type(1n + #{$i}){
+								$j: $i - 1;
+								$number: 100% * $j;
+
+								@include translateX($number);
 							}
-							
-							p {
-								color: #666;
-								margin: 10px 0;
+						}
+
+						.badges {
+							@include clearfix;
+
+							.badge {
+								background-color: #fff;
+								border:1px solid #ccc;
+								border-radius: 50%;
+								color: #999;
+								float: left;
+								margin-right: 10px;
+								font-size: 30px;
+								position: relative;
+								height: 60px;
+								width: 60px;
+								@include transition(all 300ms ease);
+
+								i {
+									position: absolute;
+									left: 50%;
+									top: 50%;
+									@include translate(-50%,-50%);
+								}
+
+								&:hover {
+
+									&.html {
+										$color: #f55;
+										border-color: $color;
+										color: $color;
+									}
+
+									&.css {
+										$color: #0499d7;
+										border-color: $color;
+										color: $color;
+									}
+
+									&.audio {
+										$color: #17b153;
+										border-color: $color;
+										color: $color;
+									}
+
+									&.video {
+										$color: #fba600;
+										border-color: $color;
+										color: $color;
+									}
+								}
 							}
+						}
+					}
+				}
+
+				.small-slide {
+					@include clearfix;
+
+					a {
+						float: left;
+						padding: 5px;
+						width: floor(100% / 5);
+
+						img {
+							display: block;
+							width: 100%;
 						}
 					}
 				}
 			}
 		}
 	}
-	
+
 	&.nav-active {
-		
+
 		nav {
 			@include translate3d(40px, 0, 0);
 		}
-		
+
 		.sections {
-			
+
 			section {
 				@include transform(translateX(10%) rotateY(-30deg));
-				
+
 				@media only screen and (max-width : 414px) {
 					@include transform(translateX(200px) rotateY(-30deg));
 				}
-				
+
 				&#work {
-					
+
 					.my-work {
-						
+
 						.item {
-							
+
 							&:before {
 								@include translateZ(-100px);
 							}

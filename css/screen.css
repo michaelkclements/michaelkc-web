@@ -276,87 +276,124 @@ body {
                 font-size: 22px; } }
       body .sections section#work {
         background-color: #fff;
-        background-image: -webkit-radial-gradient(circle, #fff, #ccc);
-        background-image: -moz-radial-gradient(circle, #fff, #ccc);
-        background-image: -ms-radial-gradient(circle, #fff, #ccc);
-        background-image: radial-gradient(circle, #fff, #ccc);
+        background-image: -webkit-radial-gradient(circle, #fff, #ddd);
+        background-image: -moz-radial-gradient(circle, #fff, #ddd);
+        background-image: -ms-radial-gradient(circle, #fff, #ddd);
+        background-image: radial-gradient(circle, #fff, #ddd);
         background-repeat: no-repeat; }
-        body .sections section#work .my-work {
-          position: relative;
-          -webkit-transition: all 300ms ease;
-          -moz-transition: all 300ms ease;
-          -ms-transition: all 300ms ease;
-          transition: all 300ms ease; }
-          body .sections section#work .my-work:before, body .sections section#work .my-work:after {
-            content: '';
-            display: table; }
-          body .sections section#work .my-work:after {
-            clear: both; }
-          body .sections section#work .my-work .item {
-            border-radius: 5px;
-            float: left;
-            margin: 15px;
-            width: calc(33.33% - 30px);
-            -webkit-transition: all 300ms ease;
-            -moz-transition: all 300ms ease;
-            -ms-transition: all 300ms ease;
-            transition: all 300ms ease; }
-            @media only screen and (max-width: 414px) {
-              body .sections section#work .my-work .item {
-                width: calc(50% - 30px); } }
-            body .sections section#work .my-work .item img {
-              display: block;
-              width: 100%; }
-          body .sections section#work .my-work.hide {
-            -webkit-transform: translateX(-100%);
-            -moz-transform: translateX(-100%);
-            -ms-transform: translateX(-100%);
-            transform: translateX(-100%); }
-            body .sections section#work .my-work.hide .item {
-              opacity: 0.1; }
-          body .sections section#work .my-work .work-focus {
+        body .sections section#work .slide {
+          height: 325px;
+          margin-bottom: 20px;
+          position: relative; }
+          body .sections section#work .slide article {
+            padding-right: 40px;
             position: absolute;
-            top: 20px;
-            opacity: 0;
-            -webkit-transition: all 300ms ease;
-            -moz-transition: all 300ms ease;
-            -ms-transition: all 300ms ease;
-            transition: all 300ms ease;
-            -webkit-transform-origin: 50% 0% 0;
-            -moz-transform-origin: 50% 0% 0;
-            -ms-transform-origin: 50% 0% 0;
-            transform-origin: 50% 0% 0;
-            -webkit-transform: translateX(100%);
-            -moz-transform: translateX(100%);
-            -ms-transform: translateX(100%);
-            transform: translateX(100%); }
-            body .sections section#work .my-work .work-focus.show {
-              opacity: 1; }
-            body .sections section#work .my-work .work-focus figure {
+            height: 100%;
+            width: 100%; }
+            body .sections section#work .slide article:before, body .sections section#work .slide article:after {
+              content: '';
+              display: table; }
+            body .sections section#work .slide article:after {
+              clear: both; }
+            body .sections section#work .slide article figure {
               float: left;
-              width: 50%; }
-              body .sections section#work .my-work .work-focus figure a {
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+              margin-right: 5%;
+              width: 45%; }
+              body .sections section#work .slide article figure a {
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
                 display: block;
                 -webkit-transition: all 300ms ease;
                 -moz-transition: all 300ms ease;
                 -ms-transition: all 300ms ease;
                 transition: all 300ms ease; }
-                body .sections section#work .my-work .work-focus figure a:hover {
-                  box-shadow: 0 3px 15px rgba(30, 147, 207, 0.3); }
-                body .sections section#work .my-work .work-focus figure a img {
+                body .sections section#work .slide article figure a img {
                   display: block;
                   width: 100%; }
-            body .sections section#work .my-work .work-focus article {
+                body .sections section#work .slide article figure a:hover {
+                  box-shadow: 0 0 5px rgba(0, 156, 255, 0.5); }
+            body .sections section#work .slide article h1 {
+              font-size: 40px;
+              font-weight: 300; }
+            body .sections section#work .slide article p {
+              color: #666;
+              margin: 10px 0; }
+            body .sections section#work .slide article:nth-of-type(1n + 1) {
+              -webkit-transform: translateX(0%);
+              -moz-transform: translateX(0%);
+              -ms-transform: translateX(0%);
+              transform: translateX(0%); }
+            body .sections section#work .slide article:nth-of-type(1n + 2) {
+              -webkit-transform: translateX(100%);
+              -moz-transform: translateX(100%);
+              -ms-transform: translateX(100%);
+              transform: translateX(100%); }
+            body .sections section#work .slide article:nth-of-type(1n + 3) {
+              -webkit-transform: translateX(200%);
+              -moz-transform: translateX(200%);
+              -ms-transform: translateX(200%);
+              transform: translateX(200%); }
+            body .sections section#work .slide article:nth-of-type(1n + 4) {
+              -webkit-transform: translateX(300%);
+              -moz-transform: translateX(300%);
+              -ms-transform: translateX(300%);
+              transform: translateX(300%); }
+            body .sections section#work .slide article:nth-of-type(1n + 5) {
+              -webkit-transform: translateX(400%);
+              -moz-transform: translateX(400%);
+              -ms-transform: translateX(400%);
+              transform: translateX(400%); }
+            body .sections section#work .slide article .badges:before, body .sections section#work .slide article .badges:after {
+              content: '';
+              display: table; }
+            body .sections section#work .slide article .badges:after {
+              clear: both; }
+            body .sections section#work .slide article .badges .badge {
+              background-color: #fff;
+              border: 1px solid #ccc;
+              border-radius: 50%;
+              color: #999;
               float: left;
-              padding-left: 50px;
-              width: 50%; }
-              body .sections section#work .my-work .work-focus article h1 {
-                font-weight: 300;
-                font-size: 32px; }
-              body .sections section#work .my-work .work-focus article p {
-                color: #666;
-                margin: 10px 0; }
+              margin-right: 10px;
+              font-size: 30px;
+              position: relative;
+              height: 60px;
+              width: 60px;
+              -webkit-transition: all 300ms ease;
+              -moz-transition: all 300ms ease;
+              -ms-transition: all 300ms ease;
+              transition: all 300ms ease; }
+              body .sections section#work .slide article .badges .badge i {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
+              body .sections section#work .slide article .badges .badge:hover.html {
+                border-color: #f55;
+                color: #f55; }
+              body .sections section#work .slide article .badges .badge:hover.css {
+                border-color: #0499d7;
+                color: #0499d7; }
+              body .sections section#work .slide article .badges .badge:hover.audio {
+                border-color: #17b153;
+                color: #17b153; }
+              body .sections section#work .slide article .badges .badge:hover.video {
+                border-color: #fba600;
+                color: #fba600; }
+        body .sections section#work .small-slide:before, body .sections section#work .small-slide:after {
+          content: '';
+          display: table; }
+        body .sections section#work .small-slide:after {
+          clear: both; }
+        body .sections section#work .small-slide a {
+          float: left;
+          padding: 5px;
+          width: 20%; }
+          body .sections section#work .small-slide a img {
+            display: block;
+            width: 100%; }
   body.nav-active nav {
     -webkit-transform: translate3d(40px, 0, 0);
     -moz-transform: translate3d(40px, 0, 0);

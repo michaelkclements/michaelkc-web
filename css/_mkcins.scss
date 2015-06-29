@@ -3,7 +3,7 @@
 @mixin background-size() {
     background-position:center;
     background-size:cover;
-    background-repeat:none;
+    background-repeat:no-repeat;
 }
 
 // Border box with ease

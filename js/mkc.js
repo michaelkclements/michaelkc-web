@@ -13,14 +13,9 @@ ready(function () {
         var self = this;
         
         self.isNavClicked = ko.observable(false);
-        self.isWorkShown = ko.observable(false);
         
         self.openNav = function () {
             self.isNavClicked(!self.isNavClicked())
-        };
-        
-        self.showWork = function () {
-            self.isWorkShown(!self.isWorkShown())
         };
 
     };

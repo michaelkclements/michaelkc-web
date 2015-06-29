@@ -7,22 +7,23 @@
     <meta name="description" content="The best web designer ever* *Not really" />
     <meta name="keywords" content="html, css, js, html5, css3, graphic, web, designer, awesome, lovely eyes, loves long walks on the beaches and strawberries and peaches" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="icon" href="images/favicon.png" />
     <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico" /><![endif]-->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch-icon-144.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch-icon-114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch-icon-72.png" />
     <link rel="apple-touch-icon-precomposed" href="images/touch-icon-57.png" />
-    
+
     <link rel="stylesheet" href="css/screen.css">
-    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="js/mkc.js"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>
 
   </head>
   <body data-bind="css: { 'nav-active' : isNavClicked }">
-    
+
     <div class="navigation">
       <nav>
         <ul>
@@ -37,61 +38,140 @@
           </li>
         </ul>
       </nav>
-      
+
       <div class="hamburger" data-bind="click: openNav">
         <div class="line"></div>
       </div>
     </div>
-    
+
     <div class="sections">
-    
+
       <section id="intro">
-        
+
         <div class="text">
           <h1 class="title">MichaelKC<span class="domain">.com</span></h1>
           <h2 class="sub-title">Front end developer living in <span class="location">Newcastle upon Tyne</span></h2>
         </div>
-        
+
       </section>
-      
+
       <section id="work">
-        
+
         <div class="container">
-    
+
             <h1 class="title">Work</span></h1>
-              
-            <div class="my-work" data-bind="css: { 'hide': isWorkShown }">
-              
-              <a class="item" data-bind="click: showWork()"><img src="images/work-music.jpg"/></a>
-              <a class="item" data-bind="click: showWork()"><img src="images/work-oldmkc.jpg"/></a>
-              <a class="item" data-bind="click: showWork()"><img src="images/work-litfusefilms.jpg"/></a>
-              <a class="item" data-bind="click: showWork()"><img src="images/work-wonderflix.jpg"/></a>
-              <a class="item" data-bind="click: showWork()"><img src="images/work-rs.jpg"/></a>
-              <a class="item" data-bind="click: showWork()"><img src="images/work-football.jpg"/></a>
-                
-              <div class="work-focus" data-bind="css: { 'show': isWorkShown }">
+
+            <div class="slide">
+              <article>
                 <figure>
                   <a href="http://michaelkc.com/music/"><img src="images/work-music.jpg"/></a>
                 </figure>
-                
-                <article>
+
                   <h1>MichaelKC Music</h1>
                   <p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p>
                   <p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p>
                   <p>The tough parts was getting the logic for shuffling, repeating and both.</p>
                   <p>Thanks for my friend Lars for the music.</p>
-                </article>
-                
-                <nav>
-                  <a data-bind="click: showWork()">Back</a>
-                </nav>
-              </div>
+
+                  <div class="badges">
+                    <div class="badge html" data-title="HTML5 Semantics">
+                      <i class="fa fa-html5"></i>
+                    </div>
+                    <div class="badge css" data-title="CSS3 Magic">
+                      <i class="fa fa-css3"></i>
+                    </div>
+                    <div class="badge audio" data-title="HTML5 Audio">
+                      <i class="fa fa-volume-up"></i>
+                    </div>
+                  </div>
+
+              </article>
+
+              <article>
+                <figure>
+                  <a href="http://michaelkc.com/music/"><img src="images/work-oldmkc.jpg"/></a>
+                </figure>
+
+                  <h1>My old portfolio</h1>
+                  <p>I set out to put my CSS3 3D transform knowledge to the test.</p>
+                  <p>Clicking on a link would move the site around in a 3D environment.</p>
+                  <p>The use of HTML 5 video was also used to portray a video I created using the Unreal engine.</p>
+                  <p>Sorry about the use of Lobster font.</p>
+                  <div class="badges">
+                    <div class="badge html" data-title="HTML5 Semantics">
+                      <i class="fa fa-html5"></i>
+                    </div>
+                    <div class="badge css" data-title="CSS3 Magic">
+                      <i class="fa fa-css3"></i>
+                    </div>
+                    <div class="badge video" data-title="HTML5 Video">
+                      <i class="fa fa-video-camera"></i>
+                    </div>
+                  </div>
+              </article>
+
+              <article>
+                <figure>
+                  <a href="http://michaelkc.com/music/"><img src="images/work-litfusefilms.jpg"/></a>
+                </figure>
+
+                  <h1>Lit Fuse Films</h1>
+                  <p>This was a group of talented people that made video game videos (Machinima).</p>
+                  <p>Being a part of this group taught me how to organise and work in a team.</p>
+                  <p>The website shown now is something quick I put together to link to our videos.</p>
+                  <div class="badges">
+                    <div class="badge html" data-title="HTML5 Semantics">
+                      <i class="fa fa-html5"></i>
+                    </div>
+                    <div class="badge css" data-title="CSS3 Magic">
+                      <i class="fa fa-css3"></i>
+                    </div>
+                  </div>
+              </article>
+
+              <article>
+                <figure>
+                  <a href="http://michaelkc.com/music/"><img src="images/work-wonderflix.jpg"/></a>
+                </figure>
+
+                  <h1>Wonderflix</h1>
+                  <p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p>
+                  <p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p>
+                  <p>The tough parts was getting the logic for shuffling, repeating and both.</p>
+                  <p>Thanks to my friend Lars for the music.</p>
+                  <div class="badges">
+                    <div class="badge html" data-title="HTML5 Semantics">
+                      <i class="fa fa-html5"></i>
+                    </div>
+                    <div class="badge css" data-title="CSS3 Magic">
+                      <i class="fa fa-css3"></i>
+                    </div>
+                    <div class="badge wp" data-title="Wordpress template">
+                      <i class="fa fa-wordpress"></i>
+                    </div>
+                  </div>
+              </article>
             </div>
-        
+
+            <div class="small-slide">
+              <a class="button">
+                <img src="images/work-music.jpg">
+              </a>
+              <a class="button">
+                <img src="images/work-oldmkc.jpg">
+              </a>
+              <a class="button">
+                <img src="images/work-litfusefilms.jpg">
+              </a>
+              <a class="button">
+                <img src="images/work-wonderflix.jpg">
+              </a>
+            </div>
+
         </div>
-        
+
       </section>
-    
+
     </div>
 
   </body>
