@@ -42,7 +42,12 @@ body {
   font-size: 20px; }
 
 a {
-  text-decoration: none; }
+  color: #f55;
+  text-decoration: none;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  transition: all 200ms ease; }
 
 @-webkit-keyframes text-fold-in {
   from {
@@ -164,24 +169,28 @@ body {
       -moz-transform-origin: 100% 50% 0;
       -ms-transform-origin: 100% 50% 0;
       transform-origin: 100% 50% 0;
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
-      -ms-transform-style: preserve-3d;
-      transform-style: preserve-3d;
       -webkit-transition: all 300ms ease;
       -moz-transition: all 300ms ease;
       -ms-transition: all 300ms ease;
       transition: all 300ms ease; }
       body .sections section .container {
         margin: 0 auto;
-        max-width: 960px;
+        min-width: 960px;
+        max-width: 1100px;
         padding: 50px 0; }
         body .sections section .container .title {
           font-family: 'Lato';
           font-size: 98px;
           font-weight: 100; }
+        body .sections section .container h2 {
+          font-size: 30px;
+          font-weight: 300; }
       body .sections section#intro {
-        background-color: black; }
+        background-color: black;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d; }
         body .sections section#intro:before, body .sections section#intro:after {
           content: '';
           position: absolute;
@@ -281,119 +290,207 @@ body {
         background-image: -ms-radial-gradient(circle, #fff, #ddd);
         background-image: radial-gradient(circle, #fff, #ddd);
         background-repeat: no-repeat; }
-        body .sections section#work .slide {
-          height: 325px;
-          margin-bottom: 20px;
-          position: relative; }
-          body .sections section#work .slide article {
-            padding-right: 40px;
+        body .sections section#work .tiles {
+          margin-top: 50px;
+          position: relative;
+          -webkit-perspective: 2000px;
+          -moz-perspective: 2000px;
+          -ms-perspective: 2000px;
+          perspective: 2000px;
+          -webkit-transform-style: preserve-3d;
+          -moz-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+          transform-style: preserve-3d; }
+          body .sections section#work .tiles:before, body .sections section#work .tiles:after {
+            content: '';
+            display: table; }
+          body .sections section#work .tiles:after {
+            clear: both; }
+          body .sections section#work .tiles .tile {
+            border-radius: 3px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            float: left;
+            margin: 10px;
+            width: calc(33.33% - 20px);
+            -webkit-transition: all 300ms ease;
+            -moz-transition: all 300ms ease;
+            -ms-transition: all 300ms ease;
+            transition: all 300ms ease; }
+            body .sections section#work .tiles .tile img {
+              display: block;
+              width: 100%; }
+          body .sections section#work .tiles.focus-active .tile {
+            opacity: 0.05;
+            -webkit-transform: translateZ(-500px);
+            -moz-transform: translateZ(-500px);
+            -ms-transform: translateZ(-500px);
+            transform: translateZ(-500px); }
+          body .sections section#work .tiles.focus-active .focus {
+            opacity: 1;
+            pointer-events: all;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0); }
+          body .sections section#work .tiles .focus {
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            top: 0;
+            right: 0;
+            left: 0;
+            opacity: 0;
+            padding: 30px;
+            padding-left: 550px;
+            padding-bottom: 140px;
+            pointer-events: none;
             position: absolute;
-            height: 100%;
-            width: 100%; }
-            body .sections section#work .slide article:before, body .sections section#work .slide article:after {
-              content: '';
-              display: table; }
-            body .sections section#work .slide article:after {
-              clear: both; }
-            body .sections section#work .slide article figure {
-              float: left;
-              margin-right: 5%;
-              width: 45%; }
-              body .sections section#work .slide article figure a {
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: all 300ms ease;
+            -moz-transition: all 300ms ease;
+            -ms-transition: all 300ms ease;
+            transition: all 300ms ease;
+            -webkit-transform: translateZ(500px);
+            -moz-transform: translateZ(500px);
+            -ms-transform: translateZ(500px);
+            transform: translateZ(500px); }
+            body .sections section#work .tiles .focus figure {
+              box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+              top: 20px;
+              left: 20px;
+              width: 500px;
+              position: absolute; }
+              body .sections section#work .tiles .focus figure a {
                 display: block;
                 -webkit-transition: all 300ms ease;
                 -moz-transition: all 300ms ease;
                 -ms-transition: all 300ms ease;
                 transition: all 300ms ease; }
-                body .sections section#work .slide article figure a img {
+                body .sections section#work .tiles .focus figure a img {
                   display: block;
                   width: 100%; }
-                body .sections section#work .slide article figure a:hover {
-                  box-shadow: 0 0 5px rgba(0, 156, 255, 0.5); }
-            body .sections section#work .slide article h1 {
-              font-size: 40px;
-              font-weight: 300; }
-            body .sections section#work .slide article p {
-              color: #666;
-              margin: 10px 0; }
-            body .sections section#work .slide article:nth-of-type(1n + 1) {
-              -webkit-transform: translateX(0%);
-              -moz-transform: translateX(0%);
-              -ms-transform: translateX(0%);
-              transform: translateX(0%); }
-            body .sections section#work .slide article:nth-of-type(1n + 2) {
-              -webkit-transform: translateX(100%);
-              -moz-transform: translateX(100%);
-              -ms-transform: translateX(100%);
-              transform: translateX(100%); }
-            body .sections section#work .slide article:nth-of-type(1n + 3) {
-              -webkit-transform: translateX(200%);
-              -moz-transform: translateX(200%);
-              -ms-transform: translateX(200%);
-              transform: translateX(200%); }
-            body .sections section#work .slide article:nth-of-type(1n + 4) {
-              -webkit-transform: translateX(300%);
-              -moz-transform: translateX(300%);
-              -ms-transform: translateX(300%);
-              transform: translateX(300%); }
-            body .sections section#work .slide article:nth-of-type(1n + 5) {
-              -webkit-transform: translateX(400%);
-              -moz-transform: translateX(400%);
-              -ms-transform: translateX(400%);
-              transform: translateX(400%); }
-            body .sections section#work .slide article .badges:before, body .sections section#work .slide article .badges:after {
-              content: '';
-              display: table; }
-            body .sections section#work .slide article .badges:after {
-              clear: both; }
-            body .sections section#work .slide article .badges .badge {
-              background-color: #fff;
-              border: 1px solid #ccc;
-              border-radius: 50%;
-              color: #999;
-              float: left;
-              margin-right: 10px;
-              font-size: 30px;
-              position: relative;
-              height: 60px;
-              width: 60px;
-              -webkit-transition: all 300ms ease;
-              -moz-transition: all 300ms ease;
-              -ms-transition: all 300ms ease;
-              transition: all 300ms ease; }
-              body .sections section#work .slide article .badges .badge i {
+            body .sections section#work .tiles .focus article {
+              max-height: 325px;
+              padding-bottom: 70px;
+              position: relative; }
+              body .sections section#work .tiles .focus article h1 {
+                font-size: 40px;
+                font-weight: 300; }
+              body .sections section#work .tiles .focus article p {
+                color: #666;
+                margin: 10px 0; }
+              body .sections section#work .tiles .focus article .badges {
                 position: absolute;
-                left: 50%;
-                top: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%); }
-              body .sections section#work .slide article .badges .badge:hover.html {
-                border-color: #f55;
-                color: #f55; }
-              body .sections section#work .slide article .badges .badge:hover.css {
-                border-color: #0499d7;
-                color: #0499d7; }
-              body .sections section#work .slide article .badges .badge:hover.audio {
-                border-color: #17b153;
-                color: #17b153; }
-              body .sections section#work .slide article .badges .badge:hover.video {
-                border-color: #fba600;
-                color: #fba600; }
-        body .sections section#work .small-slide:before, body .sections section#work .small-slide:after {
-          content: '';
-          display: table; }
-        body .sections section#work .small-slide:after {
-          clear: both; }
-        body .sections section#work .small-slide a {
-          float: left;
-          padding: 5px;
-          width: 20%; }
-          body .sections section#work .small-slide a img {
-            display: block;
-            width: 100%; }
+                bottom: 0; }
+                body .sections section#work .tiles .focus article .badges:before, body .sections section#work .tiles .focus article .badges:after {
+                  content: '';
+                  display: table; }
+                body .sections section#work .tiles .focus article .badges:after {
+                  clear: both; }
+                body .sections section#work .tiles .focus article .badges .badge {
+                  background-color: #fff;
+                  border: 1px solid #bbc1cc;
+                  border-radius: 50%;
+                  color: #6e7f95;
+                  float: left;
+                  margin-right: 10px;
+                  font-size: 25px;
+                  position: relative;
+                  height: 50px;
+                  width: 50px;
+                  -webkit-transition: all 300ms ease;
+                  -moz-transition: all 300ms ease;
+                  -ms-transition: all 300ms ease;
+                  transition: all 300ms ease; }
+                  body .sections section#work .tiles .focus article .badges .badge i {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%); }
+                  body .sections section#work .tiles .focus article .badges .badge:hover.html {
+                    border-color: #f55;
+                    color: #f55; }
+                  body .sections section#work .tiles .focus article .badges .badge:hover.css {
+                    border-color: #0499d7;
+                    color: #0499d7; }
+                  body .sections section#work .tiles .focus article .badges .badge:hover.audio {
+                    border-color: #17b153;
+                    color: #17b153; }
+                  body .sections section#work .tiles .focus article .badges .badge:hover.video {
+                    border-color: #fba600;
+                    color: #fba600; }
+            body .sections section#work .tiles .focus nav {
+              background: #31343F;
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              padding: 22px; }
+              body .sections section#work .tiles .focus nav .button {
+                border: 1px solid;
+                border-radius: 5px;
+                cursor: pointer;
+                display: inline-block;
+                padding: 5px 10px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none; }
+                body .sections section#work .tiles .focus nav .button:hover {
+                  background-color: #383b48; }
+                body .sections section#work .tiles .focus nav .button.back {
+                  border-color: #f55; }
+                  body .sections section#work .tiles .focus nav .button.back:hover {
+                    border-color: #ff6e6e;
+                    color: #ff6e6e; }
+                body .sections section#work .tiles .focus nav .button.github {
+                  border-color: #26a0d9;
+                  color: #26a0d9;
+                  float: right; }
+                  body .sections section#work .tiles .focus nav .button.github:hover {
+                    border-color: #51b3e1;
+                    color: #51b3e1; }
+        body .sections section#work .experience {
+          margin-top: 30px; }
+          body .sections section#work .experience .bars {
+            margin-top: 30px; }
+            body .sections section#work .experience .bars .bar {
+              background: #31343F;
+              padding: 15px 20px;
+              position: relative; }
+              body .sections section#work .experience .bars .bar .text {
+                color: #fff;
+                font-size: 30px;
+                font-weight: 100;
+                position: relative;
+                z-index: 1; }
+              body .sections section#work .experience .bars .bar .progress {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                -webkit-transition: width 500ms ease;
+                -moz-transition: width 500ms ease;
+                -ms-transition: width 500ms ease;
+                transition: width 500ms ease; }
+            body .sections section#work .experience .bars.active .bar.html .progress {
+              background-color: #E44D26;
+              width: 98%; }
+            body .sections section#work .experience .bars.active .bar.sass .progress {
+              background-color: #c6538c;
+              width: 98%; }
+            body .sections section#work .experience .bars.active .bar.css .progress {
+              background-color: #1572B6;
+              width: 98%; }
+            body .sections section#work .experience .bars.active .bar.js .progress {
+              background-color: #F0DB4F;
+              width: 80%; }
   body.nav-active nav {
     -webkit-transform: translate3d(40px, 0, 0);
     -moz-transform: translate3d(40px, 0, 0);

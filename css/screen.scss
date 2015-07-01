@@ -92,7 +92,8 @@ body {
 				}
 			}
 		}
-	}
+
+	} // .navigation
 
 	.sections {
 		overflow: hidden;
@@ -103,12 +104,12 @@ body {
 			position: relative;
 			width:100%;
 			@include transform-origin(100%, 50%);
-			@include transform-style(preserve-3d);
 			@include transition(all 300ms ease);
 
 			.container {
 				margin: 0 auto;
-				max-width: 960px;
+				min-width: 960px;
+				max-width: 1100px;
 				padding: 50px 0;
 
 				.title {
@@ -116,11 +117,17 @@ body {
 					font-size: 98px;
 					font-weight: 100;
 				}
+
+				h2 {
+					font-size: 30px;
+					font-weight: 300;
+				}
 			}
 
 			// Intro section
 			&#intro {
 				background-color: darken(#385B7F,40%);
+				@include transform-style(preserve-3d);
 
 				&:before,
 				&:after {
@@ -248,25 +255,70 @@ body {
 			&#work {
 				@include gradient-radial(#fff,#ddd);
 
-				.slide {
-					height: 325px;
-					margin-bottom: 20px;
+				$translate-z-value: 500px;
+
+				.tiles {
+					margin-top: 50px;
 					position: relative;
+					@include clearfix;
+					@include perspective(2000px);
+					@include transform-style(preserve-3d);
 
-					article {
-						padding-right: 40px;
+					.tile {
+						border-radius: 3px;
+						box-shadow: 0 0 3px rgba(#000,0.1);
+						cursor: pointer;
+						float: left;
+						margin: 10px;
+						width: calc(33.33% - 20px);
+						@include transition(all 300ms ease);
+
+						img {
+							display: block;
+							width: 100%;
+						}
+					}
+
+					// When an item is clicked
+					&.focus-active {
+
+						.tile {
+							opacity: 0.05;
+							@include translateZ(-$translate-z-value);
+						}
+
+						.focus {
+							opacity: 1;
+							pointer-events: all;
+							@include translateZ(0);
+						}
+					}
+
+					.focus {
+						background-color: rgba(#fff,0.6);
+						box-shadow: 0 1px 5px rgba(#000,0.1);
+						top: 0;
+						right: 0;
+						left: 0;
+						opacity: 0;
+						padding: 30px;
+						padding-left: 550px;
+						padding-bottom: 140px;
+						pointer-events: none;
 						position: absolute;
-						height: 100%;
-						width: 100%;
-						@include clearfix;
+						@include backface-visibility(hidden);
+						@include transition(all 300ms ease);
+						@include translateZ($translate-z-value);
 
+						// Focused image container
 						figure {
-							float: left;
-							margin-right: 5%;
-							width: 45%;
+							box-shadow: 0 1px 5px rgba(#000,0.1);
+							top: 20px;
+							left: 20px;
+							width: 500px;
+							position: absolute;
 
 							a {
-								box-shadow: 0 0 5px rgba(#000,0.1);
 								display: block;
 								@include transition(all 300ms ease);
 
@@ -276,100 +328,200 @@ body {
 								}
 
 								&:hover {
-									box-shadow: 0 0 5px rgba(#009cff, 0.5);
 								}
 							}
 						}
 
-						h1 {
-							font-size: 40px;
-							font-weight: 300;
-						}
+						article {
+							max-height: 325px;
+							padding-bottom: 70px;
+							position: relative;
 
-						p {
-							color: #666;
-							margin: 10px 0;
-						}
-
-						@for $i from 1 through 5 {
-							&:nth-of-type(1n + #{$i}){
-								$j: $i - 1;
-								$number: 100% * $j;
-
-								@include translateX($number);
+							h1 {
+								font-size: 40px;
+								font-weight: 300;
 							}
-						}
 
-						.badges {
-							@include clearfix;
+							p {
+								color: #666;
+								margin: 10px 0;
+							}
 
-							.badge {
-								background-color: #fff;
-								border:1px solid #ccc;
-								border-radius: 50%;
-								color: #999;
-								float: left;
-								margin-right: 10px;
-								font-size: 30px;
-								position: relative;
-								height: 60px;
-								width: 60px;
-								@include transition(all 300ms ease);
+							.badges {
+								position: absolute;
+								bottom: 0;
+								@include clearfix;
 
-								i {
-									position: absolute;
-									left: 50%;
-									top: 50%;
-									@include translate(-50%,-50%);
-								}
+								.badge {
+									background-color: #fff;
+									border:1px solid #bbc1cc;
+									border-radius: 50%;
+									color: #6e7f95;
+									float: left;
+									margin-right: 10px;
+									font-size: 25px;
+									position: relative;
+									height: 50px;
+									width: 50px;
+									@include transition(all 300ms ease);
+
+									i {
+										position: absolute;
+										left: 50%;
+										top: 50%;
+										@include translate(-50%,-50%);
+									}
+
+									&:hover {
+
+										&.html {
+											$color: #f55;
+											border-color: $color;
+											color: $color;
+										}
+
+										&.css {
+											$color: #0499d7;
+											border-color: $color;
+											color: $color;
+										}
+
+										&.audio {
+											$color: #17b153;
+											border-color: $color;
+											color: $color;
+										}
+
+										&.video {
+											$color: #fba600;
+											border-color: $color;
+											color: $color;
+										}
+									}
+								} // .badges .badge
+							} // .badges
+						} // article
+
+
+						// Focused item bottom bar
+						nav {
+							background: #31343F;
+							position: absolute;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							padding: 22px;
+
+							.button {
+								border: 1px solid;
+								border-radius: 5px;
+								cursor: pointer;
+								display: inline-block;
+								padding: 5px 10px;
+								@include user-select(none);
 
 								&:hover {
+									background-color: lighten(#31343F,3%);
+								}
 
-									&.html {
-										$color: #f55;
-										border-color: $color;
-										color: $color;
+								&.back {
+									border-color: $color-hyperlink;
+
+									&:hover {
+										border-color: lighten($color-hyperlink, 5%);
+										color: lighten($color-hyperlink, 5%);
 									}
+								}
 
-									&.css {
-										$color: #0499d7;
-										border-color: $color;
-										color: $color;
+								&.github {
+									$git-color: #26a0d9;
+									border-color: $git-color;
+									color: $git-color;
+									float: right;
+
+									&:hover {
+										border-color: lighten($git-color,10%);
+										color: lighten($git-color,10%);
 									}
+								}
+							}
+						} // nav
 
-									&.audio {
-										$color: #17b153;
-										border-color: $color;
-										color: $color;
+					} // .focus
+				} // .tiles
+
+				.experience {
+					margin-top: 30px;
+
+					.bars {
+						margin-top: 30px;
+
+						.bar {
+							background: #31343F;
+							padding: 15px 20px;
+							position: relative;
+
+							.text {
+								color: #fff;
+								font-size: 30px;
+								font-weight: 100;
+								position: relative;
+								z-index: 1;
+							}
+
+							.progress {
+								position: absolute;
+								top: 0;
+								bottom: 0;
+								left: 0;
+								width: 0;
+								@include transition(width 500ms ease);
+							}
+
+						} // .bar
+
+						&.active {
+
+							.bar {
+
+								&.html {
+
+									.progress {
+										background-color: #E44D26;
+										width: 98%;
 									}
+								}
 
-									&.video {
-										$color: #fba600;
-										border-color: $color;
-										color: $color;
+								&.sass {
+
+									.progress {
+										background-color: #c6538c;
+										width: 98%;
+									}
+								}
+
+								&.css {
+
+									.progress {
+										background-color: #1572B6;
+										width: 98%;
+									}
+								}
+
+								&.js {
+
+									.progress {
+										background-color: #F0DB4F;
+										width: 80%;
 									}
 								}
 							}
 						}
-					}
+					} // .bars
 				}
 
-				.small-slide {
-					@include clearfix;
-
-					a {
-						float: left;
-						padding: 5px;
-						width: floor(100% / 5);
-
-						img {
-							display: block;
-							width: 100%;
-						}
-					}
-				}
-			}
-		}
+			} // section.work
+		} // section
 	}
 
 	&.nav-active {
