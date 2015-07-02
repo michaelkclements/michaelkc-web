@@ -23,6 +23,16 @@ ready(function () {
           self.isFocusActive(!self.isFocusActive())
         };
 
+        var today = new Date();
+        var birthday = new Date(1986, 08, 05);
+        var years = today.getFullYear() - birthday.getFullYear();
+
+        birthday.setFullYear(today.getFullYear());
+        
+        if (today < birthday){
+          years--;
+        }
+        self.age = ko.observable(years);
     };
 
     // Activates knockout.js
