@@ -31,6 +31,14 @@
     white-space:nowrap;
 }
 
+// Most the time for user-select I choose none
+@mixin user-select-none() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 // Mixins with parameters
 // Animation
 @mixin animation($animate...) {
@@ -76,7 +84,7 @@
     cursor: $type;
 }
 
-// Filters 
+// Filters
 @mixin filter($string) {
     -webkit-filter: $string;
     -moz-filter: $string;
@@ -235,6 +243,11 @@
     -moz-transform: rotateZ($deg);
     -ms-transform: rotateZ($deg);
     transform: rotateZ($deg);
+}
+
+@mixin shape-outside($value) {
+    -webkit-shape-outside:$value;
+    shape-outside:$value;
 }
 
 @mixin translate($x, $y) {

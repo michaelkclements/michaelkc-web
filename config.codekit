@@ -122,6 +122,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/about.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.29298e+06,
+		"inputAbbreviatedPath": "\/images\/about.png",
+		"outputAbbreviatedPath": "\/images\/about.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/bg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

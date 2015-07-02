@@ -23,15 +23,37 @@ ready(function () {
           self.isFocusActive(!self.isFocusActive())
         };
 
-        workItems: ko.observableArray([
-          { title: 'MKC Music', url: 'http://michaelkc.com/music'},
-          { title: 'Old MichaelKC.com', url: 'http://michaelkc.com/old'},
-          { title: 'Lit Fuse Films', url: 'http://litfusefilms.com' }
-        ])
-
     };
 
     // Activates knockout.js
     ko.applyBindings(new ViewModel());
+
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'https://api.dribbble.com/players/MichaelKC/shots', true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        // Success!
+        var data = JSON.parse(request.responseText);
+
+        data.shots.forEach(function(i, shot){
+          if (i >= 3) {
+            return false;
+          }
+          console.log(data.shots);
+        });
+
+      } else {
+        // We reached our target server, but it returned an error
+
+      }
+    };
+
+    request.onerror = function() {
+      // There was a connection error of some sort
+    };
+
+    request.send();
 
 });

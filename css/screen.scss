@@ -116,11 +116,36 @@ body {
 					font-family: 'Lato';
 					font-size: 98px;
 					font-weight: 100;
+					text-align: center;
+					position: relative;
+
+					&::before,
+					&::after {
+						background-color: #ccc;
+						content: '';
+						height: 1px;
+						position: absolute;
+						top: 50%;
+						width: 25%
+					}
+
+					&::before {
+						left: 0;
+					}
+
+					&::after {
+						right: 0;
+					}
 				}
 
 				h2 {
 					font-size: 30px;
 					font-weight: 300;
+				}
+
+				p {
+					color: #666;
+					margin: 10px 0;
 				}
 			}
 
@@ -160,25 +185,26 @@ body {
 
 					.title,
 					.sub-title {
+						background-color: #fff;
 						font-weight: 100;
 						@include backface-visibility(hidden);
 						@include transform-origin(50%,0);
 					}
 
 					.title {
-						color: #fff;
+						color: #31343F;
+						display: inline-block;
 						font-size: 78px;
+						padding: 10px 25px;
 						@include animation(text-fold-in 700ms ease 300ms 1 both);
-
-						.domain {
-							color: #eee;
-						}
 					}
 
 					.sub-title {
-						color: #fff;
+						color: #31343F;
 						font-size: 34px;
 						font-weight: 300;
+						margin-top: 10px;
+						padding: 10px 15px;
 						@include animation(text-fold-in 700ms ease 700ms 1 both);
 
 						.location {
@@ -342,11 +368,6 @@ body {
 								font-weight: 300;
 							}
 
-							p {
-								color: #666;
-								margin: 10px 0;
-							}
-
 							.badges {
 								position: absolute;
 								bottom: 0;
@@ -450,77 +471,73 @@ body {
 					} // .focus
 				} // .tiles
 
-				.experience {
-					margin-top: 30px;
+			} // section#work
 
-					.bars {
-						margin-top: 30px;
+			// About me sections
+			&#about-me {
+				background-color: #f5e9d5;
+				@include gradient-vertical(#f5e9d5,#f5e9d5);
 
-						.bar {
-							background: #31343F;
-							padding: 15px 20px;
-							position: relative;
+				.container {
+					position: absolute;
+					bottom: 0;
+					top: 0;
+					left: 50%;
+					@include translateX(-50%);
 
-							.text {
-								color: #fff;
-								font-size: 30px;
-								font-weight: 100;
-								position: relative;
-								z-index: 1;
-							}
+					.text {
+						float: right;
+						font-size: 22px;
+						margin-top: 50px;
+						position: relative;
+						text-align: right;
+						width: 50%;
+						z-index: 2;
 
-							.progress {
-								position: absolute;
-								top: 0;
-								bottom: 0;
-								left: 0;
-								width: 0;
-								@include transition(width 500ms ease);
-							}
-
-						} // .bar
-
-						&.active {
-
-							.bar {
-
-								&.html {
-
-									.progress {
-										background-color: #E44D26;
-										width: 98%;
-									}
-								}
-
-								&.sass {
-
-									.progress {
-										background-color: #c6538c;
-										width: 98%;
-									}
-								}
-
-								&.css {
-
-									.progress {
-										background-color: #1572B6;
-										width: 98%;
-									}
-								}
-
-								&.js {
-
-									.progress {
-										background-color: #F0DB4F;
-										width: 80%;
-									}
-								}
-							}
+						&::before {
+							content: '';
+							float: left;
+							width: 100px;
+							height: 100px;
+							@include shape-outside(circle());
 						}
-					} // .bars
+					}
 				}
 
-			} // section.work
+				.my-desk {
+					position: absolute;
+					width: 1920px;
+					height: 100%;
+					left: -100%;
+					top: 0;
+
+					.me {
+						background-image: url(../images/about.png);
+						background-position: bottom;
+						background-repeat: no-repeat;
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						z-index: 1;
+					}
+
+					.video {
+						bottom: 429px;
+						left: 50%;
+						position: absolute;
+						width: 660px;
+						height: 375px;
+						@include translate(-50%,0);
+
+						video {
+							display: block;
+							width: 100%;
+						}
+					}
+				}
+			}
 		} // section
 	}
 

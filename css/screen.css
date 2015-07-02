@@ -181,10 +181,26 @@ body {
         body .sections section .container .title {
           font-family: 'Lato';
           font-size: 98px;
-          font-weight: 100; }
+          font-weight: 100;
+          text-align: center;
+          position: relative; }
+          body .sections section .container .title::before, body .sections section .container .title::after {
+            background-color: #ccc;
+            content: '';
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            width: 25%; }
+          body .sections section .container .title::before {
+            left: 0; }
+          body .sections section .container .title::after {
+            right: 0; }
         body .sections section .container h2 {
           font-size: 30px;
           font-weight: 300; }
+        body .sections section .container p {
+          color: #666;
+          margin: 10px 0; }
       body .sections section#intro {
         background-color: black;
         -webkit-transform-style: preserve-3d;
@@ -223,6 +239,7 @@ body {
           transform: translate3d(0, -50%, 100px); }
           body .sections section#intro .text .title,
           body .sections section#intro .text .sub-title {
+            background-color: #fff;
             font-weight: 100;
             -webkit-backface-visibility: hidden;
             -moz-backface-visibility: hidden;
@@ -232,18 +249,20 @@ body {
             -ms-transform-origin: 50% 0 0;
             transform-origin: 50% 0 0; }
           body .sections section#intro .text .title {
-            color: #fff;
+            color: #31343F;
+            display: inline-block;
             font-size: 78px;
+            padding: 10px 25px;
             -webkit-animation: text-fold-in 700ms ease 300ms 1 both;
             -moz-animation: text-fold-in 700ms ease 300ms 1 both;
             -ms-animation: text-fold-in 700ms ease 300ms 1 both;
             animation: text-fold-in 700ms ease 300ms 1 both; }
-            body .sections section#intro .text .title .domain {
-              color: #eee; }
           body .sections section#intro .text .sub-title {
-            color: #fff;
+            color: #31343F;
             font-size: 34px;
             font-weight: 300;
+            margin-top: 10px;
+            padding: 10px 15px;
             -webkit-animation: text-fold-in 700ms ease 700ms 1 both;
             -moz-animation: text-fold-in 700ms ease 700ms 1 both;
             -ms-animation: text-fold-in 700ms ease 700ms 1 both;
@@ -378,9 +397,6 @@ body {
               body .sections section#work .tiles .focus article h1 {
                 font-size: 40px;
                 font-weight: 300; }
-              body .sections section#work .tiles .focus article p {
-                color: #666;
-                margin: 10px 0; }
               body .sections section#work .tiles .focus article .badges {
                 position: absolute;
                 bottom: 0; }
@@ -455,42 +471,67 @@ body {
                   body .sections section#work .tiles .focus nav .button.github:hover {
                     border-color: #51b3e1;
                     color: #51b3e1; }
-        body .sections section#work .experience {
-          margin-top: 30px; }
-          body .sections section#work .experience .bars {
-            margin-top: 30px; }
-            body .sections section#work .experience .bars .bar {
-              background: #31343F;
-              padding: 15px 20px;
-              position: relative; }
-              body .sections section#work .experience .bars .bar .text {
-                color: #fff;
-                font-size: 30px;
-                font-weight: 100;
-                position: relative;
-                z-index: 1; }
-              body .sections section#work .experience .bars .bar .progress {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                -webkit-transition: width 500ms ease;
-                -moz-transition: width 500ms ease;
-                -ms-transition: width 500ms ease;
-                transition: width 500ms ease; }
-            body .sections section#work .experience .bars.active .bar.html .progress {
-              background-color: #E44D26;
-              width: 98%; }
-            body .sections section#work .experience .bars.active .bar.sass .progress {
-              background-color: #c6538c;
-              width: 98%; }
-            body .sections section#work .experience .bars.active .bar.css .progress {
-              background-color: #1572B6;
-              width: 98%; }
-            body .sections section#work .experience .bars.active .bar.js .progress {
-              background-color: #F0DB4F;
-              width: 80%; }
+      body .sections section#about-me {
+        background-color: #f5e9d5;
+        background-image: -webkit-linear-gradient(top, #f5e9d5 0%, #f5e9d5 100%);
+        background-image: -moz-linear-gradient(top, #f5e9d5 0%, #f5e9d5 100%);
+        background-image: -ms-linear-gradient(top, #f5e9d5 0%, #f5e9d5 100%);
+        background-image: linear-gradient(to bottom, #f5e9d5 0%, #f5e9d5 100%);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF5E9D5', endColorstr='#FFF5E9D5', GradientType=0); }
+        body .sections section#about-me .container {
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+          body .sections section#about-me .container .text {
+            float: right;
+            font-size: 22px;
+            margin-top: 50px;
+            position: relative;
+            text-align: right;
+            width: 50%;
+            z-index: 2; }
+            body .sections section#about-me .container .text::before {
+              content: '';
+              float: left;
+              width: 100px;
+              height: 100px;
+              -webkit-shape-outside: circle();
+              shape-outside: circle(); }
+        body .sections section#about-me .my-desk {
+          position: absolute;
+          width: 1920px;
+          height: 100%;
+          left: -100%;
+          top: 0; }
+          body .sections section#about-me .my-desk .me {
+            background-image: url(../images/about.png);
+            background-position: bottom;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1; }
+          body .sections section#about-me .my-desk .video {
+            bottom: 429px;
+            left: 50%;
+            position: absolute;
+            width: 660px;
+            height: 375px;
+            -webkit-transform: translate(-50%, 0);
+            -moz-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+            body .sections section#about-me .my-desk .video video {
+              display: block;
+              width: 100%; }
   body.nav-active nav {
     -webkit-transform: translate3d(40px, 0, 0);
     -moz-transform: translate3d(40px, 0, 0);
