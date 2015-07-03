@@ -152,9 +152,6 @@ body {
           display: block;
           font-size: 34px;
           padding: 5px; }
-          @media only screen and (max-width: 1024px) {
-            body .navigation nav ul li a {
-              font-size: 20px; } }
   body .sections {
     overflow: hidden;
     -webkit-perspective: 3000px;
@@ -239,7 +236,7 @@ body {
           transform: translate3d(0, -50%, 100px); }
           body .sections section#intro .text .title,
           body .sections section#intro .text .sub-title {
-            background-color: #fff;
+            background-color: rgba(49, 52, 63, 0.5);
             font-weight: 100;
             -webkit-backface-visibility: hidden;
             -moz-backface-visibility: hidden;
@@ -249,7 +246,7 @@ body {
             -ms-transform-origin: 50% 0 0;
             transform-origin: 50% 0 0; }
           body .sections section#intro .text .title {
-            color: #31343F;
+            color: #fff;
             display: inline-block;
             font-size: 78px;
             padding: 10px 25px;
@@ -258,7 +255,7 @@ body {
             -ms-animation: text-fold-in 700ms ease 300ms 1 both;
             animation: text-fold-in 700ms ease 300ms 1 both; }
           body .sections section#intro .text .sub-title {
-            color: #31343F;
+            color: #fff;
             font-size: 34px;
             font-weight: 300;
             margin-top: 10px;
@@ -269,39 +266,6 @@ body {
             animation: text-fold-in 700ms ease 700ms 1 both; }
             body .sections section#intro .text .sub-title .location {
               color: #ff4f79; }
-          @media only screen and (max-width: 1920px) {
-            body .sections section#intro .text {
-              bottom: 25%; }
-              body .sections section#intro .text .title {
-                font-size: 78px; }
-              body .sections section#intro .text .sub-title {
-                font-size: 28px; } }
-          @media only screen and (max-width: 1024px) {
-            body .sections section#intro .text {
-              right: 5%;
-              bottom: 24%; }
-              body .sections section#intro .text .title {
-                font-size: 68px; } }
-          @media only screen and (max-width: 768px) {
-            body .sections section#intro .text {
-              right: 5%;
-              bottom: 28%; }
-              body .sections section#intro .text .title {
-                font-size: 68px; }
-              body .sections section#intro .text .sub-title {
-                font-size: 24px; } }
-          @media only screen and (max-width: 414px) {
-            body .sections section#intro .text {
-              left: 5%;
-              right: 5%;
-              bottom: 25%; }
-              body .sections section#intro .text .title,
-              body .sections section#intro .text .sub-title {
-                text-align: center; }
-              body .sections section#intro .text .title {
-                font-size: 38px; }
-              body .sections section#intro .text .sub-title {
-                font-size: 22px; } }
       body .sections section#work {
         background-color: #fff;
         background-image: -webkit-radial-gradient(circle, #fff, #ddd);
@@ -309,7 +273,7 @@ body {
         background-image: -ms-radial-gradient(circle, #fff, #ddd);
         background-image: radial-gradient(circle, #fff, #ddd);
         background-repeat: no-repeat; }
-        body .sections section#work .tiles {
+        body .sections section#work .container .tiles {
           margin-top: 50px;
           position: relative;
           -webkit-perspective: 2000px;
@@ -320,12 +284,12 @@ body {
           -moz-transform-style: preserve-3d;
           -ms-transform-style: preserve-3d;
           transform-style: preserve-3d; }
-          body .sections section#work .tiles:before, body .sections section#work .tiles:after {
+          body .sections section#work .container .tiles:before, body .sections section#work .container .tiles:after {
             content: '';
             display: table; }
-          body .sections section#work .tiles:after {
+          body .sections section#work .container .tiles:after {
             clear: both; }
-          body .sections section#work .tiles .tile {
+          body .sections section#work .container .tiles .tile {
             border-radius: 3px;
             box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
             cursor: pointer;
@@ -336,23 +300,23 @@ body {
             -moz-transition: all 300ms ease;
             -ms-transition: all 300ms ease;
             transition: all 300ms ease; }
-            body .sections section#work .tiles .tile img {
+            body .sections section#work .container .tiles .tile img {
               display: block;
               width: 100%; }
-          body .sections section#work .tiles.focus-active .tile {
+          body .sections section#work .container .tiles.focus-active .tile {
             opacity: 0.05;
             -webkit-transform: translateZ(-500px);
             -moz-transform: translateZ(-500px);
             -ms-transform: translateZ(-500px);
             transform: translateZ(-500px); }
-          body .sections section#work .tiles.focus-active .focus {
+          body .sections section#work .container .tiles.focus-active .focus {
             opacity: 1;
             pointer-events: all;
             -webkit-transform: translateZ(0);
             -moz-transform: translateZ(0);
             -ms-transform: translateZ(0);
             transform: translateZ(0); }
-          body .sections section#work .tiles .focus {
+          body .sections section#work .container .tiles .focus {
             background-color: rgba(255, 255, 255, 0.6);
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
             top: 0;
@@ -360,7 +324,6 @@ body {
             left: 0;
             opacity: 0;
             padding: 30px;
-            padding-left: 550px;
             padding-bottom: 140px;
             pointer-events: none;
             position: absolute;
@@ -375,37 +338,38 @@ body {
             -moz-transform: translateZ(500px);
             -ms-transform: translateZ(500px);
             transform: translateZ(500px); }
-            body .sections section#work .tiles .focus figure {
+            body .sections section#work .container .tiles .focus figure {
               box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-              top: 20px;
-              left: 20px;
-              width: 500px;
-              position: absolute; }
-              body .sections section#work .tiles .focus figure a {
+              display: inline-block;
+              margin-right: 30px;
+              vertical-align: top;
+              width: 500px; }
+              body .sections section#work .container .tiles .focus figure a {
                 display: block;
                 -webkit-transition: all 300ms ease;
                 -moz-transition: all 300ms ease;
                 -ms-transition: all 300ms ease;
                 transition: all 300ms ease; }
-                body .sections section#work .tiles .focus figure a img {
+                body .sections section#work .container .tiles .focus figure a img {
                   display: block;
                   width: 100%; }
-            body .sections section#work .tiles .focus article {
-              max-height: 325px;
+            body .sections section#work .container .tiles .focus article {
+              display: inline-block;
               padding-bottom: 70px;
-              position: relative; }
-              body .sections section#work .tiles .focus article h1 {
+              position: relative;
+              vertical-align: top; }
+              body .sections section#work .container .tiles .focus article h1 {
                 font-size: 40px;
                 font-weight: 300; }
-              body .sections section#work .tiles .focus article .badges {
+              body .sections section#work .container .tiles .focus article .badges {
                 position: absolute;
                 bottom: 0; }
-                body .sections section#work .tiles .focus article .badges:before, body .sections section#work .tiles .focus article .badges:after {
+                body .sections section#work .container .tiles .focus article .badges:before, body .sections section#work .container .tiles .focus article .badges:after {
                   content: '';
                   display: table; }
-                body .sections section#work .tiles .focus article .badges:after {
+                body .sections section#work .container .tiles .focus article .badges:after {
                   clear: both; }
-                body .sections section#work .tiles .focus article .badges .badge {
+                body .sections section#work .container .tiles .focus article .badges .badge {
                   background-color: #fff;
                   border: 1px solid #bbc1cc;
                   border-radius: 50%;
@@ -420,7 +384,7 @@ body {
                   -moz-transition: all 300ms ease;
                   -ms-transition: all 300ms ease;
                   transition: all 300ms ease; }
-                  body .sections section#work .tiles .focus article .badges .badge i {
+                  body .sections section#work .container .tiles .focus article .badges .badge i {
                     position: absolute;
                     left: 50%;
                     top: 50%;
@@ -428,26 +392,26 @@ body {
                     -moz-transform: translate(-50%, -50%);
                     -ms-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%); }
-                  body .sections section#work .tiles .focus article .badges .badge:hover.html {
+                  body .sections section#work .container .tiles .focus article .badges .badge:hover.html {
                     border-color: #f55;
                     color: #f55; }
-                  body .sections section#work .tiles .focus article .badges .badge:hover.css {
+                  body .sections section#work .container .tiles .focus article .badges .badge:hover.css {
                     border-color: #0499d7;
                     color: #0499d7; }
-                  body .sections section#work .tiles .focus article .badges .badge:hover.audio {
+                  body .sections section#work .container .tiles .focus article .badges .badge:hover.audio {
                     border-color: #17b153;
                     color: #17b153; }
-                  body .sections section#work .tiles .focus article .badges .badge:hover.video {
+                  body .sections section#work .container .tiles .focus article .badges .badge:hover.video {
                     border-color: #fba600;
                     color: #fba600; }
-            body .sections section#work .tiles .focus nav {
+            body .sections section#work .container .tiles .focus nav {
               background: #31343F;
               position: absolute;
               right: 0;
               bottom: 0;
               left: 0;
               padding: 22px; }
-              body .sections section#work .tiles .focus nav .button {
+              body .sections section#work .container .tiles .focus nav .button {
                 border: 1px solid;
                 border-radius: 5px;
                 cursor: pointer;
@@ -457,22 +421,23 @@ body {
                 -moz-user-select: none;
                 -ms-user-select: none;
                 user-select: none; }
-                body .sections section#work .tiles .focus nav .button:hover {
+                body .sections section#work .container .tiles .focus nav .button:hover {
                   background-color: #383b48; }
-                body .sections section#work .tiles .focus nav .button.back {
+                body .sections section#work .container .tiles .focus nav .button.back {
                   border-color: #f55; }
-                  body .sections section#work .tiles .focus nav .button.back:hover {
+                  body .sections section#work .container .tiles .focus nav .button.back:hover {
                     border-color: #ff6e6e;
                     color: #ff6e6e; }
-                body .sections section#work .tiles .focus nav .button.github {
+                body .sections section#work .container .tiles .focus nav .button.github {
                   border-color: #26a0d9;
                   color: #26a0d9;
                   float: right; }
-                  body .sections section#work .tiles .focus nav .button.github:hover {
+                  body .sections section#work .container .tiles .focus nav .button.github:hover {
                     border-color: #51b3e1;
                     color: #51b3e1; }
       body .sections section#about-me {
         background-color: #f5e9d5;
+        overflow: hidden;
         background-image: -webkit-linear-gradient(top, #f5e9d5 0%, #f5e9d5 100%);
         background-image: -moz-linear-gradient(top, #f5e9d5 0%, #f5e9d5 100%);
         background-image: -ms-linear-gradient(top, #f5e9d5 0%, #f5e9d5 100%);
@@ -504,17 +469,15 @@ body {
               height: 600px;
               -webkit-shape-outside: polygon(0% 0%, 100% 100%, 0 100%);
               shape-outside: polygon(0% 0%, 100% 100%, 0 100%); }
-            @media only screen and (max-width: 1920px) {
-              body .sections section#about-me .container .text {
-                font-size: 22px;
-                margin-top: 50px;
-                width: 60%; } }
         body .sections section#about-me .my-desk {
           position: absolute;
           width: 1920px;
           height: 100%;
-          left: -100%;
-          top: 0; }
+          top: 0;
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
           body .sections section#about-me .my-desk .me {
             background-image: url(../images/about.png);
             background-position: bottom;
@@ -538,6 +501,74 @@ body {
             body .sections section#about-me .my-desk .video video {
               display: block;
               width: 100%; }
+      body .sections section#contact {
+        background-color: #272125;
+        overflow: hidden; }
+        body .sections section#contact .buttons {
+          position: absolute;
+          left: 20%;
+          right: 20%;
+          top: 50%;
+          z-index: 1;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
+          body .sections section#contact .buttons .button {
+            float: left;
+            width: calc(25% - 20px);
+            margin: 0 10px;
+            height: 200px;
+            position: relative; }
+            body .sections section#contact .buttons .button i {
+              color: #fff;
+              font-size: 70px;
+              left: 50%;
+              top: 50%;
+              position: absolute;
+              z-index: 1;
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+            body .sections section#contact .buttons .button::before {
+              border-radius: 5px;
+              content: '';
+              opacity: 0.7;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              -webkit-transition: all 300ms ease;
+              -moz-transition: all 300ms ease;
+              -ms-transition: all 300ms ease;
+              transition: all 300ms ease; }
+            body .sections section#contact .buttons .button.twitter::before {
+              background-color: #2ba9e1; }
+            body .sections section#contact .buttons .button.github::before {
+              background-color: #2A2B2D; }
+            body .sections section#contact .buttons .button.linkedin::before {
+              background-color: #007bb5; }
+            body .sections section#contact .buttons .button.dribbble::before {
+              background-color: #c6376d; }
+            body .sections section#contact .buttons .button:hover::before {
+              opacity: 1; }
+        body .sections section#contact .video {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0; }
+          body .sections section#contact .video video {
+            height: 100%;
+            opacity: 0.03;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
   body.nav-active nav {
     -webkit-transform: translate3d(40px, 0, 0);
     -moz-transform: translate3d(40px, 0, 0);
@@ -548,14 +579,119 @@ body {
     -moz-transform: translateX(10%) rotateY(-30deg);
     -ms-transform: translateX(10%) rotateY(-30deg);
     transform: translateX(10%) rotateY(-30deg); }
-    @media only screen and (max-width: 414px) {
-      body.nav-active .sections section {
-        -webkit-transform: translateX(200px) rotateY(-30deg);
-        -moz-transform: translateX(200px) rotateY(-30deg);
-        -ms-transform: translateX(200px) rotateY(-30deg);
-        transform: translateX(200px) rotateY(-30deg); } }
     body.nav-active .sections section#work .my-work .item:before {
       -webkit-transform: translateZ(-100px);
       -moz-transform: translateZ(-100px);
       -ms-transform: translateZ(-100px);
       transform: translateZ(-100px); }
+  @media only screen and (max-width: 1920px) {
+    body .sections section#intro .text {
+      bottom: 25%; }
+      body .sections section#intro .text .title {
+        font-size: 78px; }
+      body .sections section#intro .text .sub-title {
+        font-size: 28px; }
+    body .sections section#about-me .container .text {
+      font-size: 22px;
+      margin-top: 50px;
+      width: 60%; } }
+  @media only screen and (max-width: 1024px) {
+    body .sections section#intro .text {
+      right: 5%;
+      bottom: 24%; }
+      body .sections section#intro .text .title {
+        font-size: 68px; }
+    body .sections section#contact .buttons .button {
+      margin: 10px;
+      height: 200px;
+      width: calc(50% - 20px); } }
+  @media only screen and (max-width: 768px) {
+    body .sections section .container {
+      min-width: 768px; }
+      body .sections section .container .title {
+        font-size: 60px; }
+    body .sections section#intro .text {
+      right: 5%;
+      bottom: 28%; }
+      body .sections section#intro .text .title {
+        font-size: 68px; }
+      body .sections section#intro .text .sub-title {
+        font-size: 24px; }
+    body .sections section#work .container p {
+      font-size: 18px; }
+    body .sections section#work .container .tiles .focus {
+      left: 10px;
+      right: 10px;
+      padding-left: 30px;
+      padding-bottom: 90px; }
+      body .sections section#work .container .tiles .focus article h1 {
+        font-size: 32px; }
+      body .sections section#work .container .tiles .focus figure {
+        display: block;
+        margin: 0 auto 20px;
+        left: 0;
+        top: 0;
+        position: relative;
+        width: 80%; }
+    body .sections section#work .container .tiles .tile {
+      width: calc(50% - 20px); }
+    body .sections section#about-me {
+      height: 720px; }
+      body .sections section#about-me .container .text {
+        padding: 0 40px;
+        text-align: center;
+        width: auto; }
+        body .sections section#about-me .container .text:before {
+          content: none; }
+      body .sections section#about-me .my-desk {
+        height: 550px;
+        position: relative;
+        width: 768px;
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0); }
+        body .sections section#about-me .my-desk .me {
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat; }
+        body .sections section#about-me .my-desk .video {
+          display: none; } }
+  @media only screen and (max-width: 414px) {
+    body.nav-active .sections section {
+      -webkit-transform: translateX(200px) rotateY(-30deg);
+      -moz-transform: translateX(200px) rotateY(-30deg);
+      -ms-transform: translateX(200px) rotateY(-30deg);
+      transform: translateX(200px) rotateY(-30deg); }
+    body .sections section .container {
+      min-width: 320px; }
+      body .sections section .container .title {
+        font-size: 34px; }
+    body .sections section#intro .text {
+      left: 5%;
+      right: 5%;
+      bottom: 25%; }
+      body .sections section#intro .text .title,
+      body .sections section#intro .text .sub-title {
+        text-align: center; }
+      body .sections section#intro .text .title {
+        font-size: 38px; }
+      body .sections section#intro .text .sub-title {
+        font-size: 22px; }
+    body .sections section#work .container p {
+      font-size: 16px; }
+    body .sections section#work .container .tiles .focus article {
+      padding-bottom: 0; }
+      body .sections section#work .container .tiles .focus article .badges {
+        display: none; }
+    body .sections section#about-me .container .text {
+      font-size: 16px; }
+    body .sections section#about-me .my-desk {
+      height: 340px;
+      min-width: 320px;
+      max-width: 414px; }
+    body .sections section#contact .buttons .button {
+      margin: 10px;
+      height: 110px; }
+      body .sections section#contact .buttons .button i {
+        font-size: 60px; } }

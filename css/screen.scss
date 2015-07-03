@@ -81,13 +81,6 @@ body {
 						display: block;
 						font-size: 34px;
 						padding: 5px;
-
-						@media only screen and (max-width : 1024px) {
-
-							& {
-								font-size: 20px;
-							}
-						}
 					}
 				}
 			}
@@ -147,7 +140,8 @@ body {
 					color: #666;
 					margin: 10px 0;
 				}
-			}
+
+			} // .container
 
 			// Intro section
 			&#intro {
@@ -185,14 +179,14 @@ body {
 
 					.title,
 					.sub-title {
-						background-color: #fff;
+						background-color: rgba(#31343F,0.5);
 						font-weight: 100;
 						@include backface-visibility(hidden);
 						@include transform-origin(50%,0);
 					}
 
 					.title {
-						color: #31343F;
+						color: #fff;
 						display: inline-block;
 						font-size: 78px;
 						padding: 10px 25px;
@@ -200,7 +194,7 @@ body {
 					}
 
 					.sub-title {
-						color: #31343F;
+						color: #fff;
 						font-size: 34px;
 						font-weight: 300;
 						margin-top: 10px;
@@ -211,69 +205,6 @@ body {
 							color: #ff4f79;
 						}
 					}
-
-					@media only screen and (max-width : 1920px) {
-
-						& {
-							bottom: 25%;
-
-							.title {
-								font-size: 78px;
-							}
-
-							.sub-title {
-								font-size: 28px;
-							}
-						}
-					}
-
-					@media only screen and (max-width : 1024px) {
-
-						& {
-							right:5%;
-							bottom:24%;
-
-							.title {
-								font-size: 68px;
-							}
-						}
-					}
-
-					@media only screen and (max-width : 768px) {
-						& {
-							right:5%;
-							bottom:28%;
-
-							.title {
-								font-size: 68px;
-							}
-
-							.sub-title {
-								font-size: 24px;
-							}
-						}
-					}
-
-					@media only screen and (max-width : 414px) {
-						& {
-							left: 5%;
-							right:5%;
-							bottom:25%;
-
-							.title,
-							.sub-title {
-								text-align: center;
-							}
-
-							.title {
-								font-size: 38px;
-							}
-
-							.sub-title {
-								font-size: 22px;
-							}
-						}
-					}
 				}
 			}
 
@@ -281,201 +212,205 @@ body {
 			&#work {
 				@include gradient-radial(#fff,#ddd);
 
-				$translate-z-value: 500px;
+				.container {
 
-				.tiles {
-					margin-top: 50px;
-					position: relative;
-					@include clearfix;
-					@include perspective(2000px);
-					@include transform-style(preserve-3d);
+					$translate-z-value: 500px;
 
-					.tile {
-						border-radius: 3px;
-						box-shadow: 0 0 3px rgba(#000,0.1);
-						cursor: pointer;
-						float: left;
-						margin: 10px;
-						width: calc(33.33% - 20px);
-						@include transition(all 300ms ease);
-
-						img {
-							display: block;
-							width: 100%;
-						}
-					}
-
-					// When an item is clicked
-					&.focus-active {
+					.tiles {
+						margin-top: 50px;
+						position: relative;
+						@include clearfix;
+						@include perspective(2000px);
+						@include transform-style(preserve-3d);
 
 						.tile {
-							opacity: 0.05;
-							@include translateZ(-$translate-z-value);
+							border-radius: 3px;
+							box-shadow: 0 0 3px rgba(#000,0.1);
+							cursor: pointer;
+							float: left;
+							margin: 10px;
+							width: calc(33.33% - 20px);
+							@include transition(all 300ms ease);
+
+							img {
+								display: block;
+								width: 100%;
+							}
+						}
+
+						// When an item is clicked
+						&.focus-active {
+
+							.tile {
+								opacity: 0.05;
+								@include translateZ(-$translate-z-value);
+							}
+
+							.focus {
+								opacity: 1;
+								pointer-events: all;
+								@include translateZ(0);
+							}
 						}
 
 						.focus {
-							opacity: 1;
-							pointer-events: all;
-							@include translateZ(0);
-						}
-					}
-
-					.focus {
-						background-color: rgba(#fff,0.6);
-						box-shadow: 0 1px 5px rgba(#000,0.1);
-						top: 0;
-						right: 0;
-						left: 0;
-						opacity: 0;
-						padding: 30px;
-						padding-left: 550px;
-						padding-bottom: 140px;
-						pointer-events: none;
-						position: absolute;
-						@include backface-visibility(hidden);
-						@include transition(all 300ms ease);
-						@include translateZ($translate-z-value);
-
-						// Focused image container
-						figure {
+							background-color: rgba(#fff,0.6);
 							box-shadow: 0 1px 5px rgba(#000,0.1);
-							top: 20px;
-							left: 20px;
-							width: 500px;
+							top: 0;
+							right: 0;
+							left: 0;
+							opacity: 0;
+							padding: 30px;
+							padding-bottom: 140px;
+							pointer-events: none;
 							position: absolute;
+							@include backface-visibility(hidden);
+							@include transition(all 300ms ease);
+							@include translateZ($translate-z-value);
 
-							a {
-								display: block;
-								@include transition(all 300ms ease);
+							// Focused image container
+							figure {
+								box-shadow: 0 1px 5px rgba(#000,0.1);
+								display: inline-block;
+								margin-right: 30px;
+								vertical-align: top;
+								width: 500px;
 
-								img {
+								a {
 									display: block;
-									width: 100%;
-								}
-
-								&:hover {
-								}
-							}
-						}
-
-						article {
-							max-height: 325px;
-							padding-bottom: 70px;
-							position: relative;
-
-							h1 {
-								font-size: 40px;
-								font-weight: 300;
-							}
-
-							.badges {
-								position: absolute;
-								bottom: 0;
-								@include clearfix;
-
-								.badge {
-									background-color: #fff;
-									border:1px solid #bbc1cc;
-									border-radius: 50%;
-									color: #6e7f95;
-									float: left;
-									margin-right: 10px;
-									font-size: 25px;
-									position: relative;
-									height: 50px;
-									width: 50px;
 									@include transition(all 300ms ease);
 
-									i {
-										position: absolute;
-										left: 50%;
-										top: 50%;
-										@include translate(-50%,-50%);
+									img {
+										display: block;
+										width: 100%;
 									}
 
 									&:hover {
-
-										&.html {
-											$color: #f55;
-											border-color: $color;
-											color: $color;
-										}
-
-										&.css {
-											$color: #0499d7;
-											border-color: $color;
-											color: $color;
-										}
-
-										&.audio {
-											$color: #17b153;
-											border-color: $color;
-											color: $color;
-										}
-
-										&.video {
-											$color: #fba600;
-											border-color: $color;
-											color: $color;
-										}
-									}
-								} // .badges .badge
-							} // .badges
-						} // article
-
-
-						// Focused item bottom bar
-						nav {
-							background: #31343F;
-							position: absolute;
-							right: 0;
-							bottom: 0;
-							left: 0;
-							padding: 22px;
-
-							.button {
-								border: 1px solid;
-								border-radius: 5px;
-								cursor: pointer;
-								display: inline-block;
-								padding: 5px 10px;
-								@include user-select(none);
-
-								&:hover {
-									background-color: lighten(#31343F,3%);
-								}
-
-								&.back {
-									border-color: $color-hyperlink;
-
-									&:hover {
-										border-color: lighten($color-hyperlink, 5%);
-										color: lighten($color-hyperlink, 5%);
-									}
-								}
-
-								&.github {
-									$git-color: #26a0d9;
-									border-color: $git-color;
-									color: $git-color;
-									float: right;
-
-									&:hover {
-										border-color: lighten($git-color,10%);
-										color: lighten($git-color,10%);
 									}
 								}
 							}
-						} // nav
 
-					} // .focus
-				} // .tiles
+							article {
+								display: inline-block;
+								padding-bottom: 70px;
+								position: relative;
+								vertical-align: top;
+
+								h1 {
+									font-size: 40px;
+									font-weight: 300;
+								}
+
+								.badges {
+									position: absolute;
+									bottom: 0;
+									@include clearfix;
+
+									.badge {
+										background-color: #fff;
+										border:1px solid #bbc1cc;
+										border-radius: 50%;
+										color: #6e7f95;
+										float: left;
+										margin-right: 10px;
+										font-size: 25px;
+										position: relative;
+										height: 50px;
+										width: 50px;
+										@include transition(all 300ms ease);
+
+										i {
+											position: absolute;
+											left: 50%;
+											top: 50%;
+											@include translate(-50%,-50%);
+										}
+
+										&:hover {
+
+											&.html {
+												$color: #f55;
+												border-color: $color;
+												color: $color;
+											}
+
+											&.css {
+												$color: #0499d7;
+												border-color: $color;
+												color: $color;
+											}
+
+											&.audio {
+												$color: #17b153;
+												border-color: $color;
+												color: $color;
+											}
+
+											&.video {
+												$color: #fba600;
+												border-color: $color;
+												color: $color;
+											}
+										}
+									} // .badges .badge
+								} // .badges
+							} // article
+
+
+							// Focused item bottom bar
+							nav {
+								background: #31343F;
+								position: absolute;
+								right: 0;
+								bottom: 0;
+								left: 0;
+								padding: 22px;
+
+								.button {
+									border: 1px solid;
+									border-radius: 5px;
+									cursor: pointer;
+									display: inline-block;
+									padding: 5px 10px;
+									@include user-select(none);
+
+									&:hover {
+										background-color: lighten(#31343F,3%);
+									}
+
+									&.back {
+										border-color: $color-hyperlink;
+
+										&:hover {
+											border-color: lighten($color-hyperlink, 5%);
+											color: lighten($color-hyperlink, 5%);
+										}
+									}
+
+									&.github {
+										$git-color: #26a0d9;
+										border-color: $git-color;
+										color: $git-color;
+										float: right;
+
+										&:hover {
+											border-color: lighten($git-color,10%);
+											color: lighten($git-color,10%);
+										}
+									}
+								}
+							} // nav
+
+						} // .focus
+					} // .tiles
+				}
 
 			} // section#work
 
 			// About me sections
 			&#about-me {
 				background-color: #f5e9d5;
+				overflow: hidden;
 				@include gradient-vertical(#f5e9d5,#f5e9d5);
 
 				.container {
@@ -502,15 +437,6 @@ body {
 							height: 600px;
 							@include shape-outside(polygon(0% 0%, 100% 100%, 0 100%));
 						}
-
-						@media only screen and (max-width : 1920px) {
-
-							& {
-								font-size: 22px;
-								margin-top: 50px;
-								width: 60%;
-							}
-						}
 					}
 				}
 
@@ -518,8 +444,8 @@ body {
 					position: absolute;
 					width: 1920px;
 					height: 100%;
-					left: -100%;
 					top: 0;
+					@include translateX(-50%);
 
 					.me {
 						background-image: url(../images/about.png);
@@ -546,11 +472,107 @@ body {
 							width: 100%;
 						}
 					}
+				} // .my-desk
+			} // section#about-me
+
+			&#contact {
+				background-color: #272125;
+				overflow: hidden;
+
+				.buttons {
+					position: absolute;
+					left: 20%;
+					right: 20%;
+					top: 50%;
+					z-index: 1;
+					@include translateY(-50%);
+
+					.button {
+						float: left;
+						width: calc(25% - 20px);
+						margin: 0 10px;
+						height: 200px;
+						position: relative;
+
+						i {
+							color: #fff;
+							font-size: 70px;
+							left: 50%;
+							top: 50%;
+							position: absolute;
+							z-index: 1;
+							@include translate(-50%,-50%);
+						}
+
+						&::before {
+							border-radius: 5px;
+							content: '';
+							opacity: 0.7;
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							@include transition(all 300ms ease);
+						}
+
+						&.twitter {
+
+							&::before {
+								background-color: #2ba9e1;
+							}
+						}
+
+						&.github {
+
+							&::before {
+								background-color: #2A2B2D;
+							}
+						}
+
+						&.linkedin {
+
+							&::before {
+								background-color: #007bb5;
+							}
+						}
+
+						&.dribbble {
+
+							&::before {
+								background-color: #c6376d;
+							}
+						}
+
+						&:hover {
+
+							&::before {
+								opacity: 1;
+							}
+						}
+					}
+				} // .buttons
+
+				.video {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+
+					video {
+						height: 100%;
+						opacity: 0.03;
+						position: absolute;
+						left: 50%;
+						@include translateX(-50%);
+					}
 				}
 			}
 		} // section
 	}
 
+	// Body with navigation active
 	&.nav-active {
 
 		nav {
@@ -562,10 +584,6 @@ body {
 			section {
 				@include transform(translateX(10%) rotateY(-30deg));
 
-				@media only screen and (max-width : 414px) {
-					@include transform(translateX(200px) rotateY(-30deg));
-				}
-
 				&#work {
 
 					.my-work {
@@ -574,6 +592,283 @@ body {
 
 							&:before {
 								@include translateZ(-100px);
+							}
+						}
+					}
+				}
+			}
+		}
+	} // body.nav-active
+
+	// 1080p
+	@media only screen and (max-width: 1920px) {
+		.sections {
+
+			section {
+
+				&#intro {
+
+					.text {
+						bottom: 25%;
+
+						.title {
+							font-size: 78px;
+						}
+
+						.sub-title {
+							font-size: 28px;
+						}
+					}
+				}
+
+				&#about-me {
+
+					.container {
+
+						.text {
+							font-size: 22px;
+							margin-top: 50px;
+							width: 60%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Tablet landscape
+	@media only screen and (max-width : 1024px) {
+		.sections {
+
+			section {
+
+				&#intro {
+
+					.text {
+						right:5%;
+						bottom:24%;
+
+						.title {
+							font-size: 68px;
+						}
+					}
+				}
+
+				&#about-me {
+				}
+
+				&#contact {
+
+					.buttons {
+
+						.button {
+							margin: 10px;
+							height: 200px;
+							width: calc(50% - 20px);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Tablet portrait
+	@media only screen and (max-width : 768px) {
+		.sections {
+
+			section {
+
+				.container {
+					min-width: 768px;
+
+					.title {
+						font-size: 60px;
+					}
+				}
+
+				&#intro {
+
+					.text {
+						right:5%;
+						bottom:28%;
+
+						.title {
+							font-size: 68px;
+						}
+
+						.sub-title {
+							font-size: 24px;
+						}
+					}
+				}
+
+				&#work {
+
+					.container {
+
+						p {
+							font-size: 18px;
+						}
+
+						.tiles {
+
+							.focus {
+								left: 10px;
+								right: 10px;
+								padding-left: 30px;
+								padding-bottom: 90px;
+
+								article {
+
+									h1 {
+										font-size: 32px;
+									}
+								}
+
+								figure {
+									display: block;
+									margin: 0 auto 20px;
+									left: 0;
+									top: 0;
+									position: relative;
+									width: 80%;
+								}
+							}
+
+							.tile {
+								width: calc(50% - 20px);
+							}
+						}
+					}
+				}
+
+				&#about-me {
+					height: 720px;
+
+					.container {
+
+						.text {
+							padding: 0 40px;
+							text-align: center;
+							width: auto;
+
+							&:before {
+								content: none;
+							}
+						}
+					}
+
+					.my-desk {
+						height: 550px;
+						position: relative;
+						width: 768px;
+						@include translateX(0);
+
+						.me {
+							@include background-size;
+						}
+
+						.video {
+							display: none;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	// Small screens
+	@media only screen and (max-width : 414px) {
+
+		&.nav-active .sections section {
+			@include transform(translateX(200px) rotateY(-30deg));
+		}
+
+		.sections {
+
+			section {
+
+				.container {
+					min-width: 320px;
+
+					.title {
+						font-size: 34px;
+					}
+				}
+
+				&#intro {
+
+					.text {
+						left: 5%;
+						right:5%;
+						bottom:25%;
+
+						.title,
+						.sub-title {
+							text-align: center;
+						}
+
+						.title {
+							font-size: 38px;
+						}
+
+						.sub-title {
+							font-size: 22px;
+						}
+					}
+				}
+
+				&#work {
+
+					.container {
+
+						p {
+							font-size: 16px;
+						}
+
+						.tiles {
+
+							.focus {
+
+								article {
+									padding-bottom: 0;
+
+									.badges {
+										display: none;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				&#about-me {
+
+					.container {
+
+						.text {
+								font-size: 16px;
+						}
+					}
+
+					.my-desk {
+						height: 340px;
+						min-width: 320px;
+						max-width: 414px;
+					}
+				}
+
+				&#contact {
+
+					.buttons {
+
+						.button {
+							margin: 10px;
+							height: 110px;
+
+							i {
+								font-size: 60px;
 							}
 						}
 					}
