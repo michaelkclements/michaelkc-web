@@ -103,7 +103,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 60px;
+    right: 0;
     height: 60px;
     z-index: 10000;
     -webkit-user-select: none;
@@ -114,6 +114,7 @@ body {
       top: 50%;
       left: 15px;
       right: 15px;
+      width: 40px;
       -webkit-transform: translate(0, -50%);
       -moz-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
@@ -124,7 +125,7 @@ body {
       body .navigation .hamburger .line:before, body .navigation .hamburger .line:after {
         content: '';
         left: 0;
-        right: 0;
+        width: 100%;
         background-color: #fff;
         height: 3px;
         position: absolute; }
@@ -162,10 +163,6 @@ body {
       min-height: 100vh;
       position: relative;
       width: 100%;
-      -webkit-transform-origin: 100% 50% 0;
-      -moz-transform-origin: 100% 50% 0;
-      -ms-transform-origin: 100% 50% 0;
-      transform-origin: 100% 50% 0;
       -webkit-transition: all 300ms ease;
       -moz-transition: all 300ms ease;
       -ms-transition: all 300ms ease;
@@ -273,168 +270,174 @@ body {
         background-image: -ms-radial-gradient(circle, #fff, #ddd);
         background-image: radial-gradient(circle, #fff, #ddd);
         background-repeat: no-repeat; }
-        body .sections section#work .container .tiles {
-          margin-top: 50px;
-          position: relative;
+        body .sections section#work .container {
           -webkit-perspective: 2000px;
           -moz-perspective: 2000px;
           -ms-perspective: 2000px;
-          perspective: 2000px;
-          -webkit-transform-style: preserve-3d;
-          -moz-transform-style: preserve-3d;
-          -ms-transform-style: preserve-3d;
-          transform-style: preserve-3d; }
-          body .sections section#work .container .tiles:before, body .sections section#work .container .tiles:after {
-            content: '';
-            display: table; }
-          body .sections section#work .container .tiles:after {
-            clear: both; }
-          body .sections section#work .container .tiles .tile {
-            border-radius: 3px;
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            float: left;
-            margin: 10px;
-            width: calc(33.33% - 20px);
-            -webkit-transition: all 300ms ease;
-            -moz-transition: all 300ms ease;
-            -ms-transition: all 300ms ease;
-            transition: all 300ms ease; }
-            body .sections section#work .container .tiles .tile img {
-              display: block;
-              width: 100%; }
-          body .sections section#work .container .tiles.focus-active .tile {
-            opacity: 0.05;
-            -webkit-transform: translateZ(-500px);
-            -moz-transform: translateZ(-500px);
-            -ms-transform: translateZ(-500px);
-            transform: translateZ(-500px); }
-          body .sections section#work .container .tiles.focus-active .focus {
-            opacity: 1;
-            pointer-events: all;
-            -webkit-transform: translateZ(0);
-            -moz-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            transform: translateZ(0); }
-          body .sections section#work .container .tiles .focus {
-            background-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-            top: 0;
-            right: 0;
-            left: 0;
-            opacity: 0;
-            padding: 30px;
-            padding-bottom: 140px;
-            pointer-events: none;
-            position: absolute;
-            -webkit-backface-visibility: hidden;
-            -moz-backface-visibility: hidden;
-            backface-visibility: hidden;
-            -webkit-transition: all 300ms ease;
-            -moz-transition: all 300ms ease;
-            -ms-transition: all 300ms ease;
-            transition: all 300ms ease;
-            -webkit-transform: translateZ(500px);
-            -moz-transform: translateZ(500px);
-            -ms-transform: translateZ(500px);
-            transform: translateZ(500px); }
-            body .sections section#work .container .tiles .focus figure {
-              box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-              display: inline-block;
-              margin-right: 30px;
-              vertical-align: top;
-              width: 500px; }
-              body .sections section#work .container .tiles .focus figure a {
+          perspective: 2000px; }
+          body .sections section#work .container .tiles {
+            margin-top: 50px;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d; }
+            body .sections section#work .container .tiles:before, body .sections section#work .container .tiles:after {
+              content: '';
+              display: table; }
+            body .sections section#work .container .tiles:after {
+              clear: both; }
+            body .sections section#work .container .tiles .tile {
+              border-radius: 3px;
+              box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+              cursor: pointer;
+              float: left;
+              margin: 10px;
+              width: calc(33.33% - 20px);
+              -webkit-transition: all 300ms ease;
+              -moz-transition: all 300ms ease;
+              -ms-transition: all 300ms ease;
+              transition: all 300ms ease; }
+              body .sections section#work .container .tiles .tile img {
                 display: block;
-                -webkit-transition: all 300ms ease;
-                -moz-transition: all 300ms ease;
-                -ms-transition: all 300ms ease;
-                transition: all 300ms ease; }
-                body .sections section#work .container .tiles .focus figure a img {
+                width: 100%; }
+              body .sections section#work .container .tiles .tile:hover {
+                -webkit-transform: translateZ(50px);
+                -moz-transform: translateZ(50px);
+                -ms-transform: translateZ(50px);
+                transform: translateZ(50px); }
+            body .sections section#work .container .tiles.focus-active .tile {
+              opacity: 0.05;
+              -webkit-transform: translateZ(-500px);
+              -moz-transform: translateZ(-500px);
+              -ms-transform: translateZ(-500px);
+              transform: translateZ(-500px); }
+            body .sections section#work .container .tiles.focus-active .focus {
+              opacity: 1;
+              pointer-events: all;
+              -webkit-transform: translateZ(0);
+              -moz-transform: translateZ(0);
+              -ms-transform: translateZ(0);
+              transform: translateZ(0); }
+            body .sections section#work .container .tiles .focus {
+              background-color: rgba(255, 255, 255, 0.6);
+              box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+              top: 0;
+              right: 0;
+              left: 0;
+              opacity: 0;
+              padding: 30px;
+              padding-bottom: 140px;
+              pointer-events: none;
+              position: absolute;
+              -webkit-backface-visibility: hidden;
+              -moz-backface-visibility: hidden;
+              backface-visibility: hidden;
+              -webkit-transition: all 300ms ease;
+              -moz-transition: all 300ms ease;
+              -ms-transition: all 300ms ease;
+              transition: all 300ms ease;
+              -webkit-transform: translateZ(500px);
+              -moz-transform: translateZ(500px);
+              -ms-transform: translateZ(500px);
+              transform: translateZ(500px); }
+              body .sections section#work .container .tiles .focus figure {
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+                display: inline-block;
+                margin-right: 30px;
+                vertical-align: top;
+                width: 500px; }
+                body .sections section#work .container .tiles .focus figure a {
                   display: block;
-                  width: 100%; }
-            body .sections section#work .container .tiles .focus article {
-              display: inline-block;
-              padding-bottom: 70px;
-              position: relative;
-              vertical-align: top; }
-              body .sections section#work .container .tiles .focus article h1 {
-                font-size: 40px;
-                font-weight: 300; }
-              body .sections section#work .container .tiles .focus article .badges {
-                position: absolute;
-                bottom: 0; }
-                body .sections section#work .container .tiles .focus article .badges:before, body .sections section#work .container .tiles .focus article .badges:after {
-                  content: '';
-                  display: table; }
-                body .sections section#work .container .tiles .focus article .badges:after {
-                  clear: both; }
-                body .sections section#work .container .tiles .focus article .badges .badge {
-                  background-color: #fff;
-                  border: 1px solid #bbc1cc;
-                  border-radius: 50%;
-                  color: #6e7f95;
-                  float: left;
-                  margin-right: 10px;
-                  font-size: 25px;
-                  position: relative;
-                  height: 50px;
-                  width: 50px;
                   -webkit-transition: all 300ms ease;
                   -moz-transition: all 300ms ease;
                   -ms-transition: all 300ms ease;
                   transition: all 300ms ease; }
-                  body .sections section#work .container .tiles .focus article .badges .badge i {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    -webkit-transform: translate(-50%, -50%);
-                    -moz-transform: translate(-50%, -50%);
-                    -ms-transform: translate(-50%, -50%);
-                    transform: translate(-50%, -50%); }
-                  body .sections section#work .container .tiles .focus article .badges .badge:hover.html {
-                    border-color: #f55;
-                    color: #f55; }
-                  body .sections section#work .container .tiles .focus article .badges .badge:hover.css {
-                    border-color: #0499d7;
-                    color: #0499d7; }
-                  body .sections section#work .container .tiles .focus article .badges .badge:hover.audio {
-                    border-color: #17b153;
-                    color: #17b153; }
-                  body .sections section#work .container .tiles .focus article .badges .badge:hover.video {
-                    border-color: #fba600;
-                    color: #fba600; }
-            body .sections section#work .container .tiles .focus nav {
-              background: #31343F;
-              position: absolute;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              padding: 22px; }
-              body .sections section#work .container .tiles .focus nav .button {
-                border: 1px solid;
-                border-radius: 5px;
-                cursor: pointer;
+                  body .sections section#work .container .tiles .focus figure a img {
+                    display: block;
+                    width: 100%; }
+              body .sections section#work .container .tiles .focus article {
                 display: inline-block;
-                padding: 5px 10px;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none; }
-                body .sections section#work .container .tiles .focus nav .button:hover {
-                  background-color: #383b48; }
-                body .sections section#work .container .tiles .focus nav .button.back {
-                  border-color: #f55; }
-                  body .sections section#work .container .tiles .focus nav .button.back:hover {
-                    border-color: #ff6e6e;
-                    color: #ff6e6e; }
-                body .sections section#work .container .tiles .focus nav .button.github {
-                  border-color: #26a0d9;
-                  color: #26a0d9;
-                  float: right; }
-                  body .sections section#work .container .tiles .focus nav .button.github:hover {
-                    border-color: #51b3e1;
-                    color: #51b3e1; }
+                padding-bottom: 70px;
+                position: relative;
+                vertical-align: top; }
+                body .sections section#work .container .tiles .focus article h1 {
+                  font-size: 40px;
+                  font-weight: 300; }
+                body .sections section#work .container .tiles .focus article .badges {
+                  position: absolute;
+                  bottom: 0; }
+                  body .sections section#work .container .tiles .focus article .badges:before, body .sections section#work .container .tiles .focus article .badges:after {
+                    content: '';
+                    display: table; }
+                  body .sections section#work .container .tiles .focus article .badges:after {
+                    clear: both; }
+                  body .sections section#work .container .tiles .focus article .badges .badge {
+                    background-color: #fff;
+                    border: 1px solid #bbc1cc;
+                    border-radius: 50%;
+                    color: #6e7f95;
+                    float: left;
+                    margin-right: 10px;
+                    font-size: 25px;
+                    position: relative;
+                    height: 50px;
+                    width: 50px;
+                    -webkit-transition: all 300ms ease;
+                    -moz-transition: all 300ms ease;
+                    -ms-transition: all 300ms ease;
+                    transition: all 300ms ease; }
+                    body .sections section#work .container .tiles .focus article .badges .badge i {
+                      position: absolute;
+                      left: 50%;
+                      top: 50%;
+                      -webkit-transform: translate(-50%, -50%);
+                      -moz-transform: translate(-50%, -50%);
+                      -ms-transform: translate(-50%, -50%);
+                      transform: translate(-50%, -50%); }
+                    body .sections section#work .container .tiles .focus article .badges .badge:hover.html {
+                      border-color: #f55;
+                      color: #f55; }
+                    body .sections section#work .container .tiles .focus article .badges .badge:hover.css {
+                      border-color: #0499d7;
+                      color: #0499d7; }
+                    body .sections section#work .container .tiles .focus article .badges .badge:hover.audio {
+                      border-color: #17b153;
+                      color: #17b153; }
+                    body .sections section#work .container .tiles .focus article .badges .badge:hover.video {
+                      border-color: #fba600;
+                      color: #fba600; }
+              body .sections section#work .container .tiles .focus nav {
+                background: #31343F;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 22px; }
+                body .sections section#work .container .tiles .focus nav .button {
+                  border: 1px solid;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  display: inline-block;
+                  padding: 5px 10px;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+                  user-select: none; }
+                  body .sections section#work .container .tiles .focus nav .button:hover {
+                    background-color: #383b48; }
+                  body .sections section#work .container .tiles .focus nav .button.back {
+                    border-color: #f55; }
+                    body .sections section#work .container .tiles .focus nav .button.back:hover {
+                      border-color: #ff6e6e;
+                      color: #ff6e6e; }
+                  body .sections section#work .container .tiles .focus nav .button.github {
+                    border-color: #26a0d9;
+                    color: #26a0d9;
+                    float: right; }
+                    body .sections section#work .container .tiles .focus nav .button.github:hover {
+                      border-color: #51b3e1;
+                      color: #51b3e1; }
       body .sections section#about-me {
         background-color: #f5e9d5;
         overflow: hidden;
@@ -522,7 +525,7 @@ body {
             position: relative; }
             body .sections section#contact .buttons .button i {
               color: #fff;
-              font-size: 70px;
+              font-size: 80px;
               left: 50%;
               top: 50%;
               position: absolute;
@@ -547,7 +550,7 @@ body {
             body .sections section#contact .buttons .button.twitter::before {
               background-color: #2ba9e1; }
             body .sections section#contact .buttons .button.github::before {
-              background-color: #2A2B2D; }
+              background-color: #3f4042; }
             body .sections section#contact .buttons .button.linkedin::before {
               background-color: #007bb5; }
             body .sections section#contact .buttons .button.dribbble::before {
@@ -575,10 +578,10 @@ body {
     -ms-transform: translate3d(40px, 0, 0);
     transform: translate3d(40px, 0, 0); }
   body.nav-active .sections section {
-    -webkit-transform: translateX(10%) rotateY(-30deg);
-    -moz-transform: translateX(10%) rotateY(-30deg);
-    -ms-transform: translateX(10%) rotateY(-30deg);
-    transform: translateX(10%) rotateY(-30deg); }
+    -webkit-transform: translate3d(20%, 0, -200px);
+    -moz-transform: translate3d(20%, 0, -200px);
+    -ms-transform: translate3d(20%, 0, -200px);
+    transform: translate3d(20%, 0, -200px); }
     body.nav-active .sections section#work .my-work .item:before {
       -webkit-transform: translateZ(-100px);
       -moz-transform: translateZ(-100px);
@@ -586,15 +589,17 @@ body {
       transform: translateZ(-100px); }
   @media only screen and (max-width: 1920px) {
     body .sections section#intro .text {
-      bottom: 25%; }
+      bottom: 15%; }
       body .sections section#intro .text .title {
         font-size: 78px; }
       body .sections section#intro .text .sub-title {
         font-size: 28px; }
     body .sections section#about-me .container .text {
       font-size: 22px;
-      margin-top: 50px;
-      width: 60%; } }
+      margin-top: 70px;
+      width: 57%; }
+    body .sections section#contact .buttons .button {
+      height: 250px; } }
   @media only screen and (max-width: 1024px) {
     body .sections section#intro .text {
       right: 5%;
@@ -604,7 +609,9 @@ body {
     body .sections section#contact .buttons .button {
       margin: 10px;
       height: 200px;
-      width: calc(50% - 20px); } }
+      width: calc(50% - 20px); }
+      body .sections section#contact .buttons .button i {
+        font-size: 70px; } }
   @media only screen and (max-width: 768px) {
     body .sections section .container {
       min-width: 768px; }
@@ -659,10 +666,10 @@ body {
           display: none; } }
   @media only screen and (max-width: 414px) {
     body.nav-active .sections section {
-      -webkit-transform: translateX(200px) rotateY(-30deg);
-      -moz-transform: translateX(200px) rotateY(-30deg);
-      -ms-transform: translateX(200px) rotateY(-30deg);
-      transform: translateX(200px) rotateY(-30deg); }
+      -webkit-transform: translateX(200px) translateZ(-100px);
+      -moz-transform: translateX(200px) translateZ(-100px);
+      -ms-transform: translateX(200px) translateZ(-100px);
+      transform: translateX(200px) translateZ(-100px); }
     body .sections section .container {
       min-width: 320px; }
       body .sections section .container .title {

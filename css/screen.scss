@@ -28,7 +28,7 @@ body {
 			position: fixed;
 			top: 0;
 			left: 0;
-			width:60px;
+			right: 0;
 			height: 60px;
 			z-index: 10000;
 			@include user-select(none);
@@ -43,6 +43,7 @@ body {
 				top:50%;
 				left: $padding;
 				right: $padding;
+				width: 40px;
 				@include translate(0, -50%);
 				@include line;
 
@@ -50,7 +51,7 @@ body {
 				&:after {
 					content: '';
 					left: 0;
-					right: 0;
+					width: 100%;
 					@include line;
 				}
 
@@ -96,7 +97,6 @@ body {
 			min-height:100vh;
 			position: relative;
 			width:100%;
-			@include transform-origin(100%, 50%);
 			@include transition(all 300ms ease);
 
 			.container {
@@ -213,14 +213,13 @@ body {
 				@include gradient-radial(#fff,#ddd);
 
 				.container {
-
+					@include perspective(2000px);
 					$translate-z-value: 500px;
 
 					.tiles {
 						margin-top: 50px;
 						position: relative;
 						@include clearfix;
-						@include perspective(2000px);
 						@include transform-style(preserve-3d);
 
 						.tile {
@@ -235,6 +234,10 @@ body {
 							img {
 								display: block;
 								width: 100%;
+							}
+
+							&:hover {
+								@include translateZ(50px);
 							}
 						}
 
@@ -496,7 +499,7 @@ body {
 
 						i {
 							color: #fff;
-							font-size: 70px;
+							font-size: 80px;
 							left: 50%;
 							top: 50%;
 							position: absolute;
@@ -526,7 +529,7 @@ body {
 						&.github {
 
 							&::before {
-								background-color: #2A2B2D;
+								background-color: #3f4042;
 							}
 						}
 
@@ -582,7 +585,7 @@ body {
 		.sections {
 
 			section {
-				@include transform(translateX(10%) rotateY(-30deg));
+				@include translate3d(20%, 0, -200px);
 
 				&#work {
 
@@ -609,7 +612,7 @@ body {
 				&#intro {
 
 					.text {
-						bottom: 25%;
+						bottom: 15%;
 
 						.title {
 							font-size: 78px;
@@ -627,8 +630,18 @@ body {
 
 						.text {
 							font-size: 22px;
-							margin-top: 50px;
-							width: 60%;
+							margin-top: 70px;
+							width: 57%;
+						}
+					}
+				}
+
+				&#contact {
+
+					.buttons {
+
+						.button {
+							height: 250px;
 						}
 					}
 				}
@@ -665,6 +678,10 @@ body {
 							margin: 10px;
 							height: 200px;
 							width: calc(50% - 20px);
+
+							i {
+								font-size: 70px;
+							}
 						}
 					}
 				}
@@ -782,7 +799,7 @@ body {
 	@media only screen and (max-width : 414px) {
 
 		&.nav-active .sections section {
-			@include transform(translateX(200px) rotateY(-30deg));
+			@include transform(translateX(200px) translateZ(-100px));
 		}
 
 		.sections {
