@@ -34,7 +34,10 @@
             <a href="#work">Work</a>
           </li>
           <li>
-            <a href="#work">Experience</a>
+            <a href="#about-me">About me</a>
+          </li>
+          <li>
+            <a href="#contact">Contact me</a>
           </li>
         </ul>
       </nav>
@@ -76,15 +79,12 @@
                 </nav>
 
                 <figure>
-                  <a href="http://michaelkc.com/music/"><img src="images/work-music.jpg"/></a>
+                  <a data-bind="attr: { href: focusItem.url }"><img data-bind="attr: { src: focusItem.imgUrl }"/></a>
                 </figure>
 
                 <article>
-                  <h1>MichaelKC Music</h1>
-                  <p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p>
-                  <p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p>
-                  <p>The tough parts was getting the logic for shuffling, repeating and both.</p>
-                  <p>Thanks for my friend Lars for the music.</p>
+                  <h1 data-bind="text: focusItem.title"></h1>
+                  <div data-bind="html: focusItem.desc"></div>
 
                   <div class="badges">
                     <div class="badge html" data-title="HTML5 Semantics">
@@ -100,78 +100,14 @@
 
                 </article>
 
-                <!-- <article>
-                  <figure>
-                    <a href="http://michaelkc.com/music/"><img src="images/work-oldmkc.jpg"/></a>
-                  </figure>
-
-                    <h1>My old portfolio</h1>
-                    <p>I set out to put my CSS3 3D transform knowledge to the test.</p>
-                    <p>Clicking on a link would move the site around in a 3D environment.</p>
-                    <p>The use of HTML 5 video was also used to portray a video I created using the Unreal engine.</p>
-                    <p>Sorry about the use of Lobster font.</p>
-                    <div class="badges">
-                      <div class="badge html" data-title="HTML5 Semantics">
-                        <i class="fa fa-html5"></i>
-                      </div>
-                      <div class="badge css" data-title="CSS3 Magic">
-                        <i class="fa fa-css3"></i>
-                      </div>
-                      <div class="badge video" data-title="HTML5 Video">
-                        <i class="fa fa-video-camera"></i>
-                      </div>
-                    </div>
-                </article>
-
-                <article>
-                  <figure>
-                    <a href="http://michaelkc.com/music/"><img src="images/work-litfusefilms.jpg"/></a>
-                  </figure>
-
-                    <h1>Lit Fuse Films</h1>
-                    <p>This was a group of talented people that made video game videos (Machinima).</p>
-                    <p>Being a part of this group taught me how to organise and work in a team.</p>
-                    <p>The website shown now is something quick I put together to link to our videos.</p>
-                    <div class="badges">
-                      <div class="badge html" data-title="HTML5 Semantics">
-                        <i class="fa fa-html5"></i>
-                      </div>
-                      <div class="badge css" data-title="CSS3 Magic">
-                        <i class="fa fa-css3"></i>
-                      </div>
-                    </div>
-                </article>
-
-                <article>
-                  <figure>
-                    <a href="http://michaelkc.com/music/"><img src="images/work-wonderflix.jpg"/></a>
-                  </figure>
-
-                    <h1>Wonderflix</h1>
-                    <p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p>
-                    <p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p>
-                    <p>The tough parts was getting the logic for shuffling, repeating and both.</p>
-                    <p>Thanks to my friend Lars for the music.</p>
-                    <div class="badges">
-                      <div class="badge html" data-title="HTML5 Semantics">
-                        <i class="fa fa-html5"></i>
-                      </div>
-                      <div class="badge css" data-title="CSS3 Magic">
-                        <i class="fa fa-css3"></i>
-                      </div>
-                      <div class="badge wp" data-title="Wordpress template">
-                        <i class="fa fa-wordpress"></i>
-                      </div>
-                    </div>
-                </article> -->
               </div>
 
-              <div class="tile" data-bind="click: focusItem"><img src="images/work-music.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem"><img src="images/work-oldmkc.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem"><img src="images/work-litfusefilms.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem"><img src="images/work-football.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem"><img src="images/work-wonderflix.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem"><img src="images/work-rs.jpg"/></div>
+              <div class="tile" data-bind="click: focusItem.bind($data, 'music')"><img src="images/work-music.jpg"/></div>
+              <div class="tile" data-bind="click: focusItem.bind($data, 'oldmkc')"><img src="images/work-oldmkc.jpg"/></div>
+              <div class="tile" data-bind="click: focusItem.bind($data, 'litfusefilms')"><img src="images/work-litfusefilms.jpg"/></div>
+              <div class="tile" data-bind="click: focusItem.bind($data, 'football')"><img src="images/work-football.jpg"/></div>
+              <div class="tile" data-bind="click: focusItem.bind($data, 'wonderflix')"><img src="images/work-wonderflix.jpg"/></div>
+              <div class="tile" data-bind="click: focusItem.bind($data, 'rs')"><img src="images/work-rs.jpg"/></div>
 
             </div>
 
@@ -185,18 +121,10 @@
           <h1 class="title">About me</h1>
 
           <div class="text">
-            <p>
-              My name is Michael K. Clements and I'm a <span data-bind="text: age"></span> year old front end developer.
-            </p>
-            <p>
-              I'm a big fan of Technology and I like to know a lot about it.
-            </p>
-            <p>
-              Apple and Google's websites are big inspirations to me and I learn from their techniques. I also visit Awwwards and Dribbble to feel inadequate about my own work.
-            </p>
-            <p>
-              I play quite a few games like Dota 2, Rust, Hearthstone and many more on the Playstation 4.
-            </p>
+            <p>My name is Michael K. Clements and I'm a <span data-bind="text: age"></span> year old front end developer / gamer / film enthusiast.</p>
+            <p>I'm a bit of a tech geek and I like keeping up to date about new hardware, software, patches & whatever!</p>
+            <p>Apple and Google's websites are big inspirations to me and I try to learn from their techniques. There's always more to learn!</p>
+            <p>The most played game I play at the moment is <a href="http://blog.dota2.com/" target="_blank">Dota 2</a>. A part from that I enjoy playing <a href="http://rocketleague.psyonix.com/" target="_blank">Rocket League</a> and <a href="http://www.thewitcher.com/" target="_blank">The Witcher 3</a>.</p>
 
           </div>
 
