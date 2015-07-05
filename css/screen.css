@@ -75,32 +75,16 @@ a {
     transform: rotateX(110deg); } }
 @-webkit-keyframes section-in {
   from {
-    opacity: 0;
-    -webkit-transform: translateZ(-100px);
-    -moz-transform: translateZ(-100px);
-    -ms-transform: translateZ(-100px);
-    transform: translateZ(-100px); } }
+    opacity: 0; } }
 @-moz-keyframes section-in {
   from {
-    opacity: 0;
-    -webkit-transform: translateZ(-100px);
-    -moz-transform: translateZ(-100px);
-    -ms-transform: translateZ(-100px);
-    transform: translateZ(-100px); } }
+    opacity: 0; } }
 @-ms-keyframes section-in {
   from {
-    opacity: 0;
-    -webkit-transform: translateZ(-100px);
-    -moz-transform: translateZ(-100px);
-    -ms-transform: translateZ(-100px);
-    transform: translateZ(-100px); } }
+    opacity: 0; } }
 @keyframes section-in {
   from {
-    opacity: 0;
-    -webkit-transform: translateZ(-100px);
-    -moz-transform: translateZ(-100px);
-    -ms-transform: translateZ(-100px);
-    transform: translateZ(-100px); } }
+    opacity: 0; } }
 @-webkit-keyframes loading-ball-1 {
   0% {
     -webkit-transform: scale(1);
@@ -285,17 +269,6 @@ body {
           font-weight: 100;
           text-align: center;
           position: relative; }
-          body .sections section .container .title::before, body .sections section .container .title::after {
-            border-bottom: 1px dotted #f55;
-            content: '';
-            height: 1px;
-            position: absolute;
-            top: 50%;
-            width: 25%; }
-          body .sections section .container .title::before {
-            left: 0; }
-          body .sections section .container .title::after {
-            right: 0; }
         body .sections section .container h2 {
           font-size: 30px;
           font-weight: 300; }
@@ -456,7 +429,11 @@ body {
                 display: inline-block;
                 margin-right: 30px;
                 vertical-align: top;
-                width: 500px; }
+                width: 500px;
+                -webkit-transition: all 300ms ease;
+                -moz-transition: all 300ms ease;
+                -ms-transition: all 300ms ease;
+                transition: all 300ms ease; }
                 body .sections section#work .container .tiles .focus figure a {
                   display: block;
                   -webkit-transition: all 300ms ease;
@@ -466,6 +443,8 @@ body {
                   body .sections section#work .container .tiles .focus figure a img {
                     display: block;
                     width: 100%; }
+                body .sections section#work .container .tiles .focus figure:hover {
+                  box-shadow: 0 1px 5px rgba(38, 160, 217, 0.6); }
               body .sections section#work .container .tiles .focus article {
                 display: inline-block;
                 padding-bottom: 70px;
@@ -694,10 +673,10 @@ body {
             -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
       body .sections section.animate {
-        -webkit-animation: section-in 600ms ease 0s 1 backwards;
-        -moz-animation: section-in 600ms ease 0s 1 backwards;
-        -ms-animation: section-in 600ms ease 0s 1 backwards;
-        animation: section-in 600ms ease 0s 1 backwards; }
+        -webkit-animation: section-in 700ms ease 0s 1 backwards;
+        -moz-animation: section-in 700ms ease 0s 1 backwards;
+        -ms-animation: section-in 700ms ease 0s 1 backwards;
+        animation: section-in 700ms ease 0s 1 backwards; }
   body.nav-active .navigation nav {
     -webkit-transform: translateX(40px);
     -moz-transform: translateX(40px);
@@ -758,6 +737,9 @@ body {
         font-size: 78px; }
       body .sections section#intro .text .sub-title {
         font-size: 28px; }
+    body .sections section#about-me .container .title {
+      font-size: 70px;
+      text-align: right; }
     body .sections section#about-me .container .text {
       font-size: 22px;
       margin-top: 70px;
@@ -768,8 +750,6 @@ body {
     body .sections section#about-me .container .title {
       font-size: 70px;
       text-align: right; }
-      body .sections section#about-me .container .title::before, body .sections section#about-me .container .title::after {
-        content: none; }
     body .sections section#about-me .container .text {
       margin-top: 0; }
       body .sections section#about-me .container .text::before {
@@ -790,11 +770,6 @@ body {
           width: 50%; }
     body .sections section#about-me .container {
       padding-top: 30px; }
-      body .sections section#about-me .container .title {
-        font-size: 70px;
-        text-align: right; }
-        body .sections section#about-me .container .title::before, body .sections section#about-me .container .title::after {
-          content: none; }
       body .sections section#about-me .container .text {
         margin-top: 0; }
         body .sections section#about-me .container .text::before {
@@ -849,8 +824,6 @@ body {
       body .sections section#about-me .container .title {
         font-size: 60px;
         text-align: center; }
-        body .sections section#about-me .container .title::before, body .sections section#about-me .container .title::after {
-          content: ''; }
       body .sections section#about-me .container .text {
         padding: 0 40px;
         text-align: center;
@@ -917,7 +890,7 @@ body {
       max-width: 414px; }
       body .sections section#about-me .my-desk .video {
         bottom: 178px;
-        height: 152px;
+        height: 156px;
         left: 17%;
         right: 17%; }
     body .sections section#contact .buttons .button {

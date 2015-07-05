@@ -100,28 +100,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/images\/about-imac.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 349720,
-		"inputAbbreviatedPath": "\/images\/about-imac.jpg",
-		"outputAbbreviatedPath": "\/images\/about-imac.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/about-me.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 935047,
-		"inputAbbreviatedPath": "\/images\/about-me.png",
-		"outputAbbreviatedPath": "\/images\/about-me.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/images\/about.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -133,13 +111,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/bg.jpg": {
-		"fileType": 16384,
+	"\/images\/favicon.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 686113,
-		"inputAbbreviatedPath": "\/images\/bg.jpg",
-		"outputAbbreviatedPath": "\/images\/bg.jpg",
+		"initialSize": 19850,
+		"inputAbbreviatedPath": "\/images\/favicon.png",
+		"outputAbbreviatedPath": "\/images\/favicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -155,13 +133,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/intro-bg.png": {
+	"\/images\/touch-icon-114.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 2.76367e+06,
-		"inputAbbreviatedPath": "\/images\/intro-bg.png",
-		"outputAbbreviatedPath": "\/images\/intro-bg.png",
+		"initialSize": 28462,
+		"inputAbbreviatedPath": "\/images\/touch-icon-114.png",
+		"outputAbbreviatedPath": "\/images\/touch-icon-114.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/touch-icon-144.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29637,
+		"inputAbbreviatedPath": "\/images\/touch-icon-144.png",
+		"outputAbbreviatedPath": "\/images\/touch-icon-144.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/touch-icon-57.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22252,
+		"inputAbbreviatedPath": "\/images\/touch-icon-57.png",
+		"outputAbbreviatedPath": "\/images\/touch-icon-57.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/touch-icon-72.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23631,
+		"inputAbbreviatedPath": "\/images\/touch-icon-72.png",
+		"outputAbbreviatedPath": "\/images\/touch-icon-72.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

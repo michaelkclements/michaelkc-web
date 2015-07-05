@@ -60,7 +60,7 @@ ready(function () {
               title: "Robert Stoneman WIP",
               url: "http://michaelkc.com/rs/",
               imgUrl: "images/work-rs.jpg",
-              desc: "<p>This was the start of a site I was putting together for my friend.</p><p>Unfortunately haven't finished it off just yet.</p>"
+              desc: "<p>This was the start of a site I was putting together for my friend.</p><p>Unfortunately haven't finished it off just yet.</p><p>This was another test for Angular and to try my knowledge at using fullscreen HTML 5 video for the website.</p>"
             }
         ]);
 
@@ -101,9 +101,9 @@ ready(function () {
       for (var i = 0; i < el.length; i++){
         var elementTop = el[i].offsetTop;
         var elementHeight = el[i].offsetHeight;
-        var total = elementTop - elementHeight;
+        var total = elementTop - (elementHeight);
 
-        if (scrollingY > total + 10) {
+        if (scrollingY > total) {
           el[i].className = "animate";
         }
       }
@@ -113,3 +113,15 @@ ready(function () {
     ko.applyBindings(vm);
 
 });
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-12499097-3']);
+_gaq.push(['_trackPageview']);
+
+// Google Analytics
+
+(function () {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();

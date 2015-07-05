@@ -11,7 +11,6 @@
 @include keyframes(section-in) {
 	from {
 		opacity: 0;
-		@include translateZ(-100px);
 	}
 }
 
@@ -136,24 +135,6 @@ body {
 					font-weight: 100;
 					text-align: center;
 					position: relative;
-
-					&::before,
-					&::after {
-						border-bottom: 1px dotted #f55;
-						content: '';
-						height: 1px;
-						position: absolute;
-						top: 50%;
-						width: 25%
-					}
-
-					&::before {
-						left: 0;
-					}
-
-					&::after {
-						right: 0;
-					}
 				}
 
 				h2 {
@@ -306,6 +287,7 @@ body {
 								margin-right: 30px;
 								vertical-align: top;
 								width: 500px;
+								@include transition(all 300ms ease);
 
 								a {
 									display: block;
@@ -315,6 +297,10 @@ body {
 										display: block;
 										width: 100%;
 									}
+								}
+
+								&:hover {
+									box-shadow: 0 1px 5px rgba(#26A0D9,0.6);
 								}
 							}
 
@@ -615,7 +601,7 @@ body {
 
 			// Section animate
 			&.animate {
-				@include animation(section-in 600ms ease 0s 1 backwards);
+				@include animation(section-in 700ms ease 0s 1 backwards);
 			}
 		} // section
 	}
@@ -654,6 +640,7 @@ body {
 		}
 	} // body.nav-active
 
+	// Loading balls
 	.loading {
 		background-color: #fff;
 		border-radius: 50%;
@@ -714,6 +701,11 @@ body {
 
 					.container {
 
+						.title {
+							font-size: 70px;
+							text-align: right;
+						}
+
 						.text {
 							font-size: 22px;
 							margin-top: 70px;
@@ -747,11 +739,6 @@ body {
 						.title {
 							font-size: 70px;
 							text-align: right;
-
-							&::before,
-							&::after {
-								content: none;
-							}
 						}
 
 						.text {
@@ -811,16 +798,6 @@ body {
 
 					.container {
 						padding-top: 30px;
-
-						.title {
-							font-size: 70px;
-							text-align: right;
-
-							&::before,
-							&::after {
-								content: none;
-							}
-						}
 
 						.text {
 							margin-top: 0;
@@ -937,11 +914,6 @@ body {
 						.title {
 							font-size: $title-size;
 							text-align: center;
-
-							&::before,
-							&::after {
-								content: '';
-							}
 						}
 
 						.text {
