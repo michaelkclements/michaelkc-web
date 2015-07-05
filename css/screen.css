@@ -54,45 +54,141 @@ a {
     -webkit-transform: rotateX(110deg);
     -moz-transform: rotateX(110deg);
     -ms-transform: rotateX(110deg);
-    transform: rotateX(110deg); }
-  to {
-    -webkit-transform: rotateX(0deg);
-    -moz-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg); } }
+    transform: rotateX(110deg); } }
 @-moz-keyframes text-fold-in {
   from {
     -webkit-transform: rotateX(110deg);
     -moz-transform: rotateX(110deg);
     -ms-transform: rotateX(110deg);
-    transform: rotateX(110deg); }
-  to {
-    -webkit-transform: rotateX(0deg);
-    -moz-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg); } }
+    transform: rotateX(110deg); } }
 @-ms-keyframes text-fold-in {
   from {
     -webkit-transform: rotateX(110deg);
     -moz-transform: rotateX(110deg);
     -ms-transform: rotateX(110deg);
-    transform: rotateX(110deg); }
-  to {
-    -webkit-transform: rotateX(0deg);
-    -moz-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg); } }
+    transform: rotateX(110deg); } }
 @keyframes text-fold-in {
   from {
     -webkit-transform: rotateX(110deg);
     -moz-transform: rotateX(110deg);
     -ms-transform: rotateX(110deg);
-    transform: rotateX(110deg); }
+    transform: rotateX(110deg); } }
+@-webkit-keyframes section-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translateZ(-100px);
+    -moz-transform: translateZ(-100px);
+    -ms-transform: translateZ(-100px);
+    transform: translateZ(-100px); } }
+@-moz-keyframes section-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translateZ(-100px);
+    -moz-transform: translateZ(-100px);
+    -ms-transform: translateZ(-100px);
+    transform: translateZ(-100px); } }
+@-ms-keyframes section-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translateZ(-100px);
+    -moz-transform: translateZ(-100px);
+    -ms-transform: translateZ(-100px);
+    transform: translateZ(-100px); } }
+@keyframes section-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translateZ(-100px);
+    -moz-transform: translateZ(-100px);
+    -ms-transform: translateZ(-100px);
+    transform: translateZ(-100px); } }
+@-webkit-keyframes loading-ball-1 {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  20% {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8); }
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); } }
+@-moz-keyframes loading-ball-1 {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  20% {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8); }
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); } }
+@-ms-keyframes loading-ball-1 {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  20% {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8); }
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); } }
+@keyframes loading-ball-1 {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  20% {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8); }
+  70% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9); } }
+@-webkit-keyframes loading-ball-2 {
   to {
-    -webkit-transform: rotateX(0deg);
-    -moz-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg); } }
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+@-moz-keyframes loading-ball-2 {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+@-ms-keyframes loading-ball-2 {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
+@keyframes loading-ball-2 {
+  to {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    transform: rotateZ(360deg); } }
 body {
   background-color: #252a33;
   height: 100vh; }
@@ -170,14 +266,14 @@ body {
       min-height: 100vh;
       position: relative;
       width: 100%;
+      -webkit-transform-origin: 50% 0% 0;
+      -moz-transform-origin: 50% 0% 0;
+      -ms-transform-origin: 50% 0% 0;
+      transform-origin: 50% 0% 0;
       -webkit-transition: all 300ms ease;
       -moz-transition: all 300ms ease;
       -ms-transition: all 300ms ease;
-      transition: all 300ms ease;
-      -webkit-transform-origin: 100% 50% 0;
-      -moz-transform-origin: 100% 50% 0;
-      -ms-transform-origin: 100% 50% 0;
-      transform-origin: 100% 50% 0; }
+      transition: all 300ms ease; }
       body .sections section .container {
         margin: 0 auto;
         min-width: 960px;
@@ -590,6 +686,11 @@ body {
             -moz-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
+      body .sections section.animate {
+        -webkit-animation: section-in 600ms ease 0s 1 backwards;
+        -moz-animation: section-in 600ms ease 0s 1 backwards;
+        -ms-animation: section-in 600ms ease 0s 1 backwards;
+        animation: section-in 600ms ease 0s 1 backwards; }
   body.nav-active .navigation nav {
     -webkit-transform: translateX(40px);
     -moz-transform: translateX(40px);
@@ -605,6 +706,44 @@ body {
       -moz-transform: translateZ(-100px);
       -ms-transform: translateZ(-100px);
       transform: translateZ(-100px); }
+  body .loading {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    z-index: -1;
+    -webkit-animation: loading-ball-1 1000ms ease-out 0s infinite both;
+    -moz-animation: loading-ball-1 1000ms ease-out 0s infinite both;
+    -ms-animation: loading-ball-1 1000ms ease-out 0s infinite both;
+    animation: loading-ball-1 1000ms ease-out 0s infinite both; }
+    body .loading::before, body .loading::after {
+      background-color: #fff;
+      border-radius: 50%;
+      content: '';
+      margin: -5px 0 0 -5px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      -webkit-transform-origin: 50% 40px 0;
+      -moz-transform-origin: 50% 40px 0;
+      -ms-transform-origin: 50% 40px 0;
+      transform-origin: 50% 40px 0; }
+    body .loading::before {
+      -webkit-animation: loading-ball-2 1000ms ease-out 0s infinite both;
+      -moz-animation: loading-ball-2 1000ms ease-out 0s infinite both;
+      -ms-animation: loading-ball-2 1000ms ease-out 0s infinite both;
+      animation: loading-ball-2 1000ms ease-out 0s infinite both; }
+    body .loading:after {
+      -webkit-animation: loading-ball-2 1000ms ease-out 100ms infinite both;
+      -moz-animation: loading-ball-2 1000ms ease-out 100ms infinite both;
+      -ms-animation: loading-ball-2 1000ms ease-out 100ms infinite both;
+      animation: loading-ball-2 1000ms ease-out 100ms infinite both; }
   @media only screen and (max-width: 1920px) {
     body .sections section#intro .text {
       bottom: 15%; }
@@ -762,3 +901,5 @@ body {
       height: 110px; }
       body .sections section#contact .buttons .button i {
         font-size: 60px; } }
+  body .hide {
+    display: none; }

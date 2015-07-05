@@ -24,7 +24,7 @@
   </head>
   <body data-bind="css: { 'nav-active' : isNavClicked }">
 
-    <div class="navigation">
+    <div data-bind="css: { 'hide': isLoaded }" class="navigation">
       <nav>
         <ul>
           <li>
@@ -47,13 +47,13 @@
       </div>
     </div>
 
-    <div class="sections">
+    <div data-bind="data-bind="css: { 'hide': isLoaded }"" class="sections">
 
-      <section id="intro">
+      <section id="intro" class="animate">
 
         <div class="text">
           <h1 class="title">MichaelKC</h1>
-          <h2 class="sub-title">Front end developer living in <span class="location">Newcastle upon Tyne</span></h2>
+          <h2 class="sub-title">Front end developer living in <a href="https://www.google.co.uk/maps/place/Newcastle+upon+Tyne,+Tyne+and+Wear,+UK/data=!4m2!3m1!1s0x487d857e0c6f64cd:0xbe252b072a76191?sa=X&ei=XxuZVaSFGKbd7Qb7nIOgAg&ved=0CIgBEPIBMA4" target="_blank" class="location">Newcastle upon Tyne</span></h2>
         </div>
 
       </section>
@@ -123,7 +123,6 @@
             <p>I'm a bit of a tech geek and I like keeping up to date about new hardware, software, patches & whatever!</p>
             <p>Apple and Google's websites are big inspirations to me and I try to learn from their techniques. There's always more to learn!</p>
             <p>The most played game I play at the moment is <a href="http://blog.dota2.com/" target="_blank">Dota 2</a>. A part from that I enjoy playing <a href="http://rocketleague.psyonix.com/" target="_blank">Rocket League</a> and <a href="http://www.thewitcher.com/" target="_blank">The Witcher 3</a>.</p>
-
           </div>
 
           <div class="my-desk">
@@ -165,6 +164,8 @@
       </section>
 
     </div>
+
+    <div class="loading" data-bind="css: { 'hide': !isLoaded }"></div>
 
   </body>
 </html>

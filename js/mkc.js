@@ -1,16 +1,23 @@
 /// <reference path="../typings/knockout/knockout.d.ts"/>
 function ready(fn) {
+    if (document.readyState == 'loading') {
+      //window.vm.isloaded(false);
+    }
     if (document.readyState !== 'loading') {
+      //window.vm.isloaded(false);
       fn();
     }
     else {
       document.addEventListener('DOMContentLoaded', fn);
+      //window.vm.isloaded(false);
     }
 }
 ready(function () {
 
     function ViewModel() {
         var self = this;
+
+        self.isLoaded = ko.observable(false);
 
         self.isNavClicked = ko.observable(false);
         self.openNav = function() {
@@ -52,14 +59,13 @@ ready(function () {
               title: "Robert Stoneman WIP",
               url: "http://michaelkc.com/rs/",
               imgUrl: "images/work-rs.jpg",
-              desc: "<p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p><p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p><p>The tough parts was getting the logic for shuffling, repeating and both.</p><p>Thanks to my friend Lars for the music.</p>"
+              desc: "<p>This was the start of a site I was putting together for my friend.</p><p>Unfortunately haven't finished it off just yet.</p>"
             }
         ]);
 
         self.isFocusActive = ko.observable(false);
         self.activeItem = ko.observable({});
 
-        // Clicking an item
         self.focusItem = function(data) {
             self.activeItem(data);
             self.isFocusActive(!self.isFocusActive())
@@ -80,7 +86,29 @@ ready(function () {
         }, this);
     };
 
-    // Activates knockout.js
-    ko.applyBindings(new ViewModel());
+    // Scroll
+    var scrollingY = pageYOffset;
+    var sections = document.getElementsByTagName("section");
+
+    window.onscroll = function() {
+        scrollingY = pageYOffset;
+
+        isSectionVisible(sections);
+    }
+
+    function isSectionVisible(el) {
+      for (var i = 0; i < el.length; i++){
+        var elementTop = el[i].offsetTop;
+        var elementHeight = el[i].offsetHeight;
+        var total = elementTop - elementHeight;
+
+        if (scrollingY > total + 10) {
+          el[i].className = "animate";
+        }
+      }
+    }
+
+    window.vm = new ViewModel();
+    ko.applyBindings(vm);
 
 });
