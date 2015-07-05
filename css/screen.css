@@ -106,8 +106,8 @@ body {
       position: fixed;
       top: 0;
       left: 0;
-      height: 60px;
-      width: 60px;
+      height: 70px;
+      width: 70px;
       z-index: 10000;
       -webkit-tap-highlight-color: transparent;
       -webkit-transition: all 300ms ease;
@@ -119,10 +119,9 @@ body {
       -ms-user-select: none;
       user-select: none; }
       body .navigation .hamburger .line {
-        top: 40px;
+        top: 50%;
         left: 15px;
         right: 15px;
-        width: 30px;
         -webkit-transform: translate(0, -50%);
         -moz-transform: translate(0, -50%);
         -ms-transform: translate(0, -50%);
@@ -174,7 +173,11 @@ body {
       -webkit-transition: all 300ms ease;
       -moz-transition: all 300ms ease;
       -ms-transition: all 300ms ease;
-      transition: all 300ms ease; }
+      transition: all 300ms ease;
+      -webkit-transform-origin: 100% 50% 0;
+      -moz-transform-origin: 100% 50% 0;
+      -ms-transform-origin: 100% 50% 0;
+      transform-origin: 100% 50% 0; }
       body .sections section .container {
         margin: 0 auto;
         min-width: 960px;
@@ -237,7 +240,6 @@ body {
           transform: translate3d(0, -50%, 100px); }
           body .sections section#intro .text .title,
           body .sections section#intro .text .sub-title {
-            background-color: rgba(49, 52, 63, 0.5);
             font-weight: 100;
             -webkit-backface-visibility: hidden;
             -moz-backface-visibility: hidden;
@@ -247,6 +249,8 @@ body {
             -ms-transform-origin: 50% 0 0;
             transform-origin: 50% 0 0; }
           body .sections section#intro .text .title {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
             color: #fff;
             display: inline-block;
             font-size: 78px;
@@ -259,8 +263,7 @@ body {
             color: #fff;
             font-size: 34px;
             font-weight: 300;
-            margin-top: 10px;
-            padding: 10px 15px;
+            margin-top: 20px;
             -webkit-animation: text-fold-in 700ms ease 700ms 1 both;
             -moz-animation: text-fold-in 700ms ease 700ms 1 both;
             -ms-animation: text-fold-in 700ms ease 700ms 1 both;
@@ -371,7 +374,8 @@ body {
                 display: inline-block;
                 padding-bottom: 70px;
                 position: relative;
-                vertical-align: top; }
+                vertical-align: top;
+                width: 60%; }
                 body .sections section#work .container .tiles .focus article h1 {
                   font-size: 40px;
                   font-weight: 300; }
@@ -586,13 +590,11 @@ body {
             -moz-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
-  body.nav-active .navigation .hamburger {
-    width: 300px; }
   body.nav-active .navigation nav {
-    -webkit-transform: translate3d(40px, 0, 0);
-    -moz-transform: translate3d(40px, 0, 0);
-    -ms-transform: translate3d(40px, 0, 0);
-    transform: translate3d(40px, 0, 0); }
+    -webkit-transform: translateX(40px);
+    -moz-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px); }
   body.nav-active .sections section {
     -webkit-transform: translateX(300px) translateZ(-100px) rotateY(-10deg);
     -moz-transform: translateX(300px) translateZ(-100px) rotateY(-10deg);
@@ -632,10 +634,14 @@ body {
       bottom: 12%; }
       body .sections section#intro .text .title {
         font-size: 68px; }
-    body .sections section#work .container .tiles .focus figure {
-      width: calc(50% - 40px); }
-    body .sections section#work .container .tiles .focus article {
-      width: 50%; }
+    body .sections section#work .container {
+      padding-top: 20px; }
+      body .sections section#work .container .tiles {
+        margin-top: 20px; }
+        body .sections section#work .container .tiles .focus figure {
+          width: calc(50% - 40px); }
+        body .sections section#work .container .tiles .focus article {
+          width: 50%; }
     body .sections section#about-me .container {
       padding-top: 30px; }
       body .sections section#about-me .container .title {
@@ -665,7 +671,7 @@ body {
         font-size: 60px; }
     body .sections section#intro .text {
       right: 5%;
-      bottom: 20%; }
+      bottom: 19%; }
       body .sections section#intro .text .title {
         font-size: 68px; }
       body .sections section#intro .text .sub-title {
@@ -677,8 +683,10 @@ body {
       right: 10px;
       padding-left: 30px;
       padding-bottom: 90px; }
-      body .sections section#work .container .tiles .focus article h1 {
-        font-size: 32px; }
+      body .sections section#work .container .tiles .focus article {
+        width: auto; }
+        body .sections section#work .container .tiles .focus article h1 {
+          font-size: 32px; }
       body .sections section#work .container .tiles .focus figure {
         display: block;
         margin: 0 auto 20px;

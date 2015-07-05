@@ -67,24 +67,14 @@
             <div class="tiles" data-bind="css { 'focus-active' : isFocusActive }">
 
               <div class="focus">
-                <nav>
-                  <a class="button back" data-bind="click: focusItem">
-                    <i class="fa fa-arrow-left"></i>
-                    Back
-                  </a>
-                  <a href="https://github.com/michaelkclements/MKC-Music" class="button github">
-                    <i class="fa fa-github"></i>
-                    View on GitHub
-                  </a>
-                </nav>
 
                 <figure>
-                  <a data-bind="attr: { href: focusItem.url }"><img data-bind="attr: { src: focusItem.imgUrl }"/></a>
+                  <a data-bind="attr: { href: activeItem().url }"><img data-bind="attr: { src: activeItem().imgUrl }"/></a>
                 </figure>
 
                 <article>
-                  <h1 data-bind="text: focusItem.title"></h1>
-                  <div data-bind="html: focusItem.desc"></div>
+                  <h1 data-bind="text: activeItem().title"></h1>
+                  <div data-bind="html: activeItem().desc"></div>
 
                   <div class="badges">
                     <div class="badge html" data-title="HTML5 Semantics">
@@ -100,14 +90,22 @@
 
                 </article>
 
+                <nav>
+                  <a class="button back" data-bind="click: focusItem">
+                    <i class="fa fa-arrow-left"></i>
+                    Back
+                  </a>
+                  <a href="https://github.com/michaelkclements/MKC-Music" class="button github">
+                    <i class="fa fa-github"></i>
+                    View on GitHub
+                  </a>
+                </nav>
+
               </div>
 
-              <div class="tile" data-bind="click: focusItem.bind($data, 'music')"><img src="images/work-music.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem.bind($data, 'oldmkc')"><img src="images/work-oldmkc.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem.bind($data, 'litfusefilms')"><img src="images/work-litfusefilms.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem.bind($data, 'football')"><img src="images/work-football.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem.bind($data, 'wonderflix')"><img src="images/work-wonderflix.jpg"/></div>
-              <div class="tile" data-bind="click: focusItem.bind($data, 'rs')"><img src="images/work-rs.jpg"/></div>
+              <div data-bind="foreach: workItems">
+                <div data-bind="click: $parent.focusItem($data)" class="tile"><img data-bind="attr: { src: imgUrl }"/></div>
+              </div>
 
             </div>
 
@@ -121,7 +119,7 @@
           <h1 class="title">About me</h1>
 
           <div class="text">
-            <p>My name is Michael K. Clements and I'm a <span data-bind="text: age"></span> year old front end developer / gamer / film enthusiast.</p>
+            <p>My name is Michael K. Clements and I'm a <span data-bind="text: myAge"></span> year old front end developer / gamer / film enthusiast.</p>
             <p>I'm a bit of a tech geek and I like keeping up to date about new hardware, software, patches & whatever!</p>
             <p>Apple and Google's websites are big inspirations to me and I try to learn from their techniques. There's always more to learn!</p>
             <p>The most played game I play at the moment is <a href="http://blog.dota2.com/" target="_blank">Dota 2</a>. A part from that I enjoy playing <a href="http://rocketleague.psyonix.com/" target="_blank">Rocket League</a> and <a href="http://www.thewitcher.com/" target="_blank">The Witcher 3</a>.</p>
