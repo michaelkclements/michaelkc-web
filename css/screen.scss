@@ -505,6 +505,15 @@ body {
 							display: block;
 							width: 100%;
 						}
+
+						img {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: auto;
+							z-index: -1;
+						}
 					}
 				} // .my-desk
 			} // section#about-me
@@ -852,11 +861,13 @@ body {
 
 			section {
 
+				$title-size: 60px;
+
 				.container {
 					min-width: 768px;
 
 					.title {
-						font-size: 60px;
+						font-size: $title-size;
 					}
 				}
 
@@ -885,6 +896,7 @@ body {
 						}
 
 						.tiles {
+							margin-top: 10px;
 
 							.focus {
 								left: 10px;
@@ -923,9 +935,8 @@ body {
 					.container {
 
 						.title {
-							font-size: auto;
+							font-size: $title-size;
 							text-align: center;
-							z-index: 1;
 
 							&::before,
 							&::after {
@@ -955,7 +966,12 @@ body {
 						}
 
 						.video {
-							display: none;
+							bottom: 328px;
+							left: 17%;
+							right: 17%;
+							height: 285px;
+							width: auto;
+							@include translate(0,0);
 						}
 					}
 				}
@@ -975,11 +991,13 @@ body {
 
 			section {
 
+				$title-size: 40px;
+
 				.container {
 					min-width: 320px;
 
 					.title {
-						font-size: 34px;
+						font-size: $title-size;
 					}
 				}
 
@@ -988,7 +1006,8 @@ body {
 					.text {
 						left: 5%;
 						right:5%;
-						bottom:7%;
+						bottom:12%;
+						text-align: center;
 
 						.title,
 						.sub-title {
@@ -1033,15 +1052,26 @@ body {
 
 					.container {
 
+						.title {
+							font-size: $title-size;
+						}
+
 						.text {
-								font-size: 16px;
+							font-size: 16px;
 						}
 					}
 
 					.my-desk {
-						height: 340px;
+						height: 360px;
 						min-width: 320px;
 						max-width: 414px;
+
+						.video {
+							bottom: 178px;
+							height: 156px;
+							left: 17%;
+							right: 17%;
+						}
 					}
 				}
 

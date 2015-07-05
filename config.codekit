@@ -166,6 +166,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/video-bg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 76116,
+		"inputAbbreviatedPath": "\/images\/video-bg.jpg",
+		"outputAbbreviatedPath": "\/images\/video-bg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/work-football.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

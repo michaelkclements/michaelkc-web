@@ -29,7 +29,8 @@ ready(function () {
               title: "MichaelKC Music",
               url: "http://michaelkc.com/music/",
               imgUrl: "images/work-music.jpg",
-              desc: "<p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p><p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p><p>The tough parts was getting the logic for shuffling, repeating and both.</p><p>Thanks for my friend Lars for the music.</p>"
+              desc: "<p>A little music project I wanted to try to put together using HTML 5, CSS 3 and Javascript.</p><p>It was amazingly simple getting the audio to play using the new HTML tags using Javascript.</p><p>The tough parts was getting the logic for shuffling, repeating and both.</p><p>Thanks for my friend Lars for the music.</p>",
+              github: ""
             },
             {
               title: "Old MichaelKC.com",

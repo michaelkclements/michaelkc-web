@@ -618,6 +618,13 @@ body {
             body .sections section#about-me .my-desk .video video {
               display: block;
               width: 100%; }
+            body .sections section#about-me .my-desk .video img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: auto;
+              z-index: -1; }
       body .sections section#contact {
         background-color: #272125;
         overflow: hidden; }
@@ -817,30 +824,31 @@ body {
         font-size: 24px; }
     body .sections section#work .container p {
       font-size: 18px; }
-    body .sections section#work .container .tiles .focus {
-      left: 10px;
-      right: 10px;
-      padding-left: 30px;
-      padding-bottom: 90px; }
-      body .sections section#work .container .tiles .focus article {
-        width: auto; }
-        body .sections section#work .container .tiles .focus article h1 {
-          font-size: 32px; }
-      body .sections section#work .container .tiles .focus figure {
-        display: block;
-        margin: 0 auto 20px;
-        left: 0;
-        top: 0;
-        position: relative;
-        width: 80%; }
-    body .sections section#work .container .tiles .tile {
-      width: calc(50% - 20px); }
+    body .sections section#work .container .tiles {
+      margin-top: 10px; }
+      body .sections section#work .container .tiles .focus {
+        left: 10px;
+        right: 10px;
+        padding-left: 30px;
+        padding-bottom: 90px; }
+        body .sections section#work .container .tiles .focus article {
+          width: auto; }
+          body .sections section#work .container .tiles .focus article h1 {
+            font-size: 32px; }
+        body .sections section#work .container .tiles .focus figure {
+          display: block;
+          margin: 0 auto 20px;
+          left: 0;
+          top: 0;
+          position: relative;
+          width: 80%; }
+      body .sections section#work .container .tiles .tile {
+        width: calc(50% - 20px); }
     body .sections section#about-me {
       height: 720px; }
       body .sections section#about-me .container .title {
-        font-size: auto;
-        text-align: center;
-        z-index: 1; }
+        font-size: 60px;
+        text-align: center; }
         body .sections section#about-me .container .title::before, body .sections section#about-me .container .title::after {
           content: ''; }
       body .sections section#about-me .container .text {
@@ -862,7 +870,15 @@ body {
           background-size: cover;
           background-repeat: no-repeat; }
         body .sections section#about-me .my-desk .video {
-          display: none; } }
+          bottom: 328px;
+          left: 17%;
+          right: 17%;
+          height: 285px;
+          width: auto;
+          -webkit-transform: translate(0, 0);
+          -moz-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+          transform: translate(0, 0); } }
   @media only screen and (max-width: 414px) {
     body.nav-active .sections section {
       -webkit-transform: translateX(200px) translateZ(-100px);
@@ -872,11 +888,12 @@ body {
     body .sections section .container {
       min-width: 320px; }
       body .sections section .container .title {
-        font-size: 34px; }
+        font-size: 40px; }
     body .sections section#intro .text {
       left: 5%;
       right: 5%;
-      bottom: 7%; }
+      bottom: 12%;
+      text-align: center; }
       body .sections section#intro .text .title,
       body .sections section#intro .text .sub-title {
         text-align: center; }
@@ -890,12 +907,19 @@ body {
       padding-bottom: 0; }
       body .sections section#work .container .tiles .focus article .badges {
         display: none; }
+    body .sections section#about-me .container .title {
+      font-size: 40px; }
     body .sections section#about-me .container .text {
       font-size: 16px; }
     body .sections section#about-me .my-desk {
-      height: 340px;
+      height: 360px;
       min-width: 320px;
       max-width: 414px; }
+      body .sections section#about-me .my-desk .video {
+        bottom: 178px;
+        height: 152px;
+        left: 17%;
+        right: 17%; }
     body .sections section#contact .buttons .button {
       margin: 10px;
       height: 110px; }
