@@ -32,6 +32,20 @@
 	}
 }
 
+@include keyframes(badge-juan) {
+	0% {
+		@include transform(translateY(100%));
+	}
+	100% {
+		@include transform(translateY(-800%));
+	}
+}
+
+$color-html: #f55;
+$color-css: #0499d7;
+$color-audio: #00c58b;
+$color-video: #fba600;
+
 body {
 	background-color: #252a33;
 	height:100vh;
@@ -345,27 +359,23 @@ body {
 										&:hover {
 
 											&.html {
-												$color: #f55;
-												border-color: $color;
-												color: $color;
+												border-color: $color-html;
+												color: $color-html;
 											}
 
 											&.css {
-												$color: #0499d7;
-												border-color: $color;
-												color: $color;
+												border-color: $color-css;
+												color: $color-css;
 											}
 
 											&.audio {
-												$color: #17b153;
-												border-color: $color;
-												color: $color;
+												border-color: $color-audio;
+												color: $color-audio;
 											}
 
 											&.video {
-												$color: #fba600;
-												border-color: $color;
-												color: $color;
+												border-color: $color-video;
+												color: $color-video;
 											}
 										}
 									} // .badges .badge
@@ -422,6 +432,79 @@ body {
 				}
 
 			} // section#work
+
+			// Experience section
+			&#experience {
+				background-color: #f5f5f5;
+				display: none;
+
+				.container {
+					overflow: hidden;
+					top: 0;
+					bottom: 0;
+					left: 50%;
+					position: absolute;
+					@include translateX(-50%);
+
+					.text {
+						font-size: 22px;
+						margin-top: 70px;
+						width: 57%;
+					}
+
+					.badges {
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						z-index: -1;
+
+						.badge {
+							border-radius: 50%;
+							color: #fff;
+							font-size: 80px;
+							width: 200px;
+							height: 200px;
+							position: absolute;
+							bottom: 0;
+							right: 0;
+
+							i {
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								@include translate(-50%,-50%);
+							}
+
+							&.html {
+								background-color: $color-html;
+								right: 300px;
+								@include animation(badge-juan 10s ease-in-out 0s infinite both);
+							}
+
+							&.css {
+								background-color: $color-css;
+								right: 200px;
+								@include animation(badge-juan 10s ease-in-out 1s infinite both);
+							}
+
+							&.audio {
+								background-color: $color-audio;
+								right: 100px;
+								@include animation(badge-juan 10s ease-in-out 0.6s infinite both);
+							}
+
+							&.video {
+								background-color: $color-video;
+								color: $color-video;
+								right: 0;
+								@include animation(badge-juan 10s ease-in-out 0.5s infinite both);
+							}
+						}
+					}
+				}
+
+			} // seciton#experience
 
 			// About me sections
 			&#about-me {
@@ -493,6 +576,7 @@ body {
 						}
 
 						img {
+							display: none;
 							position: absolute;
 							top: 0;
 							left: 0;
@@ -685,6 +769,23 @@ body {
 					}
 				}
 
+				&#experience {
+
+					.container {
+
+						.title {
+							font-size: 70px;
+							text-align: left;
+						}
+
+						.text {
+							font-size: 22px;
+							margin-top: 70px;
+							width: 57%;
+						}
+					}
+				}
+
 				&#about-me {
 
 					.container {
@@ -778,6 +879,16 @@ body {
 									width: 50%;
 								}
 							}
+						}
+					}
+				}
+
+				&#experience {
+
+					.container {
+
+						.text {
+							margin-top: 0;
 						}
 					}
 				}
@@ -894,6 +1005,23 @@ body {
 					}
 				}
 
+				&#experience {
+
+					.container {
+
+						.title {
+							font-size: $title-size;
+							text-align: center;
+						}
+
+						.text {
+							padding: 0 40px;
+							text-align: center;
+							width: auto;
+						}
+					}
+				}
+
 				&#about-me {
 					height: 720px;
 
@@ -932,6 +1060,10 @@ body {
 							height: 285px;
 							width: auto;
 							@include translate(0,0);
+
+							img {
+								display: block;
+							}
 						}
 					}
 				}
@@ -943,8 +1075,15 @@ body {
 	// Small screens
 	@media only screen and (max-width : 414px) {
 
-		&.nav-active .sections section {
-			@include transform(translateX(200px) translateZ(-100px));
+		&.nav-active {
+
+			.loading {
+				opacity: 0;
+			}
+
+			.sections section {
+				//@include transform(translateX(200px) translateZ(-100px));
+			}
 		}
 
 		.sections {
@@ -1011,6 +1150,10 @@ body {
 				&#about-me {
 
 					.container {
+						left: 0;
+						right:0;
+						width: 100%;
+						@include translateX(0);
 
 						.title {
 							font-size: $title-size;
@@ -1025,12 +1168,39 @@ body {
 						height: 360px;
 						min-width: 320px;
 						max-width: 414px;
+						left: 50%;
+						@include translateX(-50%);
 
 						.video {
-							bottom: 178px;
+							bottom: 174px;
 							height: 156px;
 							left: 17%;
 							right: 17%;
+						}
+					}
+				}
+
+				&#experience {
+
+					.container {
+						left: 0;
+						right:0;
+						width: 100%;
+						@include translateX(0);
+
+						.text {
+							font-size: 16px;
+
+							p {
+
+								&:first-child {
+									display: none;
+								}
+							}
+						}
+
+						.badges {
+							opacity: 0.1;
 						}
 					}
 				}

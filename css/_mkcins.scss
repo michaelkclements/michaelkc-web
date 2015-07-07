@@ -203,11 +203,11 @@
     transform: $string;
 }
 
-@mixin scale($factor) {
-    -webkit-transform: scale($factor);
-    -moz-transform: scale($factor);
-    -ms-transform: scale($factor);
-    transform: scale($factor);
+@mixin scale($args...) {
+    -webkit-transform: scale($args);
+    -moz-transform: scale($args);
+    -ms-transform: scale($args);
+    transform: scale($args);
 }
 
 @mixin skew($deg, $deg2) {
