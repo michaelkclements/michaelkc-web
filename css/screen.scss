@@ -909,6 +909,13 @@ body {
 
 					.my-desk {
 						@include translateX(-52%);
+
+						.video {
+
+							img {
+								display: block;
+							}
+						}
 					}
 				}
 
@@ -1060,10 +1067,6 @@ body {
 							height: 285px;
 							width: auto;
 							@include translate(0,0);
-
-							img {
-								display: block;
-							}
 						}
 					}
 				}

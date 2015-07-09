@@ -901,6 +901,8 @@ body {
       -moz-transform: translateX(-52%);
       -ms-transform: translateX(-52%);
       transform: translateX(-52%); }
+      body .sections section#about-me .my-desk .video img {
+        display: block; }
     body .sections section#contact .buttons .button {
       margin: 10px;
       height: 200px;
@@ -980,9 +982,7 @@ body {
           -webkit-transform: translate(0, 0);
           -moz-transform: translate(0, 0);
           -ms-transform: translate(0, 0);
-          transform: translate(0, 0); }
-          body .sections section#about-me .my-desk .video img {
-            display: block; } }
+          transform: translate(0, 0); } }
   @media only screen and (max-width: 414px) {
     body.nav-active .loading {
       opacity: 0; }
