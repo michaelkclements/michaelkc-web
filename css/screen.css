@@ -173,50 +173,6 @@ a {
     -moz-transform: rotateZ(360deg);
     -ms-transform: rotateZ(360deg);
     transform: rotateZ(360deg); } }
-@-webkit-keyframes badge-juan {
-  0% {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); }
-  100% {
-    -webkit-transform: translateY(-800%);
-    -moz-transform: translateY(-800%);
-    -ms-transform: translateY(-800%);
-    transform: translateY(-800%); } }
-@-moz-keyframes badge-juan {
-  0% {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); }
-  100% {
-    -webkit-transform: translateY(-800%);
-    -moz-transform: translateY(-800%);
-    -ms-transform: translateY(-800%);
-    transform: translateY(-800%); } }
-@-ms-keyframes badge-juan {
-  0% {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); }
-  100% {
-    -webkit-transform: translateY(-800%);
-    -moz-transform: translateY(-800%);
-    -ms-transform: translateY(-800%);
-    transform: translateY(-800%); } }
-@keyframes badge-juan {
-  0% {
-    -webkit-transform: translateY(100%);
-    -moz-transform: translateY(100%);
-    -ms-transform: translateY(100%);
-    transform: translateY(100%); }
-  100% {
-    -webkit-transform: translateY(-800%);
-    -moz-transform: translateY(-800%);
-    -ms-transform: translateY(-800%);
-    transform: translateY(-800%); } }
 body {
   background-color: #252a33;
   height: 100vh; }
@@ -574,8 +530,23 @@ body {
                       border-color: #51b3e1;
                       color: #51b3e1; }
       body .sections section#experience {
-        background-color: #f5f5f5;
-        display: none; }
+        background-image: -webkit-linear-gradient(top, #fff 0%, #e1e2e1 60%);
+        background-image: -moz-linear-gradient(top, #fff 0%, #e1e2e1 60%);
+        background-image: -ms-linear-gradient(top, #fff 0%, #e1e2e1 60%);
+        background-image: linear-gradient(to bottom, #fff 0%, #e1e2e1 60%);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE1E2E1', GradientType=0); }
+        body .sections section#experience:before {
+          background-image: url(../images/experience-bg.png);
+          content: '';
+          position: absolute;
+          top: 60%;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat; }
         body .sections section#experience .container {
           overflow: hidden;
           top: 0;
@@ -589,59 +560,7 @@ body {
           body .sections section#experience .container .text {
             font-size: 22px;
             margin-top: 70px;
-            width: 57%; }
-          body .sections section#experience .container .badges {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1; }
-            body .sections section#experience .container .badges .badge {
-              border-radius: 50%;
-              color: #fff;
-              font-size: 80px;
-              width: 200px;
-              height: 200px;
-              position: absolute;
-              bottom: 0;
-              right: 0; }
-              body .sections section#experience .container .badges .badge i {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%); }
-              body .sections section#experience .container .badges .badge.html {
-                background-color: #f55;
-                right: 300px;
-                -webkit-animation: badge-juan 10s ease-in-out 0s infinite both;
-                -moz-animation: badge-juan 10s ease-in-out 0s infinite both;
-                -ms-animation: badge-juan 10s ease-in-out 0s infinite both;
-                animation: badge-juan 10s ease-in-out 0s infinite both; }
-              body .sections section#experience .container .badges .badge.css {
-                background-color: #0499d7;
-                right: 200px;
-                -webkit-animation: badge-juan 10s ease-in-out 1s infinite both;
-                -moz-animation: badge-juan 10s ease-in-out 1s infinite both;
-                -ms-animation: badge-juan 10s ease-in-out 1s infinite both;
-                animation: badge-juan 10s ease-in-out 1s infinite both; }
-              body .sections section#experience .container .badges .badge.audio {
-                background-color: #00c58b;
-                right: 100px;
-                -webkit-animation: badge-juan 10s ease-in-out 0.6s infinite both;
-                -moz-animation: badge-juan 10s ease-in-out 0.6s infinite both;
-                -ms-animation: badge-juan 10s ease-in-out 0.6s infinite both;
-                animation: badge-juan 10s ease-in-out 0.6s infinite both; }
-              body .sections section#experience .container .badges .badge.video {
-                background-color: #fba600;
-                color: #fba600;
-                right: 0;
-                -webkit-animation: badge-juan 10s ease-in-out 0.5s infinite both;
-                -moz-animation: badge-juan 10s ease-in-out 0.5s infinite both;
-                -ms-animation: badge-juan 10s ease-in-out 0.5s infinite both;
-                animation: badge-juan 10s ease-in-out 0.5s infinite both; }
+            text-align: center; }
       body .sections section#about-me {
         background-color: #f5e9d5;
         overflow: hidden;
@@ -850,13 +769,6 @@ body {
         font-size: 78px; }
       body .sections section#intro .text .sub-title {
         font-size: 28px; }
-    body .sections section#experience .container .title {
-      font-size: 70px;
-      text-align: left; }
-    body .sections section#experience .container .text {
-      font-size: 22px;
-      margin-top: 70px;
-      width: 57%; }
     body .sections section#about-me .container .title {
       font-size: 70px;
       text-align: right; }
@@ -889,7 +801,7 @@ body {
         body .sections section#work .container .tiles .focus article {
           width: 50%; }
     body .sections section#experience .container .text {
-      margin-top: 0; }
+      margin-top: 30px; }
     body .sections section#about-me .container {
       padding-top: 30px; }
       body .sections section#about-me .container .text {

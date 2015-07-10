@@ -32,15 +32,6 @@
 	}
 }
 
-@include keyframes(badge-juan) {
-	0% {
-		@include transform(translateY(100%));
-	}
-	100% {
-		@include transform(translateY(-800%));
-	}
-}
-
 $color-html: #f55;
 $color-css: #0499d7;
 $color-audio: #00c58b;
@@ -435,8 +426,18 @@ body {
 
 			// Experience section
 			&#experience {
-				background-color: #f5f5f5;
-				display: none;
+				@include gradient-vertical(#fff,#e1e2e1, 0%, 60%);
+
+				&:before {
+					background-image: url(../images/experience-bg.png);
+					content: '';
+					position: absolute;
+					top: 60%;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					@include background-size;
+				}
 
 				.container {
 					overflow: hidden;
@@ -449,58 +450,7 @@ body {
 					.text {
 						font-size: 22px;
 						margin-top: 70px;
-						width: 57%;
-					}
-
-					.badges {
-						position: absolute;
-						top: 0;
-						right: 0;
-						bottom: 0;
-						z-index: -1;
-
-						.badge {
-							border-radius: 50%;
-							color: #fff;
-							font-size: 80px;
-							width: 200px;
-							height: 200px;
-							position: absolute;
-							bottom: 0;
-							right: 0;
-
-							i {
-								position: absolute;
-								left: 50%;
-								top: 50%;
-								@include translate(-50%,-50%);
-							}
-
-							&.html {
-								background-color: $color-html;
-								right: 300px;
-								@include animation(badge-juan 10s ease-in-out 0s infinite both);
-							}
-
-							&.css {
-								background-color: $color-css;
-								right: 200px;
-								@include animation(badge-juan 10s ease-in-out 1s infinite both);
-							}
-
-							&.audio {
-								background-color: $color-audio;
-								right: 100px;
-								@include animation(badge-juan 10s ease-in-out 0.6s infinite both);
-							}
-
-							&.video {
-								background-color: $color-video;
-								color: $color-video;
-								right: 0;
-								@include animation(badge-juan 10s ease-in-out 0.5s infinite both);
-							}
-						}
+						text-align: center;
 					}
 				}
 
@@ -771,19 +721,6 @@ body {
 
 				&#experience {
 
-					.container {
-
-						.title {
-							font-size: 70px;
-							text-align: left;
-						}
-
-						.text {
-							font-size: 22px;
-							margin-top: 70px;
-							width: 57%;
-						}
-					}
 				}
 
 				&#about-me {
@@ -888,7 +825,7 @@ body {
 					.container {
 
 						.text {
-							margin-top: 0;
+							margin-top: 30px;
 						}
 					}
 				}

@@ -86,6 +86,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/experience-bg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 871023,
+		"inputAbbreviatedPath": "\/images\/experience-bg.png",
+		"outputAbbreviatedPath": "\/images\/experience-bg.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/favicon.png": {
 		"fileType": 32768,
 		"ignore": 0,
