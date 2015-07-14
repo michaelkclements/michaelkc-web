@@ -530,12 +530,7 @@ body {
                       border-color: #51b3e1;
                       color: #51b3e1; }
       body .sections section#experience {
-        background-image: -webkit-linear-gradient(top, #fff 0%, #e1e2e1 60%);
-        background-image: -moz-linear-gradient(top, #fff 0%, #e1e2e1 60%);
-        background-image: -ms-linear-gradient(top, #fff 0%, #e1e2e1 60%);
-        background-image: linear-gradient(to bottom, #fff 0%, #e1e2e1 60%);
-        background-repeat: repeat-x;
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE1E2E1', GradientType=0); }
+        background-color: #1776b3; }
         body .sections section#experience:before {
           background-image: url(../images/experience-bg.png);
           content: '';
@@ -557,10 +552,14 @@ body {
           -moz-transform: translateX(-50%);
           -ms-transform: translateX(-50%);
           transform: translateX(-50%); }
+          body .sections section#experience .container .title {
+            color: #fff; }
           body .sections section#experience .container .text {
             font-size: 22px;
             margin-top: 70px;
             text-align: center; }
+            body .sections section#experience .container .text p {
+              color: #fff; }
       body .sections section#about-me {
         background-color: #f5e9d5;
         overflow: hidden;
@@ -947,6 +946,7 @@ body {
         left: 17%;
         right: 17%; }
     body .sections section#experience .container {
+      padding-top: 30px;
       left: 0;
       right: 0;
       width: 100%;
@@ -954,6 +954,8 @@ body {
       -moz-transform: translateX(0);
       -ms-transform: translateX(0);
       transform: translateX(0); }
+      body .sections section#experience .container .title {
+        font-size: 40px; }
       body .sections section#experience .container .text {
         font-size: 16px; }
         body .sections section#experience .container .text p:first-child {

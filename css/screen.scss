@@ -426,7 +426,7 @@ body {
 
 			// Experience section
 			&#experience {
-				@include gradient-vertical(#fff,#e1e2e1, 0%, 60%);
+				background-color: #1776b3;
 
 				&:before {
 					background-image: url(../images/experience-bg.png);
@@ -447,10 +447,18 @@ body {
 					position: absolute;
 					@include translateX(-50%);
 
+					.title {
+						color: #fff;
+					}
+
 					.text {
 						font-size: 22px;
 						margin-top: 70px;
 						text-align: center;
+
+						p {
+							color: #fff;
+						}
 					}
 				}
 
@@ -1123,10 +1131,15 @@ body {
 				&#experience {
 
 					.container {
+						padding-top:30px;
 						left: 0;
 						right:0;
 						width: 100%;
 						@include translateX(0);
+
+						.title {
+							font-size: $title-size;
+						}
 
 						.text {
 							font-size: 16px;
