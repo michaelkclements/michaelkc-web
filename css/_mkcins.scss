@@ -309,6 +309,14 @@
     perspective: $value;
 }
 
+// Perspective origin
+@mixin perspective-origin($value) {
+    -webkit-perspective-origin: $value;
+    -moz-perspective-origin: $value;
+    -ms-perspective-origin: $value;
+    perspective-origin: $value;
+}
+
 // User select
 @mixin user-select($string) {
     -webkit-user-select: $string;
