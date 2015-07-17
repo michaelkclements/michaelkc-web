@@ -171,6 +171,13 @@
     background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
 }
 
+@mixin gradient-linear($angle, $colour-args...) {
+    background: -webkit-linear-gradient($angle, $colour-args);
+    background: -moz-linear-gradient($angle, $colour-args);
+    background: -ms-linear-gradient($angle, $colour-args);
+    background: linear-gradient($angle, $colour-args);
+}
+
 // Keyframes
 @mixin keyframes($animationName) {
     @-webkit-keyframes #{$animationName} {
