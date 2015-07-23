@@ -31,6 +31,15 @@
     white-space:nowrap;
 }
 
+// Hyphenate broken words
+@mixin hyphen-wrap() {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
 // Most the time for user-select I choose none
 @mixin user-select-none() {
   -webkit-user-select: none;

@@ -426,7 +426,7 @@ body {
 
 			// Experience section
 			&#experience {
-				background-color: #1776b3;
+				@include gradient-vertical(lighten(#1776b3,30%),#1776b3, 0%, 50%);
 
 				&:before {
 					background-image: url(../images/experience-bg.png);
