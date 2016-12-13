@@ -69,12 +69,10 @@ export default class Footer extends Component {
     return (
       <footer>
         <div className='created'>
-          <p>Created with</p>
           <div className='icon-container'>
             <SVGIcon viewBox='0 0 32 28.8' icon='sketch'></SVGIcon>
             <SVGIcon viewBox='0 0 32 32' icon='sass'></SVGIcon>
             <SVGIcon viewBox='0 0 32 12.2' icon='babel'></SVGIcon>
-            <SVGIcon viewBox='0 0 14.61 32' icon='gulp'></SVGIcon>
             <SVGIcon viewBox='0 0 32 32' icon='react'></SVGIcon>
           </div>
         </div>
