@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="132px" height="10px" viewBox="0 0 132 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>cloud-2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-303.000000, -4666.000000)" fill="#FFFFFF">
+            <g id="section-5" transform="translate(0.000000, 4320.000000)">
+                <g id="Group" transform="translate(27.000000, 173.000000)">
+                    <g id="cloud-2" transform="translate(276.000000, 173.000000)">
+                        <path d="M66.16013,2.25215219 C67.8026526,0.987790089 81.8786354,0 99,0 C117.225397,0 132,1.11928813 132,2.5 C132,3.88071187 117.225397,5 99,5 C98.1360717,5 97.2798972,4.99748497 96.4326828,4.99254628 C97.4556574,5.3144091 98,5.65201524 98,6 C98,8.209139 76.0619527,10 49,10 C21.9380473,10 0,8.209139 0,6 C0,3.790861 21.9380473,2 49,2 C55.0372893,2 60.819563,2.08913076 66.16013,2.25215219 L66.16013,2.25215219 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
