@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.4"
+    "react-scripts": "latest"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "flux": "^3.1.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "classnames": "latest",
+    "flux": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,6 +18,6 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": ">=7.2.1"
+    "node": ">=7.4.0"
   }
 }
