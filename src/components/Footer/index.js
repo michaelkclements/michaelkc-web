@@ -71,8 +71,6 @@ export default class Footer extends Component {
         <div className='created'>
           <div className='icon-container'>
             <SVGIcon viewBox='0 0 32 28.8' icon='sketch'></SVGIcon>
-            <SVGIcon viewBox='0 0 32 32' icon='sass'></SVGIcon>
-            <SVGIcon viewBox='0 0 32 12.2' icon='babel'></SVGIcon>
             <SVGIcon viewBox='0 0 32 32' icon='react'></SVGIcon>
           </div>
         </div>
