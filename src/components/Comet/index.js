@@ -17,10 +17,11 @@ export default class Comet extends Component {
     this._onScroll = this._onScroll.bind(this)
     this._onChange = this._onChange.bind(this)
     this.state = CometStore.getAnimated()
-    this.setState({isExploded: ExplosionStore.getExploded().isExploded})
   }
 
   componentDidMount() {
+    this.setState({isExploded: ExplosionStore.getExploded().isExploded})
+    
     CometStore.addChangeListener(this._onChange)
 
     if (win) {
