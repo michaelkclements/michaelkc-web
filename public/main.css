@@ -437,7 +437,7 @@ footer {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-  border: 2px solid #fff;
+  /*background-color: #fff;*/
   color: #fff;
   display: inline-block;
   font-size: 148px;
@@ -447,7 +447,8 @@ footer {
           justify-content: center;
   line-height: 150px;
   padding: 0 20px 0 15px;
-  text-align: center; }
+  text-align: center;
+}
 
 @media only screen and (max-width: 736px) {
   .logo {
