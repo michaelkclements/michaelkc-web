@@ -437,7 +437,7 @@ footer {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
-  background-color: #fff;
+  /*background-color: #fff;*/
   color: #fff;
   display: inline-block;
   font-size: 148px;
