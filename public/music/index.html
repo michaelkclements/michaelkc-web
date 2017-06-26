@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Best web music player*   *probably not" />
+    <meta name="keywords" content="music" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>Tunes</title>
+
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch-icon-144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch-icon-114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch-icon-72.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/touch-icon-57.png" />
+
+    <link rel="stylesheet" type="text/css" href="css/music.css" media="all" />
+
+    <script src="js/music.js"></script>
+
+</head>
+<body>
+    <div id="embed-container">
+        <audio id="music-player"></audio>
+    </div>
+    <nav>
+        <div id="progress-container">
+            <input id="time-slider" type="range">
+            <div id="time-progress"></div>
+        </div>
+
+        <div id="player-album-art"></div>
+
+        <div id="player-info">
+            <div id="player-song-name"></div>
+            <div id="player-artist-name"></div>
+            <div id="player-song-time"></div>
+        </div>
+
+        <div id="media-buttons">
+            <div id="repeat-button" class="button"><i></i></div>
+            <div id="rewind-button" class="button disabled"><i></i></div>
+            <div id="play-button" class="button"><i></i></div>
+            <div id="forward-button" class="button disabled"><i></i></div>
+            <div id="shuffle-button" class="button"><i></i></div>
+        </div>
+
+        <div id="volume-buttons">
+            <div id="volume-button" class="button"><i></i></div>
+            <input id="volume-slider" type="range">
+        </div>
+    </nav>
+    <aside>
+    </aside>
+    <section>
+        <div id="albums">
+        </div>
+        <div id="to-do-list">
+            <p>To do:</p>
+            <ul>
+                <li>Make individual songs playable when clicked.</li>
+                <li>Remove volume functions for mobile.</li>
+                <li>Add meta data from mp3's (song length in minutes etc.)</li>
+                <li>Create mobile view</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
