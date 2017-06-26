@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Michael K. Clements - All professional and that.</title>
+<link href="css/michaelkc.css" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Lobster|Droid+Sans" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/michaelkc.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="camera">
+
+            <section id="slideOne" class="slides active">
+                <a href="/" class="logo"></a>
+                <nav>
+                    <a class="buttonSlides" onClick="buttonSlide(this)" data-slide="Two">Websites</a>
+                    <a class="buttonSlides" onClick="buttonSlide(this)" data-slide="Three">Drawings</a>
+                    <a class="buttonSlides" onClick="buttonSlide(this)" data-slide="Four">Video</a>
+                    <a class="buttonSlides" onClick="buttonSlide(this)" data-slide="Five">Showcases</a>
+                    <a class="buttonSlides" onClick="buttonSlide(this)" data-slide="Six">Contact me</a>
+                </nav>
+            </section>
+            
+            <section id="slideTwo" class="slides"></section>
+
+            <section id="slideTwoFocus" class="slides">
+                <div id="largeFocus">
+                    <a class="goBackFocus" onClick="goBackFocus()">Go back</a>
+                    <div class="details">
+                        <h1 id="screenshotName"></h1>
+                        <p id="screenshotStatus"></p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="slideThree" class="slides"></section>
+            <section id="slideFour" class="slides"></section>
+            <section id="slideFive" class="slides"></section>
+            <section id="slideSix" class="slides"></section>
+
+        </div>
+    </div>
+    
+    <div id="ieHate">
+        <h1>My site won't work with your browser</h1>
+        <p>My website uses CSS 3 transitions, transforms and animations, so please download a latest browser to view it.</p>
+        <p>Download the latest <a href="http://www.google.co.uk/chrome">Google Chrome</a> or <a href="http://www.mozilla.org/en-US/firefox/">Firefox</a> or <a href="http://www.apple.com/safari/download/">Safari</a> or view it on an iPad or iPhone (and probs Android tablets).</p>
+    </div>
+</body>
+</html>

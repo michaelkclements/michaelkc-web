@@ -1,0 +1,249 @@
+﻿html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+}
+
+html {
+	height:100%;
+}
+
+body {
+	background:url(/images/grain.png) repeat, -webkit-gradient(linear,left top,left bottom,color-stop(0, #DF602E),color-stop(1, #C34032));
+	background:url(/images/grain.png) repeat, -webkit-linear-gradient(top, #DF602E 0%, #C34032 100%);
+	background:url(/images/grain.png) repeat,    -moz-linear-gradient(top, #DF602E 0%, #C34032 100%);
+	background:url(/images/grain.png) repeat,     -ms-linear-gradient(top, #DF602E 0%, #C34032 100%);
+	background:url(/images/grain.png) repeat,      -o-linear-gradient(top, #DF602E 0%, #C34032 100%);
+	background:url(/images/grain.png) repeat,         linear-gradient(top, #DF602E 0%, #C34032 100%);
+	position:fixed;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	overflow:hidden;
+	font-family:'Lobster', cursive;
+	font-size:3em;
+	color:#fff;
+}
+
+#wrapper {
+    margin: 0px auto;
+    width: 960px;
+}
+
+.logo {
+	background:url(/images/logo.png) no-repeat;
+	background-size:100% 100%;
+	width:300px;
+	height:150px;
+	display:block;
+	margin:50px auto;
+}
+
+a {
+	color:#00aeff;
+	text-decoration:none;
+}
+
+h1 {
+	font-size:1em;
+}
+
+p {
+	font-family:'segoe ui', 'Helvetica Neue',Helvetica;
+	font-size:0.4em;
+	line-height:1.4em;
+	text-align:justify;
+	margin:20px 0;
+}
+
+.clear {
+	clear:both;
+}
+
+.white {
+	padding:60px;
+	border-radius:20px;
+    background: #fff;
+    height: 100px;
+    position: relative;
+}
+
+#ringWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-style: preserve-3d;
+	perspective: 600px;
+	-webkit-transform-style: preserve-3d;
+	-webkit-perspective: 600px;
+	-moz-transform-style: preserve-3d;
+	-moz-perspective: 600px;
+	-ms-transform-style: preserve-3d;
+	-ms-perspective: 600px;
+}
+
+#ringWrapper .ring {
+    border-radius: 1000px;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    border: 10px solid #00aeff;
+    position: absolute;
+    animation: spinningY 3s linear 0s infinite;
+    -webkit-animation: spinningY 3s linear 0s infinite;
+    -moz-animation: spinningY 3s linear 0s infinite;
+    -ms-animation: spinningY 3s linear 0s infinite;
+    -o-animation: spinningY 3s linear 0s infinite;
+}
+
+#ringWrapper #ringOne {
+    width: 170px;
+    height: 170px;
+    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    -o-animation-delay: 1s;
+}
+#ringWrapper #ringTwo {
+    width: 140px;
+    height: 140px;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    -ms-animation-delay: 0.8s;
+    -o-animation-delay: 0.8s;
+}
+#ringWrapper #ringThree {
+    width: 110px;
+    height: 110px;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    -ms-animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+}
+#ringWrapper #ringFour {
+    width: 80px;
+    height: 80px;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    -ms-animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+}
+#ringWrapper #ringFive {
+    width: 50px;
+    height: 50px;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    -ms-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+}
+#ringWrapper #ringSix {
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -ms-animation-delay: 0s;
+    -o-animation-delay: 0s;
+}
+
+@keyframes spinningY {
+    0% {
+        transform: translate(-50%,-50%) rotateY(0deg);
+        border: 10px solid #00aeff;
+    }
+    40% {
+        transform: translate(-50%,-50%) rotateY(180deg);
+        border: 10px solid #336b90;
+    }
+    80% {
+        transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+    100% {
+        transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+}
+@-webkit-keyframes spinningY {
+    0% {
+        -webkit-transform: translate(-50%,-50%) rotateY(0deg);
+        border: 10px solid #00aeff;
+    }
+    40% {
+        -webkit-transform: translate(-50%,-50%) rotateY(180deg);
+        border: 10px solid #336b90;
+    }
+    80% {
+        -webkit-transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+    100% {
+        -webkit-transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+}
+@-moz-keyframes spinningY {
+    0% {
+        -moz-transform: translate(-50%,-50%) rotateY(0deg);
+        border: 10px solid #00aeff;
+    }
+    40% {
+        -moz-transform: translate(-50%,-50%) rotateY(180deg);
+        border: 10px solid #336b90;
+    }
+    80% {
+        -moz-transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+    100% {
+        -moz-transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+}
+@-ms-keyframes spinningY {
+    0% {
+        -ms-transform: translate(-50%,-50%) rotateY(0deg);
+        border: 10px solid #00aeff;
+    }
+    40% {
+        -ms-transform: translate(-50%,-50%) rotateY(180deg);
+        border: 10px solid #336b90;
+    }
+    80% {
+        -ms-transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+    100% {
+        -ms-transform: translate(-50%,-50%) rotateY(360deg);
+        border: 10px solid #00aeff;
+    }
+}
+#ieHate {
+	display:none;
+}
+
+/* IE hate */
+.no-cssanimations body {
+	background:#C34032 url(/images/grain.png) repeat;
+}
+.no-cssanimations #wrapper {
+	display:none;
+}
+.no-cssanimations #ieHate {
+	display:block;
+	width:600px;
+	height:240px;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin:-120px 0 0 -300px;
+}
