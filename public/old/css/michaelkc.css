@@ -42,8 +42,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -228,7 +228,6 @@ p a {
 #wrapper #slideOne nav {
 	margin:50px 0 0;
 	font-size:0.7em;
-	font-family:'Lobster', cursive;
 	text-align:center;
 }
 #wrapper #slideOne nav a {
@@ -288,7 +287,7 @@ p a {
 	border-radius:3px;
 }
 #wrapper #slideTwo .websites.screenshotSlideOne {
-	
+
 }
 #wrapper #slideTwo .websites.screenshotSlideTwo {
 	position:absolute;
