@@ -1,7 +1,16 @@
 import Comet from './Comet'
 import Footer from './Footer'
-import Image from './Image'
 import ImageView from './ImageView'
 import { SVGIcon, ContactIcon } from './Icon'
+import Section from './Section'
+import Logo from './Logo'
 
-export { Comet, Footer, Image, ImageView, SVGIcon, ContactIcon }
+export {
+  Logo,
+  Section,
+  ContactIcon,
+  SVGIcon,
+  ImageView,
+  Footer,
+  Comet
+}
