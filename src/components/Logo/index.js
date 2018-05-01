@@ -1,9 +1,11 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const Logo = styled.div`
   align-self: center;
   color: #fff;
   display: inline-block;
+  font-family: 'Raleway';
   font-size: 148px;
   font-weight: 900;
   justify-content: center;

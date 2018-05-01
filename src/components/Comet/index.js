@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-
-let win = typeof window !== 'undefined' ? window : false
+import styled from 'styled-components'
 
 const CometContainer = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.6));
@@ -66,11 +65,11 @@ export default class Comet extends Component {
   }
 
   componentDidMount() {
-    win.addEventListener('scroll', this._onScroll)
+    window.addEventListener('scroll', this._onScroll)
   }
 
   componentWillUnmount() {
-    win.removeEventListener('scroll', this._onScroll)
+    window.removeEventListener('scroll', this._onScroll)
   }
 
   render() {
@@ -88,10 +87,10 @@ export default class Comet extends Component {
   }
 
   _onScroll() {
-    const viewHeight = win.innerHeight
+    const viewHeight = window.innerHeight
     const middleSection = viewHeight / 2 - 100
 
-    if (win.scrollY > middleSection) {
+    if (window.scrollY > middleSection) {
       this.setState(prevState => ({isAnimated: true}))
     }
     else {

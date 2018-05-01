@@ -6,6 +6,8 @@ const Container = styled.div`
   background-color: ${props => props.backgroundColor ? props.backgroundColor : 'transparent'};
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  justify-content: center;
   opacity: ${props => props.isVisible ? 1 : 0};
   padding: ${props => props.isPadded ? '100px 0' : 0};
   transform: translateY(${props => props.isVisible ? '0px' : '50px'});

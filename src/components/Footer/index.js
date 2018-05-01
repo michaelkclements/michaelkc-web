@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { SVGIcon } from '../'
-
-let win = typeof window !== 'undefined' ? window : false
+import styled from 'styled-components'
 
 const Container = styled.footer`
   align-items: center;
@@ -47,8 +45,7 @@ export default () =>
   <Container>
     <Created>
       <IconContainer>
-        <SVGIcon viewBox='0 0 32 28.8' icon='sketch'></SVGIcon>
-        <SVGIcon viewBox='0 0 32 32' icon='react'></SVGIcon>
+
       </IconContainer>
     </Created>
   </Container>

@@ -2283,7 +2283,7 @@ death@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/death/-/death-1.1.0.tgz#01aa9c401edd92750514470b8266390c66c67318"
 
-debug@2.6.9, debug@^2.1.2, debug@^2.1.3, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
+debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -4639,18 +4639,6 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
-jsonp-p@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/jsonp-p/-/jsonp-p-2.0.0.tgz#98de9a1ed70bd16afb33198a701c8729301238a3"
-  dependencies:
-    jsonp "^0.2.0"
-
-jsonp@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/jsonp/-/jsonp-0.2.1.tgz#a65b4fa0f10bda719a05441ea7b94c55f3e15bae"
-  dependencies:
-    debug "^2.1.3"
-
 jspm-github@^0.14.11:
   version "0.14.13"
   resolved "https://registry.yarnpkg.com/jspm-github/-/jspm-github-0.14.13.tgz#326e5217d3639b21609293b01e7e18775dd3dcc7"
@@ -6672,14 +6660,6 @@ query-string@^4.1.0:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-query-string@^5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-5.1.1.tgz#a78c012b71c17e05f2e3fa2319dd330682efb3cb"
-  dependencies:
-    decode-uri-component "^0.2.0"
-    object-assign "^4.1.0"
-    strict-uri-encode "^1.0.0"
-
 querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
@@ -6809,13 +6789,6 @@ react-hot-loader@^3.0.0-beta.6:
     react-proxy "^3.0.0-alpha.0"
     redbox-react "^1.3.6"
     source-map "^0.6.1"
-
-react-instagram-embed@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/react-instagram-embed/-/react-instagram-embed-1.3.4.tgz#467fb5f4fced30f11ce3c6e9d246fecfc37b855d"
-  dependencies:
-    jsonp-p "^2.0.0"
-    query-string "^5.1.0"
 
 react-is@^16.3.1:
   version "16.3.2"
