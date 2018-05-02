@@ -11,7 +11,6 @@ const Container = styled.div`
   max-width: 940px;
   opacity: ${props => props.isVisible ? 1 : 0};
   padding: ${props => props.isPadded ? '100px 0' : 0};
-  transform: translateY(${props => props.isVisible ? '0px' : '50px'});
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
 `
