@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-direction: column;
   height: 100vh;
   justify-content: center;
+  max-width: 940px;
   opacity: ${props => props.isVisible ? 1 : 0};
   padding: ${props => props.isPadded ? '100px 0' : 0};
   transform: translateY(${props => props.isVisible ? '0px' : '50px'});
