@@ -9,7 +9,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Raleway\:700,800,900`
+          `Raleway\:500,700,800,900`
         ]
       }
     },

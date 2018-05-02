@@ -17,13 +17,13 @@ const Col = styled.div`
 `
 
 const Images = styled.div`
-  flex: 1;
+  width: 200%;
 `
 
 const Image = styled(Img)`
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
   float: left;
-  width: 33.33%;
+  width: calc(33.33% - 30px);
 `
 
 export default ({ data: { intro, work, contact, workImages } }) =>
@@ -193,7 +193,7 @@ export default ({ data: { intro, work, contact, workImages } }) =>
       workImages: allContentfulAsset(filter: {title: {regex: "/work-/"}}) {
         edges {
           node {
-            sizes(maxWidth: 500, maxHeight: 500) {
+            sizes(maxWidth: 500) {
               ...GatsbyContentfulSizes_withWebp
             }
           }
