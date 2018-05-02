@@ -2,18 +2,13 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.footer`
-  align-items: center;
-  bottom: 0;
-  content: '';
+  align-items: flex-end;
   display: flex;
-  height: 50vh;
-  left: 0;
+  height: 100%;
   justify-content: center;
-  overflow: hidden;
-  padding: 20px 0;
-  position: absolute;
+  padding: 100px;
+  position: relative;
   width: 100%;
-  z-index: -1;
 
   &:before {
     background-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
