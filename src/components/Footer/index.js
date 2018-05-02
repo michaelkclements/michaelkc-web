@@ -41,11 +41,11 @@ const IconContainer = styled.div`
   }
 `
 
-export default () =>
+export default ({children}) =>
   <Container>
     <Created>
       <IconContainer>
-
+        {children}
       </IconContainer>
     </Created>
   </Container>
