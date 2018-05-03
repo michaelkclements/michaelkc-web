@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+let win = typeof window !== 'undefined' ? window : false
+
 const Container = styled.div`
   align-items: center;
   background-color: ${props => props.backgroundColor ? props.backgroundColor : 'transparent'};
@@ -26,12 +28,12 @@ export default class Section extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this._onScroll)
+    win.addEventListener('scroll', this._onScroll)
     this._onScroll()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this._onScroll)
+    win.removeEventListener('scroll', this._onScroll)
   }
 
   render() {
@@ -54,7 +56,7 @@ export default class Section extends Component {
   }
 
   _onScroll() {
-    const centerHeight = window.innerHeight / 2
+    const centerHeight = win.innerHeight / 2
     const sectionTop = this.section.getBoundingClientRect().top
 
     if (sectionTop <= centerHeight) {
