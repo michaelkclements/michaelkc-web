@@ -21,7 +21,7 @@ const CometContainer = styled.div`
 const CometArrow = styled.div`
   background-color: ${props => props.isAnimated ? '#fff' : 'transparent'};
   border-radius: ${props => props.isAnimated ? '50%' : 0};
-  bottom: ${props => props.isAnimated ? '20px' : '3px'};
+  bottom: ${props => props.isAnimated ? '3px' : '20px'};
   left: 50%;
   height: 4px;
   position: absolute;
@@ -76,14 +76,16 @@ export default class Comet extends Component {
 
   render() {
 
-    const { isAnimated, isBlurred } = this.props
+    const { isBlurred } = this.props
 
     return (
       <CometContainer
-        isAnimated={isAnimated}
+        isAnimated={this.state.isAnimated}
         isBlurred={isBlurred}
       >
-        <CometArrow isAnimated={isAnimated} />
+        <CometArrow
+          isAnimated={this.state.isAnimated}
+        />
       </CometContainer>
     )
   }

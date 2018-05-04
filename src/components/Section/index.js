@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 let win = typeof window !== 'undefined' ? window : false
 
-const Container = styled.div`
+const Container = styled.section`
   align-items: center;
   background-color: ${props => props.backgroundColor ? props.backgroundColor : 'transparent'};
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
   justify-content: center;
   max-width: 940px;
@@ -15,6 +15,10 @@ const Container = styled.div`
   padding: ${props => props.isPadded ? '100px 0' : 0};
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
+
+  &:nth-of-type(odd) {
+    flex-direction: row-reverse;
+  }
 `
 
 export default class Section extends Component {

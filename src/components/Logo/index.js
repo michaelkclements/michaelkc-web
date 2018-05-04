@@ -51,9 +51,9 @@ export default class Logo extends Component {
 		const topPosition = (win.innerHeight / 2) - (win.scrollY / 1.5)
     const fontSize = 8.5 - (scrollPercent * 4)
 
-		scrollPercent <= 1
-			?	this.setState(prevState => ({topPosition: topPosition, fontSize: `${fontSize}rem`}))
-			: this.setState(prevState => ({topPosition: win.innerHeight / 2, fontSize: '4rem'}))
+		scrollPercent <= 1000
+		?	this.setState(prevState => ({topPosition: topPosition, fontSize: `${fontSize}rem`}))
+		: this.setState(prevState => ({topPosition: win.innerHeight / 2, fontSize: '4rem'}))
   }
 
 }
