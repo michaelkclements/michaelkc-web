@@ -7,17 +7,23 @@ const Container = styled.section`
   align-items: center;
   background-color: ${props => props.backgroundColor ? props.backgroundColor : 'transparent'};
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
   max-width: 940px;
   opacity: ${props => props.isVisible ? 1 : 0};
   padding: ${props => props.isPadded ? '100px 0' : 0};
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(${props => props.isVisible ? 0 : '100px'});
   width: 100%;
 
-  &:nth-of-type(odd) {
-    flex-direction: row-reverse;
+  @media (min-width: 737px) {
+    flex-direction: row;
+
+    &:nth-of-type(odd) {
+      flex-direction: row-reverse;
+    }
+
   }
 `
 
