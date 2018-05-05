@@ -66,7 +66,7 @@ export default class Section extends Component {
   }
 
   _onScroll() {
-    const centerHeight = win.innerHeight / 2
+    const centerHeight = win.innerHeight
     const sectionTop = this.section.getBoundingClientRect().top
 
     if (sectionTop <= centerHeight) {
