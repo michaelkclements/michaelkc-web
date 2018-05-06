@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Konva from 'konva'
+import { Stage, Layer, Circle } from 'react-konva'
 
 let win = typeof window !== 'undefined' ? window : false
+
+const Container = styled.div`
+  bottom: ${props => props.isAnimated ? 'calc(50% - 10px)' : '100px'};
+  height: 200px;
+  left: 50%;
+  position: ${props => props.isAnimated ? 'fixed' : 'absolute'};
+  transform: translateX(-50%);
+  width: 70px;
+`
 
 const CometContainer = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.6));
@@ -68,6 +79,9 @@ export default class Comet extends Component {
 
   componentDidMount() {
     win.addEventListener('scroll', this._onScroll)
+
+    console.log(this.canvas);
+    console.log(this.canvas.getStage());
   }
 
   componentWillUnmount() {
@@ -79,28 +93,30 @@ export default class Comet extends Component {
     const { isBlurred } = this.props
 
     return (
-      <CometContainer
-        isAnimated={this.state.isAnimated}
-        isBlurred={isBlurred}
-      >
-        <CometArrow
-          isAnimated={this.state.isAnimated}
-        />
-      </CometContainer>
+      <Container>
+        <Stage
+          height={200}
+          ref={i => {this.canvas = i}}
+          width={70}
+        >
+          <Layer>
+            <Circle
+              fill='#fff'
+              height={10}
+              onScroll={this._onScroll}
+              radius={50}
+              width={10}
+              x={20}
+              y={20}
+            />
+          </Layer>
+        </Stage>
+      </Container>
     )
   }
 
   _onScroll() {
-    const viewHeight = win.innerHeight
-    const middleSection = viewHeight / 2 - 100
-
-    if (win.scrollY > middleSection) {
-      this.setState(prevState => ({isAnimated: true}))
-    }
-    else {
-      this.setState(prevState => ({isAnimated: false}))
-    }
-
+    console.log(scrollY)
   }
 
 }

@@ -11,6 +11,7 @@ const Container = styled.div`
   position: fixed;
   text-align: center;
   transform: translate3d(-50%, -50%, 0);
+  user-select: none;
   z-index: 1;
 `
 
