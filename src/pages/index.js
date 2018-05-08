@@ -15,18 +15,21 @@ const Col = styled.div`
 `
 
 const Images = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  column-count: 3;
+  column-fill: auto;
+  column-gap: 0;
+  display: block;
+  min-height: 606px;
   perspective: 1000px;
+  width: 200%;
 `
 
 const WorkImage = styled(Image)`
+  break-inside: avoid;
   border-radius: 3px;
-  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin-bottom: 2rem;
+  padding: 10px;
+  transition: all 300ms ease;
+  opacity: 1;
 `
 
 const Icons = styled.div`
@@ -91,13 +94,22 @@ export default ({ data: { intro, work, contact, workImages } }) =>
       <Col>
         <Images>
           {
-            workImages.edges.map((item, i) =>
-              <WorkImage
-                key={i}
-                resolutions={item.node.image.resolutions}
-                video={item.node.video.file.url}
-              />
-            )
+            workImages.edges.map((item, i) => {
+
+              const video = item.node.video ? item.node.video.file.url : null
+              const resolutions = item.node.image.resolutions ? item.node.image.resolutions : null
+              const sizes = item.node.image.sizes ? item.node.image.sizes : null
+
+              return(
+                <WorkImage
+                  key={i}
+                  resolutions={resolutions}
+                  sizes={sizes}
+                  video={video}
+                  style={{transitionDelay: `${i * 100}ms`}}
+                />
+              )
+            })
           }
         </Images>
       </Col>
@@ -279,8 +291,8 @@ export default ({ data: { intro, work, contact, workImages } }) =>
             title
             url
             image {
-              resolutions(width: 398, height: 225, quality: 90) {
-                ...GatsbyContentfulResolutions_withWebp
+              sizes(maxWidth: 381, quality: 90) {
+                ...GatsbyContentfulSizes_withWebp
               }
             }
             video {

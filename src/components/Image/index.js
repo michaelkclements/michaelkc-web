@@ -3,15 +3,15 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const Container = styled.a`
+  border-radius: 3px;
   display: block;
-  overflow: hidden;
   position: relative;
-  width: 100%;
 `
 
 const Video = styled.video`
   display: block;
   height: 100%;
+  position: relative;
   width: 100%;
 `
 
@@ -27,12 +27,13 @@ export default class Image extends Component {
 
   render() {
 
-    const { className, sizes, resolutions, video } = this.props
+    const { className, sizes, style, resolutions, video } = this.props
 
     return (
       <Container
         className={className}
         onClick={this._open}
+        style={style}
       >
         {
           video
