@@ -1,55 +1,108 @@
 import React, { Component } from 'react'
-import classnames from 'classnames'
-import ImageStore from '../../stores/ImageStore'
-import CometStore from '../../stores/CometStore'
-import { closeImage, unblurComet } from '../../actions/Actions'
+import styled from 'styled-components'
+import Img from 'gatsby-image'
+
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  left: 0;
+  height: 100%;
+  opacity: ${props => props.isOpen ? 1 : 0};
+  padding-left: 300px;
+  padding-right: 50px;
+  pointer-events: ${props => props.isOpen ? 'all' : 'none'};
+  position: absolute;
+  top: 50%;
+  transform: ${props => props.isOpen ? 'translate3d(0, -50%, 0)' : 'translate3d(0, -50%, 200px)'};
+  transition: all 300ms ease;
+  width: 100%;
+`
+
+const ImageLink = styled.a`
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 250px;
+
+  img {
+    border-radius: 4px;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+`
+
+const Text = styled.div`
+
+`
+
+const Close = styled.div`
+  color: #fff;
+  cursor: pointer;
+  left: 50%;
+  padding: 20px;
+  position: absolute;
+  top: 80%;
+  transform: translate3d(-50%, -50%, 0);
+
+  &:before,
+  &:after {
+    background-color: #fff;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transform-origin: center;
+    width: 100%;
+  }
+
+  &:before {
+    transform: rotateZ(45deg);
+  }
+
+  &:after {
+    transform: rotateZ(-45deg);
+  }
+`
 
 export default class ImageView extends Component {
 
   constructor(props) {
     super(props)
     this._close = this._close.bind(this)
-    this._onChange = this._onChange.bind(this)
-    this.state = ImageStore.getVisibility()
+    this.state = {
+      isOpen: false
+    }
   }
 
   render() {
 
-    let imageViewClass = classnames({
-      'image-view': true,
-      'visible': this.state.isVisible
-    })
-
-    let src = './images/work-' + this.state.image + '.jpg'
+    const { sizes, text, title, resolutions, url } = this.props
 
     return (
-      <div onClick={this._close} className={imageViewClass}>
-        <a className='image' href={this.state.url} target="_blank">
-          <img src={src} role='presentation'/>
-        </a>
-        <div className='text'>
-          <h1><a href={this.state.url} target="_blank">{this.state.title}</a></h1>
-          <p>{this.state.text}</p>
-        </div>
-        <div className='close' onClick={this._close}></div>
-      </div>
+      <Container
+        onClick={this._close}
+      >
+        <ImageLink
+          href={url}
+          target='_blank'
+        >
+          <Img
+            sizes={sizes}
+            resolutions={resolutions}
+          />
+        </ImageLink>
+        <Text>
+          <a href={url} target='_blank'>{title}</a>
+          <p>{text}</p>
+        </Text>
+        <Close onClick={this._close} />
+      </Container>
     )
   }
 
-  _onChange() {
-    this.setState(ImageStore.getVisibility())
-  }
-
   _close() {
-    closeImage(ImageStore.getVisibility())
-    unblurComet(CometStore.getAnimated())
+    this.setState(prevState => ({isOpen: false}))
   }
 
-}
-
-ImageView.propTypes = {
-  image: React.PropTypes.object,
-  viewable: React.PropTypes.bool,
-  title: React.PropTypes.string,
-  text: React.PropTypes.string
 }

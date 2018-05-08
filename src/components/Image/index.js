@@ -1,46 +1,81 @@
 import React, { Component } from 'react'
-import ImageStore from '../../stores/ImageStore'
-import CometStore from '../../stores/CometStore'
-import { openImage, blurComet } from '../../actions/Actions'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
+
+const Container = styled.a`
+  display: block;
+  opacity: 0.5;
+  transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(0.96);
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+`
+
+const Video = styled.video`
+  display: block;
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 121, 121, 1);
+  }
+`
 
 export default class Image extends Component {
 
   constructor(props) {
     super(props)
     this._open = this._open.bind(this)
-    this.state = ImageStore.getVisibility()
+    this.state = {
+      isOpen: false
+    }
   }
 
   render() {
 
-    let src = './images/work-' + this.props.image + '.jpg'
-    let classnames = 'image ' + this.props.image
+    const { className, sizes, style, resolutions, to, video } = this.props
 
     return (
-      <a onClick={this._open} className={classnames}>
-        <img src={src} role='presentation'/>
-      </a>
+      <Container
+        className={className}
+        href={to}
+        innerRef={i => { this.container = i }}
+        onClick={this._open}
+        style={style}
+        target='_blank'
+      >
+        {
+          video
+          ? <Video
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={video} />
+            </Video>
+          : <Img
+              sizes={sizes}
+              resolutions={resolutions}
+              style={{display: 'block'}}
+            />
+        }
+      </Container>
     )
   }
 
-  _onChange() {
-    this.setState(ImageStore.getVisibility())
-  }
-
   _open() {
-    ImageStore.getVisibility().title = this.props.title
-    ImageStore.getVisibility().text = this.props.text
-    ImageStore.getVisibility().image = this.props.image
-    ImageStore.getVisibility().url = this.props.url
-    blurComet(CometStore.getAnimated())
-    openImage(ImageStore.getVisibility())
+    this.setState(prevState => ({isOpen: true}))
   }
 
-}
-
-Image.propTypes = {
-  image: React.PropTypes.string,
-  title: React.PropTypes.string,
-  text: React.PropTypes.string,
-  url: React.PropTypes.string
 }
