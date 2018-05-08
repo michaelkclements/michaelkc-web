@@ -20,8 +20,24 @@ const Container = styled.section`
   @media (min-width: 737px) {
     flex-direction: row;
 
+    > div:first-child {
+      padding-right: 2rem;
+    }
+
+    > div:last-child {
+      padding-left: 2rem;
+    }
+
     &:nth-of-type(odd) {
       flex-direction: row-reverse;
+
+      > div:first-child {
+        padding-left: 2rem;
+      }
+
+      > div:last-child {
+        padding-right: 2rem;
+      }
     }
 
   }

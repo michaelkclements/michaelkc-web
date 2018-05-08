@@ -10,7 +10,6 @@ const Col = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 0 2rem;
   position: relative;
 `
 
@@ -31,7 +30,7 @@ const Icons = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 
   > svg {
     margin-bottom: 2rem;
