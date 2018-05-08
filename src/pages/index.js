@@ -12,24 +12,24 @@ const Col = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 0 2rem;
+  position: relative;
+`
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 
 const Images = styled.div`
-  column-count: 3;
-  column-fill: auto;
-  column-gap: 0;
-  display: block;
-  min-height: 606px;
   perspective: 1000px;
-  width: 200%;
+  position: absolute;
+  width: 709px;
 `
 
 const WorkImage = styled(Image)`
-  break-inside: avoid;
   border-radius: 3px;
-  padding: 10px;
-  transition: all 300ms ease;
-  opacity: 1;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+  margin: 10px;
 `
 
 const Icons = styled.div`
@@ -80,7 +80,19 @@ const SocialIcon = styled.a`
   }
 `
 
-export default ({ data: { intro, work, contact, workImages } }) =>
+export default ({
+  data: {
+    intro,
+    work,
+    contact,
+    workWrstilers,
+    workMusic,
+    workIceCruelty,
+    workAxel,
+    workLanguage,
+    workBox
+  }
+}) =>
   <React.Fragment>
 
     <Section>
@@ -93,24 +105,18 @@ export default ({ data: { intro, work, contact, workImages } }) =>
       </Col>
       <Col>
         <Images>
-          {
-            workImages.edges.map((item, i) => {
-
-              const video = item.node.video ? item.node.video.file.url : null
-              const resolutions = item.node.image.resolutions ? item.node.image.resolutions : null
-              const sizes = item.node.image.sizes ? item.node.image.sizes : null
-
-              return(
-                <WorkImage
-                  key={i}
-                  resolutions={resolutions}
-                  sizes={sizes}
-                  video={video}
-                  style={{transitionDelay: `${i * 100}ms`}}
-                />
-              )
-            })
-          }
+          <Row>
+            <WorkImage resolutions={workIceCruelty.image.resolutions} />
+            <WorkImage video={workWrstilers.video.file.url} />
+          </Row>
+          <Row>
+            <WorkImage video={workMusic.video.file.url} />
+            <WorkImage resolutions={workAxel.image.resolutions} />
+          </Row>
+          <Row>
+            <WorkImage resolutions={workBox.image.resolutions} />
+            <WorkImage video={workLanguage.video.file.url} />
+          </Row>
         </Images>
       </Col>
 
@@ -285,7 +291,7 @@ export default ({ data: { intro, work, contact, workImages } }) =>
         }
       }
 
-      workImages: allContentfulWork(sort: {fields: [order] order: ASC}) {
+      workImages: allContentfulWork {
         edges {
           node {
             title
@@ -303,5 +309,66 @@ export default ({ data: { intro, work, contact, workImages } }) =>
           }
         }
       }
+
+      workWrstilers: contentfulWork(slug: { regex: "/wrstilers/" }) {
+        title
+        url
+        video {
+          file {
+            url
+          }
+        }
+      }
+
+      workIceCruelty: contentfulWork(slug: { regex: "/ice-cruelty/" }) {
+        title
+        url
+        image {
+          resolutions(height: 269, width: 190, quality: 90) {
+            ...GatsbyContentfulResolutions_withWebp
+          }
+        }
+      }
+
+      workMusic: contentfulWork(slug: { regex: "/music/" }) {
+        title
+        url
+        video {
+          file {
+            url
+          }
+        }
+      }
+
+      workAxel: contentfulWork(slug: { regex: "/axel/" }) {
+        title
+        url
+        image {
+          resolutions(height: 269, width: 190, quality: 90) {
+            ...GatsbyContentfulResolutions_withWebp
+          }
+        }
+      }
+
+      workLanguage: contentfulWork(slug: { regex: "/language/" }) {
+        title
+        url
+        video {
+          file {
+            url
+          }
+        }
+      }
+
+      workBox: contentfulWork(slug: { regex: "/box/" }) {
+        title
+        url
+        image {
+          resolutions(height: 269, width: 190, quality: 90) {
+            ...GatsbyContentfulResolutions_withWebp
+          }
+        }
+      }
+
     }
   `

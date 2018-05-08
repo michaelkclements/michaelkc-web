@@ -5,14 +5,31 @@ import styled from 'styled-components'
 const Container = styled.a`
   border-radius: 3px;
   display: block;
-  position: relative;
+  opacity: 0.5;
+  transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(0.96);
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1);
+  }
 `
 
 const Video = styled.video`
   display: block;
-  height: 100%;
+  height: auto;
   position: relative;
   width: 100%;
+
+  &::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 121, 121, 1);
+  }
 `
 
 export default class Image extends Component {
