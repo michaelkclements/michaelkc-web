@@ -4,18 +4,14 @@ import styled from 'styled-components'
 
 const Container = styled.a`
   display: block;
-  height: 269px;
   overflow: hidden;
   position: relative;
   width: 100%;
 `
 
 const Video = styled.video`
-  border-radius: 3px;
+  display: block;
   height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
   width: 100%;
 `
 

@@ -34,6 +34,11 @@ const Icons = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  > svg {
+    margin-bottom: 2rem;
+    width: 25%;
+  }
 `
 
 const SocialIcon = styled.a`
