@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { Trail, animated } from 'react-spring'
-import { Section, Footer, Logo } from '../components'
+import { Section, Footer, Logo, Image } from '../components'
 
 const Col = styled.div`
   color: #fff;
@@ -14,26 +14,19 @@ const Col = styled.div`
   padding: 0 2rem;
 `
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-`
-
 const Images = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   perspective: 1000px;
-  width: 200%;
-
-  .gatsby-image-outer-wrapper {
-    width: 33.33%;
-    height: 100%;
-  }
 `
 
-const Image = styled(Img)`
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+const WorkImage = styled(Image)`
+  border-radius: 3px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
 `
 
 const Icons = styled.div`
@@ -94,9 +87,10 @@ export default ({ data: { intro, work, contact, workImages } }) =>
         <Images>
           {
             workImages.edges.map((item, i) =>
-              <Image
+              <WorkImage
                 key={i}
-                sizes={item.node.sizes}
+                resolutions={item.node.image.resolutions}
+                video={item.node.video.file.url}
               />
             )
           }
@@ -274,11 +268,20 @@ export default ({ data: { intro, work, contact, workImages } }) =>
         }
       }
 
-      workImages: allContentfulAsset(filter: {title: {regex: "/work-/"}}) {
+      workImages: allContentfulWork(sort: {fields: [order] order: ASC}) {
         edges {
           node {
-            sizes(maxWidth: 500) {
-              ...GatsbyContentfulSizes_withWebp
+            title
+            url
+            image {
+              resolutions(width: 398, height: 225, quality: 90) {
+                ...GatsbyContentfulResolutions_withWebp
+              }
+            }
+            video {
+              file {
+                url
+              }
             }
           }
         }

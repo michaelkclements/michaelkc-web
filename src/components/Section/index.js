@@ -10,7 +10,7 @@ const Container = styled.section`
   flex-direction: column;
   height: 100vh;
   justify-content: center;
-  max-width: 940px;
+  max-width: 1100px;
   opacity: ${props => props.isVisible ? 1 : 0};
   padding: ${props => props.isPadded ? '100px 0' : 0};
   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
