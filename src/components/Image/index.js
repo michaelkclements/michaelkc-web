@@ -3,7 +3,6 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const Container = styled.a`
-  border-radius: 3px;
   display: block;
   opacity: 0.5;
   transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -44,13 +43,16 @@ export default class Image extends Component {
 
   render() {
 
-    const { className, sizes, style, resolutions, video } = this.props
+    const { className, sizes, style, resolutions, to, video } = this.props
 
     return (
       <Container
         className={className}
+        href={to}
+        innerRef={i => { this.container = i }}
         onClick={this._open}
         style={style}
+        target='_blank'
       >
         {
           video

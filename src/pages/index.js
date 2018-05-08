@@ -2,8 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { Trail, animated } from 'react-spring'
-import { Section, Footer, Logo, Image } from '../components'
+import { Comet, Section, Footer, Logo, Image } from '../components'
 
 const Col = styled.div`
   color: #fff;
@@ -15,21 +14,17 @@ const Col = styled.div`
   position: relative;
 `
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-`
-
 const Images = styled.div`
   perspective: 1000px;
-  position: absolute;
-  width: 709px;
 `
 
 const WorkImage = styled(Image)`
-  border-radius: 3px;
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
-  margin: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+
+  &:hover {
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.1);
+  }
 `
 
 const Icons = styled.div`
@@ -85,15 +80,12 @@ export default ({
     intro,
     work,
     contact,
-    workWrstilers,
-    workMusic,
-    workIceCruelty,
-    workAxel,
-    workLanguage,
-    workBox
+    workImages
   }
 }) =>
   <React.Fragment>
+
+    <Comet />
 
     <Section>
       <Logo />
@@ -105,18 +97,17 @@ export default ({
       </Col>
       <Col>
         <Images>
-          <Row>
-            <WorkImage resolutions={workIceCruelty.image.resolutions} />
-            <WorkImage video={workWrstilers.video.file.url} />
-          </Row>
-          <Row>
-            <WorkImage video={workMusic.video.file.url} />
-            <WorkImage resolutions={workAxel.image.resolutions} />
-          </Row>
-          <Row>
-            <WorkImage resolutions={workBox.image.resolutions} />
-            <WorkImage video={workLanguage.video.file.url} />
-          </Row>
+          {
+            workImages.edges.map((item, i) =>
+              <WorkImage
+                key={i}
+                to={item.node.url}
+                resolutions={item.node.image.resolutions}
+                sizes={item.node.image.sizes}
+                video={item.node.video ? item.node.video.file.url : null}
+              />
+            )
+          }
         </Images>
       </Col>
 
@@ -306,66 +297,6 @@ export default ({
                 url
               }
             }
-          }
-        }
-      }
-
-      workWrstilers: contentfulWork(slug: { regex: "/wrstilers/" }) {
-        title
-        url
-        video {
-          file {
-            url
-          }
-        }
-      }
-
-      workIceCruelty: contentfulWork(slug: { regex: "/ice-cruelty/" }) {
-        title
-        url
-        image {
-          resolutions(height: 269, width: 190, quality: 90) {
-            ...GatsbyContentfulResolutions_withWebp
-          }
-        }
-      }
-
-      workMusic: contentfulWork(slug: { regex: "/music/" }) {
-        title
-        url
-        video {
-          file {
-            url
-          }
-        }
-      }
-
-      workAxel: contentfulWork(slug: { regex: "/axel/" }) {
-        title
-        url
-        image {
-          resolutions(height: 269, width: 190, quality: 90) {
-            ...GatsbyContentfulResolutions_withWebp
-          }
-        }
-      }
-
-      workLanguage: contentfulWork(slug: { regex: "/language/" }) {
-        title
-        url
-        video {
-          file {
-            url
-          }
-        }
-      }
-
-      workBox: contentfulWork(slug: { regex: "/box/" }) {
-        title
-        url
-        image {
-          resolutions(height: 269, width: 190, quality: 90) {
-            ...GatsbyContentfulResolutions_withWebp
           }
         }
       }
