@@ -48,12 +48,12 @@ const SocialIcon = styled.a`
   border-radius: 50%;
   cursor: pointer;
   display: inline-flex;
-  height: 170px;
+  height: 220px;
   justify-content: center;
-  margin: 10px;
+  margin-bottom: 3rem;
   position: relative;
   transition: all 300ms ease;
-  width: 170px;
+  width: 220px;
 
   &:before {
     background-color: rgba(255, 255, 255, 0.1);
