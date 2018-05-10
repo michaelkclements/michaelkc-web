@@ -8,7 +8,6 @@ const CometContainer = styled.div`
   border-radius: 0 0 50px 50px;
   bottom: ${props => props.isAnimated ? 'calc(50% - 10px)' : '100px'};
   filter: blur(${props => props.isBlurred ? '10px' : 0});
-  height: ${props => props.isAnimated ? '30%' : '20%'};
   left: 50%;
   transform: translateX(-50%);
   transition: height 400ms ease, opacity 800ms ease 400ms, width 400ms ease, -webkit-filter 400ms ease;
@@ -54,6 +53,46 @@ const CometArrow = styled.div`
   }
 `
 
+const StyledCanvas = styled.canvas`
+  height: 100%;
+  width: 100%;
+`
+
+class Canvas extends Component {
+
+  componentDidMount() {
+    this._initCanvas()
+
+    win.addEventListener('scroll', this._getScrollDirection)
+  }
+
+  render() {
+    return(
+      <StyledCanvas
+        height='200'
+        innerRef={i => { this.canvas = i }}
+        width='70'
+      />
+    )
+  }
+
+  _initCanvas() {
+    const ctx = this.canvas.getContext('2d')
+    ctx.save()
+    ctx.beginPath()
+    ctx.arc(this.canvas.width / 2, this.canvas.height / 2 , 35, 0, 2 * Math.PI)
+    ctx.closePath()
+    ctx.fillStyle = 'rgba(255,255,255,0.6)'
+    ctx.fill()
+    ctx.restore()
+  }
+
+  _getScrollDirection() {
+    console.log(win.scrollY)
+  }
+
+}
+
 export default class Comet extends Component {
 
   constructor(props) {
@@ -79,14 +118,19 @@ export default class Comet extends Component {
     const { isBlurred } = this.props
 
     return (
-      <CometContainer
-        isAnimated={this.state.isAnimated}
-        isBlurred={isBlurred}
-      >
-        <CometArrow
+      <React.Fragment>
+        <CometContainer
           isAnimated={this.state.isAnimated}
-        />
-      </CometContainer>
+          isBlurred={isBlurred}
+        >
+          <CometArrow
+            isAnimated={this.state.isAnimated}
+          />
+
+          <Canvas />
+
+        </CometContainer>
+      </React.Fragment>
     )
   }
 
