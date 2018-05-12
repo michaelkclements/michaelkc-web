@@ -60,6 +60,13 @@ const StyledCanvas = styled.canvas`
 
 class Canvas extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      prevPos: win.innerHeight / 2
+    }
+  }
+
   componentDidMount() {
     this._initCanvas()
 
@@ -88,7 +95,11 @@ class Canvas extends Component {
   }
 
   _getScrollDirection() {
-    console.log(win.scrollY)
+
+    if (this.state.prevPos < scroll.scrollY) {
+
+    }
+    
   }
 
 }
