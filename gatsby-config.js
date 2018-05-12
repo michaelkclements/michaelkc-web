@@ -13,6 +13,18 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "michaelkc.com",
+        short_name: "michaelkc",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#a2466c",
+        display: "minimal-ui",
+        icon: "src/images/touch-icon-144.png",
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-react-next`,
     `gatsby-plugin-styled-components`,

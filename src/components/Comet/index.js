@@ -9,6 +9,7 @@ const CometContainer = styled.div`
   bottom: ${props => props.isAnimated ? 'calc(50% - 10px)' : '100px'};
   filter: blur(${props => props.isBlurred ? '10px' : 0});
   left: 50%;
+  min-height: 200px;
   transform: translateX(-50%);
   transition: height 400ms ease, opacity 800ms ease 400ms, width 400ms ease, -webkit-filter 400ms ease;
   transition: filter 400ms ease, height 400ms ease, opacity 800ms ease 400ms, width 400ms ease;
@@ -99,7 +100,7 @@ class Canvas extends Component {
     if (this.state.prevPos < scroll.scrollY) {
 
     }
-    
+
   }
 
 }
@@ -137,8 +138,6 @@ export default class Comet extends Component {
           <CometArrow
             isAnimated={this.state.isAnimated}
           />
-
-          <Canvas />
 
         </CometContainer>
       </React.Fragment>

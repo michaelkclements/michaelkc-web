@@ -22,11 +22,6 @@ export default class HTML extends Component {
             name='viewport'
             content='width=device-width, initial-scale=1.0'
           />
-          <link rel="shortcut icon" href={__PATH_PREFIX__ + '/favicon.png'} />
-          <link rel="apple-touch-icon-precomposed" href={__PATH_PREFIX__ + '/touch-icon-144.png'} sizes="144x144" />
-          <link rel="apple-touch-icon-precomposed" href={__PATH_PREFIX__ + '/touch-icon-114.png'} sizes="114x114" />
-          <link rel="apple-touch-icon-precomposed" href={__PATH_PREFIX__ + '/touch-icon-72.png'} sizes="72x72" />
-          <link rel="apple-touch-icon-precomposed" href={__PATH_PREFIX__ + '/touch-icon-57.png'} />
           {this.props.headComponents}
           {css}
         </head>
