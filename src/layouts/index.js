@@ -21,6 +21,8 @@ const TemplateWrapper = ({ children, data }) =>
         { name: 'description', content: 'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.' },
         { name: 'keywords', content: 'michaelkc, michaelkc portfolio, _michaelkc' },
         { property: 'og:image', content: OgImage },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
         { property: 'og:title', content: 'michaelkc.com' },
         { property: 'og:description', content: 'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.' },
         { property: 'og:url', content: 'https://michaelkc.com' },
