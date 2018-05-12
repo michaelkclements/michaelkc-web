@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Page } from '../components'
 
 import './index.css'
-import OgImage from '../images/og.jpg'
+import OgImage from '../static/og.jpg'
 
 const Container = styled.div`
   background-image: linear-gradient(-170deg,#FFD677 0%,#FF7979 10%,#ed4a59 40%,#FF50A2 60%,#c560ff 80%,#3090bd 100%);
