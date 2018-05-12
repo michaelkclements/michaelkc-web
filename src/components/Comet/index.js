@@ -99,7 +99,7 @@ class Canvas extends Component {
     if (this.state.prevPos < scroll.scrollY) {
 
     }
-    
+
   }
 
 }
@@ -137,8 +137,6 @@ export default class Comet extends Component {
           <CometArrow
             isAnimated={this.state.isAnimated}
           />
-
-          <Canvas />
 
         </CometContainer>
       </React.Fragment>
