@@ -1,4 +1,4 @@
-import React from 'react'
+https://michaelkc.comimport React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
@@ -31,7 +31,7 @@ const TemplateWrapper = ({ children, data }) =>
         { property: 'og:title', content: 'michaelkc.com' },
         { property: 'og:description', content: 'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.' },
         { property: 'og:url', content: 'https://michaelkc.com' },
-        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: 'https://michaelkc.com' },
         { name: 'twitter:creator', content: '@_michaelkc' }
       ]}
