@@ -48,6 +48,7 @@ export default class Section extends Component {
   constructor(props) {
     super(props)
     this._onScroll = this._onScroll.bind(this)
+    this.section = React.createRef()
     this.state = {
       isVisible: false
     }
@@ -70,7 +71,7 @@ export default class Section extends Component {
       <Container
         backgroundColor={backgroundColor}
         className={className}
-        innerRef={(el) => this.section = el}
+        ref={this.section}
         isPadded={isPadded}
         isVisible={this.state.isVisible}
         style={style}
@@ -83,7 +84,7 @@ export default class Section extends Component {
 
   _onScroll() {
     const centerHeight = win.innerHeight
-    const sectionTop = this.section.getBoundingClientRect().top
+    const sectionTop = this.section.current.getBoundingClientRect().top
 
     if (sectionTop <= centerHeight) {
       this.setState(prevState => ({isVisible: true}))

@@ -9,11 +9,11 @@ const CometContainer = styled.div`
   bottom: ${props => props.isAnimated ? 'calc(50% - 10px)' : '100px'};
   filter: blur(${props => props.isBlurred ? '10px' : 0});
   left: 50%;
+  height: ${props => props.isExploded ? '10px' : 'auto'};
   min-height: 200px;
+  opacity: ${props => props.isExploded ? 0 : 1};
   transform: translateX(-50%);
   transition: height 400ms ease, opacity 800ms ease 400ms, width 400ms ease, -webkit-filter 400ms ease;
-  transition: filter 400ms ease, height 400ms ease, opacity 800ms ease 400ms, width 400ms ease;
-  transition: filter 400ms ease, height 400ms ease, opacity 800ms ease 400ms, width 400ms ease, -webkit-filter 400ms ease;
   position: ${props => props.isAnimated ? 'fixed' : 'absolute'};
   width: ${props => props.isAnimated ? '10px' : '70px'};
 `
@@ -54,57 +54,6 @@ const CometArrow = styled.div`
   }
 `
 
-const StyledCanvas = styled.canvas`
-  height: 100%;
-  width: 100%;
-`
-
-class Canvas extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      prevPos: win.innerHeight / 2
-    }
-  }
-
-  componentDidMount() {
-    this._initCanvas()
-
-    win.addEventListener('scroll', this._getScrollDirection)
-  }
-
-  render() {
-    return(
-      <StyledCanvas
-        height='200'
-        innerRef={i => { this.canvas = i }}
-        width='70'
-      />
-    )
-  }
-
-  _initCanvas() {
-    const ctx = this.canvas.getContext('2d')
-    ctx.save()
-    ctx.beginPath()
-    ctx.arc(this.canvas.width / 2, this.canvas.height / 2 , 35, 0, 2 * Math.PI)
-    ctx.closePath()
-    ctx.fillStyle = 'rgba(255,255,255,0.6)'
-    ctx.fill()
-    ctx.restore()
-  }
-
-  _getScrollDirection() {
-
-    if (this.state.prevPos < scroll.scrollY) {
-
-    }
-
-  }
-
-}
-
 export default class Comet extends Component {
 
   constructor(props) {
@@ -127,20 +76,21 @@ export default class Comet extends Component {
 
   render() {
 
-    const { isBlurred } = this.props
+    const { isBlurred, isCometExploded } = this.props
 
     return (
-      <React.Fragment>
+      <>
         <CometContainer
           isAnimated={this.state.isAnimated}
           isBlurred={isBlurred}
+          isExploded={isCometExploded}
         >
           <CometArrow
             isAnimated={this.state.isAnimated}
           />
 
         </CometContainer>
-      </React.Fragment>
+      </>
     )
   }
 
@@ -149,10 +99,10 @@ export default class Comet extends Component {
     const middleSection = viewHeight / 2 - 100
 
     if (win.scrollY > middleSection) {
-      this.setState(prevState => ({isAnimated: true}))
+      this.setState({isAnimated: true})
     }
     else {
-      this.setState(prevState => ({isAnimated: false}))
+      this.setState({isAnimated: false})
     }
 
   }

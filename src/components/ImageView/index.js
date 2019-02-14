@@ -86,6 +86,7 @@ export default class ImageView extends Component {
         <ImageLink
           href={url}
           target='_blank'
+          rel='noopener noreferrer'
         >
           <Img
             sizes={sizes}
@@ -93,7 +94,7 @@ export default class ImageView extends Component {
           />
         </ImageLink>
         <Text>
-          <a href={url} target='_blank'>{title}</a>
+          <a href={url} target='_blank' rel='noopener noreferrer'>{title}</a>
           <p>{text}</p>
         </Text>
         <Close onClick={this._close} />
