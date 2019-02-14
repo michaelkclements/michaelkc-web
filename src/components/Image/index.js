@@ -36,6 +36,7 @@ export default class Image extends Component {
   constructor(props) {
     super(props)
     this._open = this._open.bind(this)
+    this.container = React.createRef()
     this.state = {
       isOpen: false
     }
@@ -49,7 +50,7 @@ export default class Image extends Component {
       <Container
         className={className}
         href={to}
-        innerRef={i => { this.container = i }}
+        ref={this.container}
         onClick={this._open}
         style={style}
         target='_blank'

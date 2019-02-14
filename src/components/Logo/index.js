@@ -5,7 +5,7 @@ let win = typeof window !== 'undefined' ? window : false
 
 const Container = styled.div`
   color: #fff;
-  font-size: ${props => props.isScrolled ? '4rem' : '8.5rem'};
+  font-size: ${props => (props.isScrolled ? '4rem' : '8.5rem')};
   font-weight: 900;
   left: 50%;
   position: fixed;
@@ -16,19 +16,17 @@ const Container = styled.div`
 `
 
 export default class Logo extends Component {
-
   constructor(props) {
     super(props)
     this._onScroll = this._onScroll.bind(this)
     this.state = {
       isScrolled: false,
-      topPosition: win.innerHeight / 2
+      topPosition: win.innerHeight / 2,
     }
   }
 
   componentDidMount() {
     win.addEventListener('scroll', this._onScroll)
-
   }
 
   componentWillUnmount() {
@@ -36,11 +34,10 @@ export default class Logo extends Component {
   }
 
   render() {
-
-    return(
+    return (
       <Container
         isScrolled={this.state.isScrolled}
-        style={{top: this.state.topPosition, fontSize: this.state.fontSize}}
+        style={{ top: this.state.topPosition, fontSize: this.state.fontSize }}
       >
         MKC
       </Container>
@@ -49,12 +46,11 @@ export default class Logo extends Component {
 
   _onScroll() {
     const scrollPercent = win.scrollY / win.innerHeight
-		const topPosition = (win.innerHeight / 2) - (win.scrollY / 1.5)
-    const fontSize = 8.5 - (scrollPercent * 4)
+    const topPosition = win.innerHeight / 2 - win.scrollY / 1.5
+    const fontSize = 8.5 - scrollPercent * 4
 
-		scrollPercent <= 1000
-		?	this.setState(prevState => ({topPosition: topPosition, fontSize: `${fontSize}rem`}))
-		: this.setState(prevState => ({topPosition: win.innerHeight / 2, fontSize: '4rem'}))
+    scrollPercent <= 1000
+      ? this.setState(prevState => ({ topPosition: topPosition, fontSize: `${fontSize}rem` }))
+      : this.setState(prevState => ({ topPosition: win.innerHeight / 2, fontSize: '4rem' }))
   }
-
 }

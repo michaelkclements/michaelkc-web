@@ -1,17 +1,8 @@
-import Comet from './Comet'
-import Footer from './Footer'
-import ImageView from './ImageView'
-import Section from './Section'
-import Logo from './Logo'
-import Page from './Page'
-import Image from './Image'
-
-export {
-  Image,
-  Page,
-  Logo,
-  Section,
-  ImageView,
-  Footer,
-  Comet
-}
+export { default as Layout } from './Layout'
+export { default as Image } from './Image'
+export { default as Page } from './Page'
+export { default as Logo } from './Logo'
+export { default as Section } from './Section'
+export { default as ImageView } from './ImageView'
+export { default as Footer } from './Footer'
+export { default as Comet } from './Comet'

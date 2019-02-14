@@ -26,7 +26,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-react-next`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-contentful`,

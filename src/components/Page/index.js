@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -8,7 +8,4 @@ const Container = styled.div`
   overflow: hidden;
 `
 
-export default ({children}) =>
-  <Container>
-    {children}
-  </Container>
+export default ({ children }) => <Container>{children}</Container>
