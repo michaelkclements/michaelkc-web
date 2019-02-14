@@ -6,22 +6,23 @@ let win = typeof window !== 'undefined' ? window : false
 const CometContainer = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.6));
   border-radius: 0 0 50px 50px;
-  bottom: ${props => props.isAnimated ? 'calc(50% - 10px)' : '100px'};
-  filter: blur(${props => props.isBlurred ? '10px' : 0});
+  bottom: ${props => (props.isAnimated ? 'calc(50% - 10px)' : '100px')};
+  filter: blur(${props => (props.isBlurred ? '10px' : 0)});
   left: 50%;
-  height: ${props => props.isExploded ? '10px' : 'auto'};
+  height: ${props => (props.isExploded ? '10px' : 'auto')};
   min-height: 200px;
-  opacity: ${props => props.isExploded ? 0 : 1};
+  opacity: ${props => (props.isExploded ? 0 : 1)};
   transform: translateX(-50%);
-  transition: height 400ms ease, opacity 800ms ease 400ms, width 400ms ease, -webkit-filter 400ms ease;
-  position: ${props => props.isAnimated ? 'fixed' : 'absolute'};
-  width: ${props => props.isAnimated ? '10px' : '70px'};
+  transition: height 400ms ease, opacity 800ms ease 400ms, width 400ms ease,
+    -webkit-filter 400ms ease;
+  position: ${props => (props.isAnimated ? 'fixed' : 'absolute')};
+  width: ${props => (props.isAnimated ? '10px' : '70px')};
 `
 
 const CometArrow = styled.div`
-  background-color: ${props => props.isAnimated ? '#fff' : 'transparent'};
-  border-radius: ${props => props.isAnimated ? '50%' : 0};
-  bottom: ${props => props.isAnimated ? '3px' : '20px'};
+  background-color: ${props => (props.isAnimated ? '#fff' : 'transparent')};
+  border-radius: ${props => (props.isAnimated ? '50%' : 0)};
+  bottom: ${props => (props.isAnimated ? '3px' : '20px')};
   left: 50%;
   height: 4px;
   position: absolute;
@@ -38,7 +39,7 @@ const CometArrow = styled.div`
     height: 3px;
     position: absolute;
     transition: all 300ms ease;
-    width: ${props => props.isAnimated ? '3px' : '25px'};
+    width: ${props => (props.isAnimated ? '3px' : '25px')};
   }
 
   &:before {
@@ -55,14 +56,13 @@ const CometArrow = styled.div`
 `
 
 export default class Comet extends Component {
-
   constructor(props) {
     super(props)
     this._onScroll = this._onScroll.bind(this)
     this.state = {
       isAnimated: false,
       isBlurred: false,
-      scrollPos: 0
+      scrollPos: 0,
     }
   }
 
@@ -75,7 +75,6 @@ export default class Comet extends Component {
   }
 
   render() {
-
     const { isBlurred, isCometExploded } = this.props
 
     return (
@@ -85,10 +84,7 @@ export default class Comet extends Component {
           isBlurred={isBlurred}
           isExploded={isCometExploded}
         >
-          <CometArrow
-            isAnimated={this.state.isAnimated}
-          />
-
+          <CometArrow isAnimated={this.state.isAnimated} />
         </CometContainer>
       </>
     )
@@ -99,12 +95,9 @@ export default class Comet extends Component {
     const middleSection = viewHeight / 2 - 100
 
     if (win.scrollY > middleSection) {
-      this.setState({isAnimated: true})
+      this.setState({ isAnimated: true })
+    } else {
+      this.setState({ isAnimated: false })
     }
-    else {
-      this.setState({isAnimated: false})
-    }
-
   }
-
 }

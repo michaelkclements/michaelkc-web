@@ -642,42 +642,55 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Container = styled.div`
-  background-image: linear-gradient(-170deg,#FFD677 0%,#FF7979 10%,#ed4a59 40%,#FF50A2 60%,#c560ff 80%,#3090bd 100%);
+  background-image: linear-gradient(
+    -170deg,
+    #ffd677 0%,
+    #ff7979 10%,
+    #ed4a59 40%,
+    #ff50a2 60%,
+    #c560ff 80%,
+    #3090bd 100%
+  );
   min-height: 400vh;
 `
 
-const Layout = ({ children, data }) =>
+const Layout = ({ children, data }) => (
   <Container>
-
     <Helmet
       title='_michaelkc'
       meta={[
-        { name: 'description', content: 'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.' },
+        {
+          name: 'description',
+          content:
+            'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.',
+        },
         { name: 'keywords', content: 'michaelkc, michaelkc portfolio, _michaelkc' },
         { property: 'og:image', content: OgImage },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '600' },
         { property: 'og:title', content: 'michaelkc.com' },
-        { property: 'og:description', content: 'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.' },
+        {
+          property: 'og:description',
+          content:
+            'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.',
+        },
         { property: 'og:url', content: 'https://michaelkc.com' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: 'https://michaelkc.com' },
-        { name: 'twitter:creator', content: '@_michaelkc' }
+        { name: 'twitter:creator', content: '@_michaelkc' },
       ]}
     >
-      <link rel="shortcut icon" href={Favicon} />
-      <link rel="apple-touch-icon-precomposed" href={TouchIcon144} sizes="144x144" />
-      <link rel="apple-touch-icon-precomposed" href={TouchIcon114} sizes="114x114" />
-      <link rel="apple-touch-icon-precomposed" href={TouchIcon72} sizes="72x72" />
-      <link rel="apple-touch-icon-precomposed" href={TouchIcon57} />
+      <link rel='shortcut icon' href={Favicon} />
+      <link rel='apple-touch-icon-precomposed' href={TouchIcon144} sizes='144x144' />
+      <link rel='apple-touch-icon-precomposed' href={TouchIcon114} sizes='114x114' />
+      <link rel='apple-touch-icon-precomposed' href={TouchIcon72} sizes='72x72' />
+      <link rel='apple-touch-icon-precomposed' href={TouchIcon57} />
     </Helmet>
 
     <GlobalStyle />
 
-    <Page>
-      {children}
-    </Page>
-
+    <Page>{children}</Page>
   </Container>
+)
 
 export default Layout

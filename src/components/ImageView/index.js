@@ -7,13 +7,13 @@ const Container = styled.div`
   display: flex;
   left: 0;
   height: 100%;
-  opacity: ${props => props.isOpen ? 1 : 0};
+  opacity: ${props => (props.isOpen ? 1 : 0)};
   padding-left: 300px;
   padding-right: 50px;
-  pointer-events: ${props => props.isOpen ? 'all' : 'none'};
+  pointer-events: ${props => (props.isOpen ? 'all' : 'none')};
   position: absolute;
   top: 50%;
-  transform: ${props => props.isOpen ? 'translate3d(0, -50%, 0)' : 'translate3d(0, -50%, 200px)'};
+  transform: ${props => (props.isOpen ? 'translate3d(0, -50%, 0)' : 'translate3d(0, -50%, 200px)')};
   transition: all 300ms ease;
   width: 100%;
 `
@@ -32,9 +32,7 @@ const ImageLink = styled.a`
   }
 `
 
-const Text = styled.div`
-
-`
+const Text = styled.div``
 
 const Close = styled.div`
   color: #fff;
@@ -66,35 +64,26 @@ const Close = styled.div`
 `
 
 export default class ImageView extends Component {
-
   constructor(props) {
     super(props)
     this._close = this._close.bind(this)
     this.state = {
-      isOpen: false
+      isOpen: false,
     }
   }
 
   render() {
-
     const { sizes, text, title, resolutions, url } = this.props
 
     return (
-      <Container
-        onClick={this._close}
-      >
-        <ImageLink
-          href={url}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Img
-            sizes={sizes}
-            resolutions={resolutions}
-          />
+      <Container onClick={this._close}>
+        <ImageLink href={url} target='_blank' rel='noopener noreferrer'>
+          <Img sizes={sizes} resolutions={resolutions} />
         </ImageLink>
         <Text>
-          <a href={url} target='_blank' rel='noopener noreferrer'>{title}</a>
+          <a href={url} target='_blank' rel='noopener noreferrer'>
+            {title}
+          </a>
           <p>{text}</p>
         </Text>
         <Close onClick={this._close} />
@@ -103,7 +92,6 @@ export default class ImageView extends Component {
   }
 
   _close() {
-    this.setState(prevState => ({isOpen: false}))
+    this.setState(prevState => ({ isOpen: false }))
   }
-
 }

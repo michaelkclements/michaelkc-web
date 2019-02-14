@@ -8,7 +8,4 @@ const Container = styled.div`
   overflow: hidden;
 `
 
-export default ({children}) =>
-  <Container>
-    {children}
-  </Container>
+export default ({ children }) => <Container>{children}</Container>
