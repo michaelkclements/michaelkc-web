@@ -15,8 +15,6 @@
     "gatsby-transformer-remark": "^2.2.5",
     "konva": "^2.6.0",
     "react-helmet": "^5.2.0",
-    "react-konva": "^16.8.0",
-    "react-spring": "^8.0.7",
     "react-transition-group": "^2.5.3",
     "styled-components": "^4.1.3"
   },
