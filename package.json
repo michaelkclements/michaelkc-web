@@ -1,7 +1,7 @@
 {
   "name": "michaelkc-web",
   "description": "",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "author": "Michael K. Clements <michaelkc@me.com>",
   "dependencies": {
     "gatsby": "^2.13.61",
