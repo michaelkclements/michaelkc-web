@@ -666,8 +666,6 @@ const Layout = ({ children, data }) => (
         },
         { name: 'keywords', content: 'michaelkc, michaelkc portfolio, _michaelkc' },
         { property: 'og:image', content: `https://michaelkc.com${OgImage}` },
-        { property: 'og:image:width', content: '1200' },
-        { property: 'og:image:height', content: '600' },
         { property: 'og:title', content: 'michaelkc.com' },
         {
           property: 'og:description',
