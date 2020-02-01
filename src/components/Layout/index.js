@@ -665,7 +665,7 @@ const Layout = ({ children, data }) => (
             'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.',
         },
         { name: 'keywords', content: 'michaelkc, michaelkc portfolio, _michaelkc' },
-        { property: 'og:image', content: OgImage },
+        { property: 'og:image', content: `https://michaelkc.com/${OgImage}` },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '600' },
         { property: 'og:title', content: 'michaelkc.com' },
