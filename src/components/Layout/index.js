@@ -665,7 +665,7 @@ const Layout = ({ children, data }) => (
             'Portolio created by Michael K. Clements, made with React, Gatsby, GraphQL, Styled Components and Netlify.',
         },
         { name: 'keywords', content: 'michaelkc, michaelkc portfolio, _michaelkc' },
-        { property: 'og:image', content: `https://michaelkc.com/${OgImage}` },
+        { property: 'og:image', content: `https://michaelkc.com${OgImage}` },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '600' },
         { property: 'og:title', content: 'michaelkc.com' },
@@ -677,6 +677,7 @@ const Layout = ({ children, data }) => (
         { property: 'og:url', content: 'https://michaelkc.com' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: 'https://michaelkc.com' },
+        { name: 'twitter:image', content: `https://michaelkc.com${OgImage}` },
         { name: 'twitter:creator', content: '@_michaelkc' },
       ]}
     >
