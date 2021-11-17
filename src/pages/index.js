@@ -116,7 +116,7 @@ export default class Home extends Component {
                   key={i}
                   to={item.node.url}
                   resolutions={item.node.image.resolutions}
-                  sizes={item.node.image.sizes}
+                  fluid={item.node.image.fluid}
                   video={item.node.video ? item.node.video.file.url : null}
                 />
               ))}
@@ -326,9 +326,7 @@ export const homeQuery = graphql`
           title
           url
           image {
-            sizes(maxWidth: 381, quality: 90) {
-              ...GatsbyContentfulSizes_withWebp
-            }
+            gatsbyImageData(quality: 90)
           }
           video {
             file {

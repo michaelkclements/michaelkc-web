@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Container = styled.div`
   align-items: center;
@@ -73,12 +73,12 @@ export default class ImageView extends Component {
   }
 
   render() {
-    const { sizes, text, title, resolutions, url } = this.props
+    const { fluid, text, title, resolutions, url } = this.props
 
     return (
       <Container onClick={this._close}>
         <ImageLink href={url} target='_blank' rel='noopener noreferrer'>
-          <Img sizes={sizes} resolutions={resolutions} />
+          <GatsbyImage fluid={fluid} resolutions={resolutions} />
         </ImageLink>
         <Text>
           <a href={url} target='_blank' rel='noopener noreferrer'>

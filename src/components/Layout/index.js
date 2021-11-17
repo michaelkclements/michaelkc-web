@@ -680,9 +680,9 @@ const Layout = ({ children, data }) => (
       ]}
     >
       <link rel='shortcut icon' href={Favicon} />
-      <link rel='apple-touch-icon-precomposed' href={TouchIcon144} sizes='144x144' />
-      <link rel='apple-touch-icon-precomposed' href={TouchIcon114} sizes='114x114' />
-      <link rel='apple-touch-icon-precomposed' href={TouchIcon72} sizes='72x72' />
+      <link rel='apple-touch-icon-precomposed' href={TouchIcon144} fluid='144x144' />
+      <link rel='apple-touch-icon-precomposed' href={TouchIcon114} fluid='114x114' />
+      <link rel='apple-touch-icon-precomposed' href={TouchIcon72} fluid='72x72' />
       <link rel='apple-touch-icon-precomposed' href={TouchIcon57} />
     </Helmet>
 

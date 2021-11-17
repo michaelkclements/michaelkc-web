@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
 const Container = styled.a`
@@ -44,7 +44,7 @@ export default class Image extends Component {
 
   render() {
 
-    const { className, sizes, style, resolutions, to, video } = this.props
+    const { className, fluid, style, resolutions, to, video } = this.props
 
     return (
       <Container
@@ -65,8 +65,8 @@ export default class Image extends Component {
             >
               <source src={video} />
             </Video>
-          : <Img
-              sizes={sizes}
+          : <GatsbyImage
+              fluid={fluid}
               resolutions={resolutions}
               style={{display: 'block'}}
             />
